@@ -1,0 +1,58 @@
+<admintpl file="header" />
+</head>
+<body>
+<div class="wrap">
+	<ul class="nav nav-tabs">
+		<li><a href="{:U('Discuss/category')}">分类管理</a></li>
+		<li class="active"><a href="">编辑分类</a></li>
+	</ul>
+	<form class="form-horizontal" id="formInfo" autocomplete="off">
+		<fieldset>
+			<div class="control-group">
+				<label class="control-label">分类序号</label>
+				<div class="controls">
+					<input type="number" name="listorder" value="{$listorder}" placeholder="">
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label">分类名称</label>
+				<div class="controls">
+					<input type="text" name="name" maxlength="20" value="{$name}" placeholder="">
+				</div>
+			</div>
+		</fieldset>
+		<div class="form-actions">
+			<input type="hidden" name="id" value="{$id}">
+			<a class="btn" href="javascript:history.back(-1);">取消</a>
+			<input class="btn btn-info" id="btnSubmit" type="button" value="保存">
+		</div>
+	</form>
+</div>
+<script src="__PUBLIC__/js/common.js"></script>
+<script type="text/javascript">
+	var action_code = 1;
+	$("#btnSubmit").on('click',function () {
+		if(action_code === 1){
+		    action_code = 0;
+		    var valueInfo = $("#formInfo").serialize();
+		    $.ajax({
+				type: 'POST',
+				url: '{:U("Discuss/cate_edit_post")}',
+				data: valueInfo,
+				dataType: 'json',
+				success: function (res) {
+					if(res.status === 1){
+                        layer.msg(res.info,{icon:6,time:1000},function () {
+							location.href = '{:U("Discuss/category")}';
+                        });
+					}else{
+					    action_code = 1;
+					    layer.msg(res.info,{icon:5,time:2000});
+					}
+                }
+			})
+		}
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<admintpl file="header"/>
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:U('school/index',array('type'=>$type))}">学校管理</a></li>
+        <if condition="$type eq 1">
+            <li class="active"><a href="{:U('school/add')}">新增大学</a></li>
+            <else/>
+            <li class="active"><a href="{:U('school/add')}">新增高中</a></li>
+        </if>
+    </ul>
+    <form method="post" class="form-horizontal js-ajax-form" action="{:U('school/add_post')}">
+        <fieldset>
+            <div class="control-group">
+                <label class="control-label">学校名称</label>
+                <div class="controls">
+                    <input type="text" autocomplete="off" placeholder="输入学校名称" maxlength="20" name="school_name">
+                    <span class="form-required">*</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">学校首字母</label>
+                <div class="controls">
+                    <input type="text" autocomplete="off" placeholder="输入学校名称首字母" maxlength="1" name="first">
+                    <span class="form-required">(如不填写则自动识别,多音字可能识别有误)</span>
+                </div>
+            </div>
+
+            <if condition="$type eq 1">
+                <div class="control-group">
+                    <label class="control-label">学校类型</label>
+                    <div class="controls">
+                        <input type="text" placeholder="输入学校类型" maxlength="20" name="professional_type">
+                        <span class="form-required">*</span>
+                    </div>
+                </div>
+            </if>
+
+            <div class="control-group">
+                <label class="control-label">所在地址</label>
+                <div class="controls">
+                    <textarea name="address" placeholder="学校所在地址" rows="5" cols="57"></textarea>
+                    <span class="form-required">*</span>
+                </div>
+            </div>
+        </fieldset>
+        <div class="form-actions">
+            <input type="hidden" name="type" value="{$type}">
+            <a class="btn" href="javascript:history.back(-1);">{:L('BACK')}</a>
+            <button type="submit" class="btn btn-success js-ajax-submit">{:L('ADD')}</button>
+        </div>
+    </form>
+</div>
+<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

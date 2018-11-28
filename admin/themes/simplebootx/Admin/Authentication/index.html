@@ -1,0 +1,79 @@
+<admintpl file="header"/>
+<link rel="stylesheet" href="__PUBLIC__/layui/css/layui.css">
+<style>
+    .type_pane {padding-bottom: 15px;}
+    table tr td:first-child {text-align: center;}
+</style>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:U('authentication/index')}">认证管理</a></li>
+    </ul>
+    <php>$url = U('authentication/index') ;</php>
+    <php>$status=['0'=>'未处理','1'=>'已通过','2'=>'未通过'];</php>
+    <form class="well form-search" method="post" action="{$url}">
+        关键字：
+        <input type="hidden" name="type" value="{:I('type')}">
+        <input type="text" id="keyword" name="keyword" autocomplete="off" value="{:I('request.keyword')}" placeholder="输入认证用户/认证学校"/>
+        <select type="text" id="status" name="status" style="width: 120px;height: 35px">
+            <option value="">选择认证状态</option>
+            <foreach name="status" item="v">
+                <php>$ck = I('request.status')==="$key"?"selected":"";</php>
+                <option value="{$key}" {$ck}>{$v}</option>
+            </foreach>
+        </select>
+        <select type="text" name="type" style="width: 120px;height: 35px">
+            <option value="">选择认证类型</option>
+            <option value="1" <if condition="I('request.type/s','') eq 1">selected</if>>大学</option>
+            <option value="2" <if condition="I('request.type/s','') eq 2">selected</if>>高中</option>
+        </select>
+        申请时间：
+        <input type="text" style="width: 150px" autocomplete="off" value="{:I('request.time')}" name="time" id="time" placeholder="按时间查询"/>
+        <button type="submit" class="btn btn-primary">查询</button>
+    </form>
+    <form method="post" class="js-ajax-form">
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th width="50">ID</th>
+                <th>认证用户</th>
+                <th>认证类型</th>
+                <th>认证学校</th>
+                <th>申请时间</th>
+                <th>{:L('STATUS')}</th>
+                <th width="80">{:L('ACTIONS')}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <if condition="empty($list)">
+                <tr><td colspan="7">暂无数据</td></tr>
+            </if>
+            <foreach name="list" item="vo">
+                <tr>
+                    <td>{$vo.id}</td>
+                    <td>{$vo.user_name}</td>
+                    <td>{$vo['type']==1?"大学":"高中"}</td>
+                    <td>{$vo.school_name}</td>
+                    <td>{:date("Y-m-d H:i:s",$vo['create_time'])}</td>
+                    <td>{$status[$vo['status']]}</td>
+                    <td style="text-align: center">
+                        <a href="{:U('authentication/edit',array('id'=>$vo['id']))}">详情</a>
+                    </td>
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+    </form>
+    <div class="pagination">{$page}</div>
+</div>
+<script src="__PUBLIC__/js/common.js"></script>
+<script src="__PUBLIC__/layui/layui.js"></script>
+<script type="text/javascript">
+    layui.use(["form", 'laytpl', 'laydate'], function () {
+        let laydate = layui.laydate;
+        laydate.render({elem: '#time', type: 'datetime'});
+    });
+</script>
+</body>
+</html>

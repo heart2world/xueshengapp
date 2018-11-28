@@ -1,0 +1,50 @@
+<admintpl file="header" />
+</head>
+<body>
+<div class="wrap">
+	<ul class="nav nav-tabs">
+		<li><a href="{:U('Discuss/index')}">讨论管理</a></li>
+		<li class="active"><a href="{:U('Discuss/category')}">分类管理</a></li>
+		<li><a href="{:U('Discuss/label')}">标签管理</a></li>
+	</ul>
+	<div style="margin-bottom: 12px;">
+		<a type="button" class="btn btn-info" href="{:U('Discuss/cate_add')}">新增分类</a>
+	</div>
+	<div>
+		<table class="table table-hover table-bordered table-list">
+			<thead>
+			<tr>
+				<th width="60">分类序号</th>
+				<th>分类名称</th>
+				<th>分类状态</th>
+				<th width="60">操作</th>
+			</tr>
+			</thead>
+			<tbody>
+			<if condition="empty($category)">
+				<tr><td colspan="4" class="no_data">暂无数据</td></tr>
+			</if>
+			<php>$status_array = array(0=>'隐藏',1=>'正常');</php>
+			<foreach name="category" item="vc">
+				<tr>
+					<td>{$vc.listorder}</td>
+					<td>{$vc.name}</td>
+					<td>{$status_array[$vc['status']]}</td>
+					<td class="action">
+						<if condition="$vc.status eq 1">
+							<a href="{:U('Discuss/cate_action',array('id'=>$vc['id']))}" class="js-ajax-dialog-btn" data-msg="确定隐藏该分类吗？">隐藏</a> |
+							<else/>
+							<a href="{:U('Discuss/cate_action',array('id'=>$vc['id']))}" class="js-ajax-dialog-btn" data-msg="确定显示该分类吗？">显示</a> |
+						</if>
+						<a href="{:U('Discuss/cate_edit',array('id'=>$vc['id']))}">编辑</a>
+					</td>
+				</tr>
+			</foreach>
+			</tbody>
+		</table>
+		<div class="pagination">{$page}</div>
+	</div>
+</div>
+<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

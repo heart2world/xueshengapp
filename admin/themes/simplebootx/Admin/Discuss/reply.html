@@ -1,0 +1,59 @@
+<admintpl file="header" />
+<style type="text/css">
+    .info{padding: 0 20px;}
+    .div_box{padding: 12px 0;}
+    .div_box div{margin-bottom: 20px;}
+    .left_name{width:100px;display:inline-block;text-align: right;margin-right: 50px;}
+    .table-list tr td{text-align: center;}
+</style>
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:U('Discuss/info',array('id'=>$discuss_id))}">基本信息</a></li>
+        <li><a href="{:U('Discuss/comment',array('id'=>$id))}">评论信息</a></li>
+        <li class="active"><a href="">评论详情</a></li>
+    </ul>
+    <div class="info">
+        <div class="clearfix div_box">
+            <div><span class="left_name">评论序号</span><span>{$id}</span></div>
+            <div><span class="left_name">评论用户</span><span>{$user_nicename}</span></div>
+            <div><span class="left_name">评论内容</span><span>{$content}</span></div>
+            <div><span class="left_name">点赞量</span><span>{$like_num}</span></div>
+            <div><span class="left_name">回复</span></div>
+            <div style="width: 80%;margin-left: 20px;">
+                <table class="table table-hover table-bordered table-list">
+                    <thead>
+                    <tr>
+                        <th>回复序号</th>
+                        <th>回复内容</th>
+                        <th>回复用户</th>
+                        <th>回复时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <if condition="empty($reply)">
+                        <tr><td colspan="5" class="no_data">暂无数据</td></tr>
+                    </if>
+                    <foreach name="reply" item="vr">
+                        <tr>
+                            <td>{$vr.id}</td>
+                            <td>{$vr.content}</td>
+                            <td>{$vr.user_nicename}</td>
+                            <td><php>echo date('Y-m-d H:i:s',$vr['create_time']);</php></td>
+                            <td class="action">
+                                <a href="{:U('Discuss/reply_delete',array('id'=>$vr['id']))}" class="js-ajax-delete" data-msg="确定删除该回复？">删除</a>
+                            </td>
+                        </tr>
+                    </foreach>
+                    </tbody>
+                </table>
+                <div class="pagination">{$page}</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

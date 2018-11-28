@@ -1,0 +1,163 @@
+<admintpl file="header"/>
+<link rel="stylesheet" href="__PUBLIC__/layui/css/layui.css">
+<style>
+    .action a {
+        color: #00a2d4;
+    }
+</style>
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:U('school/index')}">学校管理</a></li>
+        <li class="active"><a href="{:U('school/edit')}">编辑学校</a></li>
+    </ul>
+    <form method="post" class="form-horizontal js-ajax-form" action="{:U('school/edit_post')}">
+        <fieldset>
+            <div class="control-group">
+                <label class="control-label">学校名称</label>
+                <div class="controls">
+                    <input type="text" autocomplete="off" value="{$data.school_name}" maxlength="20" placeholder="输入学校名称" name="school_name">
+                    <span class="form-required">*</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">学校首字母</label>
+                <div class="controls">
+                    <input type="text" autocomplete="off" placeholder="输入学校名称首字母" maxlength="1" value="{$data.first}" name="first">
+                    <span class="form-required">(如不填写则自动识别,多音字可能识别有误)</span>
+                </div>
+            </div>
+
+            <if condition="$data.type eq 1">
+                <div class="control-group">
+                    <label class="control-label">学校类型</label>
+                    <div class="controls">
+                        <input type="text" placeholder="输入专业类型" maxlength="20" value="{$data.professional_type}" name="professional_type">
+                        <span class="form-required">*</span>
+                    </div>
+                </div>
+            </if>
+
+            <div class="control-group">
+                <label class="control-label">所在地址</label>
+                <div class="controls">
+                    <textarea name="address" placeholder="学校所在地址" rows="5" cols="57">{$data.address}</textarea>
+                    <span class="form-required">*</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <div class="controls">
+                    <input type="hidden" value="{$data.id}" name="id">
+                    <a class="btn" href="javascript:history.back(-1);">{:L('BACK')}</a>
+                    <button type="submit" class="btn btn-success js-ajax-submit">{:L('SAVE')}</button>
+                </div>
+            </div>
+        </fieldset>
+
+        <eq name="data.type" value="1">
+            <php>$status=array(0=>'正常',1=>'停用');</php>
+            <div class="form-actions" style="background: #fff">
+                <button id="add_pro" type="button" class="btn btn-info" style="margin-bottom: 10px">新增专业</button>
+                <table class="table table-hover table-bordered table-list" style="width: 200px">
+                    <thead>
+                    <tr>
+                        <th>专业名称</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <foreach name="pro_list" item="vo">
+                        <tr>
+                            <td>{$vo.pro_name}</td>
+                            <td>{$status[$vo['status']]}</td>
+                            <td class="action">
+                                <eq name="vo.status" value="0">
+                                    <a href="{:U('school/ban_pro',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn"
+                                       data-msg="确定禁用此专业?">停用</a>
+                                    <else/>
+                                    <a href="{:U('school/cancelban_pro',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn"
+                                       data-msg="确定启用此专业?">启用</a>
+                                </eq>
+                            </td>
+                        </tr>
+                    </foreach>
+                    </tbody>
+                </table>
+            </div>
+        </eq>
+    </form>
+</div>
+<script type="text/html" id="temp">
+    <h3 style="text-align: center;font-size: 16px"> 添加专业 </h3>
+    <form class="layui-form control-group" action="{:U('school/add_pro_post')}" id="formBox"
+          style="padding: 25px 10px 0 0">
+        <div class="layui-form-item">
+            <label class="layui-form-label">专业名称</label>
+            <div class="layui-input-block">
+                <input type="hidden" name="school_id" value="{$data.id}"/>
+                <input type="text" name="pro_name" lay-verify="required"
+                       placeholder="请输入名称"
+                       autocomplete="off">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">状态</label>
+            <div class="layui-input-block">
+                <input type="radio" value="0" name="status" title="启用" checked/>
+                <input type="radio" value="1" name="status" title="禁用"/>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button style="float: right" class="btn btn-info" lay-submit lay-filter="add">添加</button>
+            </div>
+        </div>
+    </form>
+</script>
+<script src="__PUBLIC__/js/common.js"></script>
+<script src="__PUBLIC__/layui/layui.js"></script>
+<script src="__PUBLIC__/js/app.js?_={:time()}"></script>
+<script>
+    layui.use("form", function () {
+        let form = layui.form;
+        $("#add_pro").on('click', function () {
+            openWin();
+            form.render()
+        });
+        form.on("submit(add)", function (data) {
+            request({
+                data: data.field,
+                reload: 1,
+                done: function () {
+                    setTimeout(function () {
+                        layer.closeAll()
+                    }, 1000)
+                }
+            });
+            return false;
+        });
+    });
+
+    function openWin() {
+        layer.open({
+            title: false,
+            area: ["350px", "250px"],
+            content: $("#temp").html(),
+            shadeClose: 1,
+            type: 1,
+            btn: false,
+            yes: function (index) {
+
+            }, end: function () {
+
+            }
+        });
+    }
+
+</script>
+</body>
+</html>

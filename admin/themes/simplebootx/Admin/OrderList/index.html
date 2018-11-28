@@ -1,0 +1,127 @@
+<admintpl file="header"/>
+
+<link rel="stylesheet" href="__PUBLIC__/layui/css/layui.css">
+<style>
+    .type_pane {
+        padding-bottom: 15px;
+    }
+
+    table tr td:first-child {
+        text-align: center;
+    }
+
+    .status {
+        text-decoration: solid !important;
+    }
+</style>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:U('OrderList/index')}">发货列表</a></li>
+    </ul>
+
+    <php>$url = U('OrderList/index') ;</php>
+    <php>$status=['0'=>'<font color="#6495ed">待发货</font>','1'=>'<font color="#20b2aa">已发货</font>','2'=>'<font
+            color="#a9a9a9">已关闭</font>'];
+    </php>
+    <form class="well form-search" method="post" action="{$url}" autocomplete="off">
+        文本搜索：
+        <input type="hidden" name="type" value="{:I('type')}">
+        <input type="text" id="keyword" name="keyword" value="{:I('request.keyword')}"
+               placeholder="输入商品名称/收货人/收货电话"/>
+        <select type="text" name="status" style="width: 120px;height: 35px">
+            <option value="">选择发货状态</option>
+            <foreach name="status" item="v">
+                <php>$ck = I('request.status')==="$key"?"selected":"";</php>
+                <option value="{$key}" {$ck}>{$v}</option>
+            </foreach>
+        </select>
+        <input type="text"  style="width: 150px" value="{:I('request.time')}" name="time" id="time"  placeholder="按时间查询"  />
+        <button type="submit" class="btn btn-primary">查询</button>
+        <!--<a class="btn btn-warning" href="{$url}">重置</a>-->
+    </form>
+
+
+    <form method="post" class="js-ajax-form">
+
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th width="50">发货ID</th>
+                <th>发货商品</th>
+                <th width="60">发货数量</th>
+                <th>收货人</th>
+                <th>收货地址</th>
+                <th>收货电话</th>
+                <th>提交时间</th>
+                <th width="45">状态</th>
+                <th width="120">{:L('ACTIONS')}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <if condition="empty($list)">
+                <tr><td colspan="9">暂无数据</td></tr>
+            </if>
+            <foreach name="list" item="vo">
+                <tr>
+                    <td>{$vo.id}</td>
+                    <td>{$vo.gift_name}</td>
+                    <td>{$vo.number}</td>
+                    <td>{$vo.user_name}</td>
+                    <td>{$vo.address}</td>
+                    <td>{$vo.mobile}</td>
+                    <td>{:date("Y-m-d H:i:s",$vo['create_time'])}</td>
+                    <td>{$status[$vo['status']]}</td>
+                    <td style="text-align: center">
+                        <eq name="vo.status" value="0">
+                            <a class="status" data-url="{:U('OrderList/invoice',array('id'=>$vo['id']))}">发货</a>
+                        </eq>
+                    </td>
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+    </form>
+    <div class="pagination">{$page}</div>
+</div>
+<script src="__PUBLIC__/js/common.js"></script>
+<script src="__PUBLIC__/layui/layui.js"></script>
+<script src="__PUBLIC__/js/app.js"></script>
+<script id="temp" type="text/html">
+    <form action="" class="layui-form">
+        <input type='radio' title="已发货" name='status' value='1' checked/>
+        <input type='radio' title="取消发货" name='status' value='2'/>
+    </form>
+</script>
+<script type="text/javascript">
+    layui.use(["form", 'laytpl', 'laydate'], function () {
+        let form = layui.form;
+        let laydate = layui.laydate;
+        laydate.render({elem: '#time', type:'datetime'});
+        $("a.status").on("click", function () {
+            let a = $(this);
+            let html = $("#temp").html();
+            layer.open({
+                title: false
+                , content: html
+                , type :0
+                , yes: function (index) {
+                    let url = a.data("url");
+                    let status = $("[name=status]:checked").val();
+                    request({
+                        reload:1,
+                        url: url,
+                        data: {status: status},
+                        done: function (res) {
+                        }
+                    });
+                }
+            });
+            form.render();
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

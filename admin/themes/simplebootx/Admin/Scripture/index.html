@@ -1,0 +1,97 @@
+<admintpl file="header"/>
+<link rel="stylesheet" href="__PUBLIC__/layui/css/layui.css">
+<style type="text/css">
+    .type_pane {
+        padding-bottom: 15px;
+    }
+    table tr td:first-child {
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:U('scripture/index')}">学霸笔记管理</a></li>
+        <li class=""><a href="{:U('scripture/add')}">新增笔记</a></li>
+    </ul>
+    <php>$status=['0'=>'<font color="#20b2aa">正常</font>','1'=>'<font color="#dc143c">禁用</font>'];</php>
+    <form class="well form-search" method="post" autocomplete="off" action="{:U('Scripture/index')}">
+        文本搜索：
+        <input type="hidden" name="type" value="{:I('type')}">
+        <input type="text" id="keyword" name="keyword" autocomplete="off" value="{:I('request.keyword')}"
+               placeholder="输入笔记标题"/>
+        <select type="text" name="status" style="width: 120px;height: 35px">
+            <option value="">选择状态</option>
+             <foreach name="status" item="v">
+                 <php>$ck = I('request.status')==="$key"?"selected":"";</php>
+             <option value="{$key}" {$ck}>{$v}</option>
+            </foreach>
+        </select>
+        <select name="num_type" style="width: 140px;height: 35px">
+            <option value="">点击量/收藏量</option>
+            <option value="1" <if condition="I('request.num_type/s','') eq 1">selected</if>>点击量</option>
+            <option value="2" <if condition="I('request.num_type/s','') eq 2">selected</if>>收藏量</option>
+        </select>
+        <input type="number" name="num_last" style="width: 60px;" value="{:I('request.num_last/s','')}" placeholder=""> —
+        <input type="number" name="num_next" style="width: 60px;" value="{:I('request.num_next/s','')}" placeholder="">
+        <input type="text"  style="width: 150px" autocomplete="off" value="{:I('request.time')}" name="time" id="time"  placeholder="按时间查询"  />
+        <button type="submit" class="btn btn-primary">查询</button>
+        <!--<a class="btn btn-warning" href="{$url}">重置</a>-->
+    </form>
+
+
+    <form method="post" class="js-ajax-form">
+
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th width="50">ID</th>
+                <th>笔记标题</th>
+                <th width="50">点击量</th>
+                <th>收藏量</th>
+                <th>发布时间</th>
+                <th width="45">状态</th>
+                <th width="120">{:L('ACTIONS')}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <if condition="empty($list)">
+                <tr><td colspan="7">暂无数据</td></tr>
+            </if>
+            <foreach name="list" item="vo">
+                <tr>
+                    <td>{$vo.id}</td>
+                    <td>{$vo.title}</td>
+                    <td>{$vo.views}</td>
+                    <td>{$vo.collect}</td>
+                    <td>{:date("Y-m-d H:i:s",$vo['create_time'])}</td>
+                    <td>{$status[$vo['status']]}</td>
+                    <td style="text-align: center">
+                        <a href="{:U('scripture/edit',array('id'=>$vo['id']))}">编辑</a> |
+                        <a class="status js-ajax-dialog-btn" data-msg="确定要{$vo['status']==0?'禁用':'启用'}此笔记?"
+                           href="{$vo['status']==0?U('scripture/down',array('id'=>$vo['id'])):U('scripture/up',array('id'=>$vo['id']))}">
+                           {$vo['status']==0?"禁用":'启用'}
+                        </a> |
+                        <a href="{:U('scripture/delete',array('id'=>$vo['id']))}" class="js-ajax-delete" data-msg="删除无法恢复, 确定还是要删除此项?">删除</a>
+
+                    </td>
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+    </form>
+    <div class="pagination">{$page}</div>
+</div>
+<script src="__PUBLIC__/js/common.js"></script>
+<script src="__PUBLIC__/layui/layui.js"></script>
+<script src="__PUBLIC__/js/app.js"></script>
+<script>
+    layui.use(["form", 'laytpl', 'laydate'], function () {
+        let form = layui.form;
+        let laydate = layui.laydate;
+        laydate.render({elem: '#time', type:'datetime'});
+    });
+</script>
+</body>
+</html>

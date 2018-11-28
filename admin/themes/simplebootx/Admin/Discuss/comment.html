@@ -1,0 +1,69 @@
+<admintpl file="header" />
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:U('Discuss/info',array('id'=>$id))}">基本信息</a></li>
+        <li class="active"><a href="{:U('Discuss/comment',array('id'=>$id))}">评论信息</a></li>
+    </ul>
+    <form class="well form-search" method="post" action="{:U('Discuss/comment')}" autocomplete="off">
+        <div>
+            文本搜索：<input type="text" name="keyword" value="{:I('request.keyword/s','')}" style="width: 180px;" placeholder="请输入评论内容/评论用户">
+            <select name="number_type" style="height: 36px;">
+                <option value="">评论序号/点赞量/回复量</option>
+                <option value="1" <if condition="I('request.number_type/s','') eq 1">selected</if>>评论序号</option>
+                <option value="2" <if condition="I('request.number_type/s','') eq 2">selected</if>>点赞量</option>
+                <option value="3" <if condition="I('request.number_type/s','') eq 3">selected</if>>回复量</option>
+            </select>
+            <input type="number" name="num_last" style="width: 60px;" value="{:I('request.num_last/s','')}" placeholder=""> —
+            <input type="number" name="num_next" style="width: 60px;" value="{:I('request.num_next/s','')}" placeholder="">
+        </div>
+        <div style="margin-top: 12px;">
+            评论时间：
+            <input type="text" class="js-datetime" name="start_time" value="{:I('request.start_time/s','')}" placeholder="开始时间" style="width: 130px;"> —
+            <input type="text" class="js-datetime" name="end_time" value="{:I('request.end_time/s','')}" placeholder="结束时间" style="width: 130px;">
+            <input type="hidden" name="id" value="{$id}">
+            <input type="submit" class="btn btn-info" value="查询" />
+        </div>
+    </form>
+    <div>
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th width="60">评论序号</th>
+                <th>评论内容</th>
+                <th>评论用户</th>
+                <th>点赞量</th>
+                <th>回复量</th>
+                <th>评论时间</th>
+                <th width="120">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <if condition="empty($comment)">
+                <tr><td colspan="7" class="no_data">暂无数据</td></tr>
+            </if>
+            <php>$status_array = array(1=>'正常',2=>'停用');</php>
+            <php>$hot_array = array(1=>'—',2=>'是');</php>
+            <foreach name="comment" item="vc">
+                <tr>
+                    <td>{$vc.id}</td>
+                    <td>{$vc.content}</td>
+                    <td>{$vc.user_nicename}</td>
+                    <td>{$vc.like_num}</td>
+                    <td>{$vc.reply_num}</td>
+                    <td><php>echo date('Y-m-d H:i:s',$vc['create_time']);</php></td>
+                    <td class="action">
+                        <a href="{:U('Discuss/comment_delete',array('id'=>$vc['id']))}" class="js-ajax-delete" data-msg="会一并删除该评论下回复，确定删除？">删除</a>
+                        <a href="{:U('Discuss/reply',array('id'=>$vc['id']))}">评论回复</a>
+                    </td>
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+        <div class="pagination">{$page}</div>
+    </div>
+</div>
+<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

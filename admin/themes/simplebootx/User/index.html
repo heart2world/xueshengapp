@@ -1,0 +1,91 @@
+<admintpl file="header" />
+</head>
+<body>
+<div class="wrap">
+	<ul class="nav nav-tabs">
+		<li class="active"><a href="{:U('Indexadmin/index')}">{:L('USER_INDEXADMIN_INDEX')}</a></li>
+	</ul>
+	<form class="well form-search" method="post" autocomplete="off" action="{:U('Indexadmin/index')}">
+		<div>
+			文本搜素：
+			<input type="text" name="keyword" style="width: 200px;" value="{:I('request.keyword/s','')}" placeholder="请输入手机号/昵称/学校/专业">
+			用户类型：
+			<select name="user_type" style="height: 36px;width: 150px;">
+				<option value="">请选择用户类型</option>
+				<option value="2" <if condition="I('request.user_type/s','') eq 2">selected</if>>学生</option>
+				<option value="3" <if condition="I('request.user_type/s','') eq 3">selected</if>>家长</option>
+			</select>
+			学校类型：
+			<select name="school_type" style="height: 36px;width: 150px;">
+				<option value="">请选择学校类型</option>
+				<option value="1" <if condition="I('request.school_type/s','') eq 1">selected</if>>大学</option>
+				<option value="2" <if condition="I('request.school_type/s','') eq 2">selected</if>>高中</option>
+			</select>
+			用户状态：
+			<select name="user_status" style="height: 36px;width: 150px;">
+				<option value="">请选择用户状态</option>
+				<option value="1" <if condition="I('request.user_status/s','') eq 1">selected</if>>正常</option>
+				<option value="2" <if condition="I('request.user_status/s','') eq 2">selected</if>>停用</option>
+			</select>
+		</div>
+		<div style="margin-top: 12px;">
+			累积在线时长：
+			<input type="number" name="num_last" style="width: 60px;" value="{:I('request.num_last/s','')}" placeholder=""> —
+			<input type="number" name="num_next" style="width: 60px;" value="{:I('request.num_next/s','')}" placeholder="">
+			注册时间：
+			<input type="text" class="js-datetime" name="start_time" value="{:I('request.start_time/s','')}" placeholder="开始时间" style="width: 130px;"> —
+			<input type="text" class="js-datetime" name="end_time" value="{:I('request.end_time/s','')}" placeholder="结束时间" style="width: 130px;">
+			<input type="submit" class="btn btn-info" value="查询" />
+		</div>
+	</form>
+	<table class="table table-hover table-bordered table-list">
+		<thead>
+		<tr>
+			<th>用户ID</th>
+			<th>手机号</th>
+			<th>用户昵称</th>
+			<th>用户类型</th>
+			<th>学校类型</th>
+			<th>所属学校</th>
+			<th>所属专业</th>
+			<th>是否认证</th>
+			<th>注册时间</th>
+			<th>累积在线时长(h)</th>
+			<th>用户状态</th>
+		</tr>
+		</thead>
+		<tbody>
+		<if condition="empty($list)">
+			<tr><td colspan="11" style="text-align: center;">暂无数据</td></tr>
+		</if>
+		<php>$user_type=array('2'=>'学生','3'=>'家长');</php>
+		<php>$school_type=array('1'=>'大学','2'=>'高中');</php>
+		<php>$verify_type=array('0'=>'否','1'=>'是');</php>
+		<foreach name="list" item="vo">
+			<tr>
+				<td>{$vo.id}</td>
+				<td>{$vo['mobile']}</td>
+				<td>{$vo['user_nicename']}</td>
+				<td>{$user_type[$vo['user_type']]}</td>
+				<td>{$school_type[$vo['type']]}</td>
+				<td>{$vo.school_name}</td>
+				<td>{$vo.pro_name}</td>
+				<td>{$verify_type[$vo['verify']]}</td>
+				<td>{$vo.create_time}</td>
+				<td>{$vo.online_time}</td>
+				<td class="action">
+					<if condition="$vo['user_status'] eq 1">
+					<a href="{:U('indexadmin/ban',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn" data-msg="确定要停用该用户？">正常</a>
+						<else/>
+					<a href="{:U('indexadmin/cancelban',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn" data-msg="确定要将该用户恢复正常？">停用</a>
+					</if>
+				</td>
+			</tr>
+		</foreach>
+		</tbody>
+	</table>
+	<div class="pagination">{$page}</div>
+</div>
+<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

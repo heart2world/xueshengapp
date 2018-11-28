@@ -1,0 +1,80 @@
+<admintpl file="header" />
+<style>
+	.type_pane{
+		padding-bottom: 15px;
+	}
+	table tr td:first-child{
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="{:U('school/index')}">学校管理</a></li>
+		</ul>
+		<php>$status=['0'=>'正常','1'=>'停用'];</php>
+		<div class="type_pane">
+			<a href="{:U('school/index', ['type'=>1])}" class="btn {:empty($type) || $type==1 ? 'btn-default':'btn-info' }">大学管理</a>
+			<a  href="{:U('school/index',['type'=>2])}"  class="btn {$type==2?'btn-default':'btn-info'}">高中管理</a>
+		</div>
+
+		<form class="well form-search" method="post" action="{$url}">
+			关键字：
+			<input type="hidden" name="type" value="{:I('type')}">
+			<input type="text" id="keyword" name="keyword" autocomplete="off" value="{:I('request.keyword')}" placeholder="学校名称/地区/专业类型"/>
+			<select type="text" id="status" name="status"  style="width: 120px;height: 35px" >
+				<option value="">选择状态</option>
+				<foreach name="status" item="v">
+					<php>$ck = I('request.status')==="$key"?"selected":"";</php>
+					<option value="{$key}" {$ck}>{$v}</option>
+				</foreach>
+			</select>
+			<button type="submit" class="btn btn-primary">查询</button>
+			<a class="btn btn-info" href="{:U('school/add',array('type'=>$type))}">新增学校</a>
+		</form>
+		<form method="post" class="js-ajax-form">
+			<table class="table table-hover table-bordered table-list">
+				<thead>
+					<tr>
+						<th width="50">ID</th>
+						<th>名称</th>
+						<eq name="data.type" value="1"><th>专业类型</th></eq>
+						<th>所在地区</th>
+						<eq name="data.type" value="1"><th>专业数</th></eq>
+						<th>注册人数</th>
+						<th width="45">{:L('STATUS')}</th>
+						<th width="120">{:L('ACTIONS')}</th>
+					</tr>
+				</thead>
+				<tbody>
+				<if condition="empty($list)">
+					<tr><td colspan="6">暂无数据</td></tr>
+				</if>
+					<foreach name="list" item="vo">
+					<tr>
+						<td>{$vo.id}</td>
+						<td>{$vo.school_name}</td>
+						<eq name="data.type" value="1"><td>{$vo.professional_type}</td></eq>
+                        <td>{$vo.address}</td>
+						<eq name="data.type" value="1"> <td>{$vo.pros}</td></eq>
+						<td>{$vo.regs}</td>
+						<td>{$status[$vo['status']]}</td>
+						<td>
+							<a href="{:U('school/edit',array('id'=>$vo['id']))}">{:L('EDIT')}</a> |
+                            <eq name="vo.status" value="0">
+                                <a href="{:U('school/ban',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn" data-msg="确定禁用此学校?">停用</a>
+                             <else/>
+                                <a href="{:U('school/cancelban',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn" data-msg="确定启用此学校?">启用</a>
+                            </eq>
+						</td>
+					</tr>
+					</foreach>
+				</tbody>
+			</table>
+		</form>
+        <div class="pagination">{$page}</div>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>
