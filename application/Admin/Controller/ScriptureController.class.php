@@ -82,8 +82,6 @@ class ScriptureController extends AdminbaseController{
 	public function add_post(){
         if (IS_POST) {
             $m = $this->scripture;
-            $_POST['content']=htmlspecialchars_decode($_POST['content']);
-            $_POST['cover_img'] = sp_get_image_preview_url($_POST['cover_img']);
             if($m->create()!==false){
                 if($m->add()!==false){
                     $this->success('保存成功!',U("scripture/index"));
@@ -117,7 +115,6 @@ class ScriptureController extends AdminbaseController{
 	public function edit(){
 	    $id = I('get.id',0,'intval');
 	    $data =  $this->scripture ->find($id);
-
 		$this->assign("data",$data);
 		$this->display();
 	}
@@ -126,10 +123,9 @@ class ScriptureController extends AdminbaseController{
 	public function edit_post(){
 		if (IS_POST) {
 		    $m = $this->scripture;
-            $_POST['content']=htmlspecialchars_decode($_POST['content']);
 		    if($m->create()!==false){
                 if($m->save()!==false){
-                    $this->success('保存成功!');
+                    $this->success('保存成功!',U("scripture/index"));
                 }else{
                     $this->error("保存失败!");
                 }

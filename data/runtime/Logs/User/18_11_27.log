@@ -1,8 +1,0 @@
-[ 2018-11-27T14:25:01+08:00 ] 222.182.193.169 /index.php?g=user&m=index&a=is_login
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000663s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001827s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000512s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.003520s ]
-NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
-

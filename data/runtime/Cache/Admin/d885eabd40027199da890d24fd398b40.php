@@ -49,54 +49,36 @@
 			z-index:9999;
 		}
 	</style><?php endif; ?>
+<style>
+li {
+	list-style: none;
+}
+</style>
 </head>
 <body>
 	<div class="wrap">
-		<ul class="nav nav-tabs">
-			<li><a href="<?php echo U('user/index');?>"><?php echo L('ADMIN_USER_INDEX');?></a></li>
-			<li class="active"><a href="<?php echo U('user/add');?>"><?php echo L('ADMIN_USER_ADD');?></a></li>
-		</ul>
-		<form method="post" class="form-horizontal js-ajax-form" action="<?php echo U('User/add_post');?>">
-			<fieldset>
-				<div class="control-group">
-					<label class="control-label">登录名</label>
-					<div class="controls">
-						<input type="text" autocomplete="off" name="user_login">
-					</div>
+		<div id="error_tips">
+			<h2><?php echo L('CACHE_CLEARED');?></h2>
+			<div class="error_cont">
+				<ul>
+					<li><?php echo L('CACHE_CLEARED');?></li>
+				</ul>
+				<div class="error_return">
+					<a href="javascript:close_app();" class="btn"><?php echo L('CLOSE');?></a>
 				</div>
-				<div class="control-group">
-					<label class="control-label">姓名</label>
-					<div class="controls">
-						<input type="text" autocomplete="off" name="user_name">
-					</div>
-				</div>
-				<div class="control-group">
-					<label class="control-label">手机号</label>
-					<div class="controls">
-						<input type="text" autocomplete="off" name="mobile">
-					</div>
-				</div>
-
-				<div class="control-group">
-					<label class="control-label"><?php echo L('PASSWORD');?></label>
-					<div class="controls">
-						<input type="password" autocomplete="off" name="user_pass">
-					</div>
-				</div>
-
-				<div class="control-group">
-					<label class="control-label"><?php echo L('ROLE');?></label>
-					<div class="controls">
-						<?php if(is_array($roles)): foreach($roles as $key=>$vo): ?><label class="checkbox inline"><input value="<?php echo ($vo["id"]); ?>" type="radio" name="role_id[]" <?php if(sp_get_current_admin_id() != 1 && $vo['id'] == 1): ?>disabled="true"<?php endif; ?>><?php echo ($vo["name"]); ?></label><?php endforeach; endif; ?>
-					</div>
-				</div>
-			</fieldset>
-			<div class="form-actions">
-				<button type="submit" class="btn btn-primary js-ajax-submit"><?php echo L('ADD');?></button>
-				<a class="btn" href="javascript:history.back(-1);"><?php echo L('BACK');?></a>
 			</div>
-		</form>
+		</div>
 	</div>
 	<script src="/public/js/common.js"></script>
+	<script>
+		var close_timeout = setTimeout(function() {
+			parent.close_current_app();
+		}, 3000);
+
+		function close_app() {
+			clearTimeout(close_timeout);
+			parent.close_current_app();
+		}
+	</script>
 </body>
 </html>

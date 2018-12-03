@@ -79,7 +79,7 @@
 			</select>
 		</div>
 		<div style="margin-top: 12px;">
-			累积在线时长：
+			累积在线天数：
 			<input type="number" name="num_last" style="width: 60px;" value="<?php echo I('request.num_last/s','');?>" placeholder=""> —
 			<input type="number" name="num_next" style="width: 60px;" value="<?php echo I('request.num_next/s','');?>" placeholder="">
 			注册时间：
@@ -100,7 +100,7 @@
 			<th>所属专业</th>
 			<th>是否认证</th>
 			<th>注册时间</th>
-			<th>累积在线时长(h)</th>
+			<th>累积在线天数(d)</th>
 			<th>用户状态</th>
 		</tr>
 		</thead>
@@ -112,11 +112,11 @@
 		<?php if(is_array($list)): foreach($list as $key=>$vo): ?><tr>
 				<td><?php echo ($vo["id"]); ?></td>
 				<td><?php echo ($vo['mobile']); ?></td>
-				<td><?php echo ($vo['user_nicename']); ?></td>
+				<td><?php echo ($vo['user_name']); ?></td>
 				<td><?php echo ($user_type[$vo['user_type']]); ?></td>
 				<td><?php echo ($school_type[$vo['type']]); ?></td>
 				<td><?php echo ($vo["school_name"]); ?></td>
-				<td><?php echo ($vo["pro_name"]); ?></td>
+				<td><?php echo ((isset($vo["pro_name"]) && ($vo["pro_name"] !== ""))?($vo["pro_name"]):'——'); ?></td>
 				<td><?php echo ($verify_type[$vo['verify']]); ?></td>
 				<td><?php echo ($vo["create_time"]); ?></td>
 				<td><?php echo ($vo["online_time"]); ?></td>

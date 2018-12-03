@@ -51,44 +51,58 @@
 	</style><?php endif; ?>
 </head>
 <body>
-	<div class="wrap js-check-wrap">
-		<ul class="nav nav-tabs">
-			<li class="active"><a href="<?php echo U('rbac/index');?>"><?php echo L('ADMIN_RBAC_INDEX');?></a></li>
-			<li><a href="<?php echo U('rbac/roleadd');?>"><?php echo L('ADMIN_RBAC_ROLEADD');?></a></li>
-		</ul>
-		<form action="<?php echo U('Rbac/listorders');?>" method="post">
-			<table class="table table-hover table-bordered">
-				<thead>
-					<tr>
-						<th width="30">ID</th>
-						<th align="left"><?php echo L('ROLE_NAME');?></th>
-						<th align="left"><?php echo L('ROLE_DESCRIPTION');?></th>
-						<th width="40" align="left"><?php echo L('STATUS');?></th>
-						<th width="120"><?php echo L('ACTIONS');?></th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php if(is_array($roles)): foreach($roles as $key=>$vo): ?><tr>
-						<td><?php echo ($vo["id"]); ?></td>
-						<td><?php echo ($vo["name"]); ?></td>
-						<td><?php echo ($vo["remark"]); ?></td>
-						<td>
-							<?php if($vo['status'] == 1): ?><font color="red">√</font>
-							<?php else: ?> 
-								<font color="red">╳</font><?php endif; ?>
-						</td>
-						<td>
-							<?php if($vo['id'] == 1): ?><font color="#cccccc"><?php echo L('EDIT');?></font> | <font color="#cccccc"><?php echo L('DELETE');?></font>
-							<?php else: ?>
-								<a href="<?php echo U('Rbac/authorize',array('id'=>$vo['id']));?>"><?php echo L('ROLE_SETTING');?></a>|
-								<a href="<?php echo U('Rbac/roleedit',array('id'=>$vo['id']));?>"><?php echo L('EDIT');?></a>|
-								<a class="js-ajax-delete" href="<?php echo U('Rbac/roledelete',array('id'=>$vo['id']));?>"><?php echo L('DELETE');?></a><?php endif; ?>
-						</td>
-					</tr><?php endforeach; endif; ?>
-				</tbody>
-			</table>
-		</form>
-	</div>
-	<script src="/public/js/common.js"></script>
+<div class="wrap">
+	<ul class="nav nav-tabs">
+		<li><a href="<?php echo U('Discuss/category');?>">分类管理</a></li>
+		<li class="active"><a href="">编辑分类</a></li>
+	</ul>
+	<form class="form-horizontal" id="formInfo" autocomplete="off">
+		<fieldset>
+			<div class="control-group">
+				<label class="control-label">分类序号</label>
+				<div class="controls">
+					<input type="number" name="listorder" value="<?php echo ($listorder); ?>" placeholder="">
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label">分类名称</label>
+				<div class="controls">
+					<input type="text" name="name" maxlength="20" value="<?php echo ($name); ?>" placeholder="">
+				</div>
+			</div>
+		</fieldset>
+		<div class="form-actions">
+			<input type="hidden" name="id" value="<?php echo ($id); ?>">
+			<a class="btn" href="javascript:history.back(-1);">取消</a>
+			<input class="btn btn-info" id="btnSubmit" type="button" value="保存">
+		</div>
+	</form>
+</div>
+<script src="/public/js/common.js"></script>
+<script type="text/javascript">
+	var action_code = 1;
+	$("#btnSubmit").on('click',function () {
+		if(action_code === 1){
+		    action_code = 0;
+		    var valueInfo = $("#formInfo").serialize();
+		    $.ajax({
+				type: 'POST',
+				url: '<?php echo U("Discuss/cate_edit_post");?>',
+				data: valueInfo,
+				dataType: 'json',
+				success: function (res) {
+					if(res.status === 1){
+                        layer.msg(res.info,{icon:6,time:1000},function () {
+							location.href = '<?php echo U("Discuss/category");?>';
+                        });
+					}else{
+					    action_code = 1;
+					    layer.msg(res.info,{icon:5,time:2000});
+					}
+                }
+			})
+		}
+    })
+</script>
 </body>
 </html>

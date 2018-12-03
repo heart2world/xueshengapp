@@ -17,7 +17,7 @@
     <div class="info">
         <div class="clearfix div_box">
             <div><span class="left_name">评论序号</span><span>{$id}</span></div>
-            <div><span class="left_name">评论用户</span><span>{$user_nicename}</span></div>
+            <div><span class="left_name">评论用户</span><span>{$user_name}</span></div>
             <div><span class="left_name">评论内容</span><span>{$content}</span></div>
             <div><span class="left_name">点赞量</span><span>{$like_num}</span></div>
             <div><span class="left_name">回复</span></div>
@@ -40,7 +40,7 @@
                         <tr>
                             <td>{$vr.id}</td>
                             <td>{$vr.content}</td>
-                            <td>{$vr.user_nicename}</td>
+                            <td>{$vr.user_name}</td>
                             <td><php>echo date('Y-m-d H:i:s',$vr['create_time']);</php></td>
                             <td class="action">
                                 <a href="{:U('Discuss/reply_delete',array('id'=>$vr['id']))}" class="js-ajax-delete" data-msg="确定删除该回复？">删除</a>

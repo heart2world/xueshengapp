@@ -38,11 +38,11 @@
 				<thead>
 					<tr>
 						<th width="50">ID</th>
-						<th>名称</th>
-						<eq name="data.type" value="1"><th>专业类型</th></eq>
+						<th>学校名称</th>
 						<th>所在地区</th>
-						<eq name="data.type" value="1"><th>专业数</th></eq>
-						<th>注册人数</th>
+						<eq name="type" value="1"><th>学校类型</th></eq>
+						<eq name="type" value="1"><th>专业数</th></eq>
+						<th>注册总人数</th>
 						<th width="45">{:L('STATUS')}</th>
 						<th width="120">{:L('ACTIONS')}</th>
 					</tr>
@@ -55,9 +55,9 @@
 					<tr>
 						<td>{$vo.id}</td>
 						<td>{$vo.school_name}</td>
-						<eq name="data.type" value="1"><td>{$vo.professional_type}</td></eq>
                         <td>{$vo.address}</td>
-						<eq name="data.type" value="1"> <td>{$vo.pros}</td></eq>
+						<eq name="type" value="1"><td>{$vo.professional_type}</td></eq>
+						<eq name="type" value="1"> <td>{$vo.pros}</td></eq>
 						<td>{$vo.regs}</td>
 						<td>{$status[$vo['status']]}</td>
 						<td>

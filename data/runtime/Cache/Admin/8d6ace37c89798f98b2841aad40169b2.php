@@ -119,7 +119,7 @@
             <?php if(is_array($discuss)): foreach($discuss as $key=>$vd): ?><tr>
                     <td><?php echo ($vd["id"]); ?></td>
                     <td><?php echo ($vd["name"]); ?></td>
-                    <td><?php echo ($vd["user_nicename"]); ?></td>
+                    <td><?php echo ($vd["user_name"]); ?></td>
                     <td><?php echo ($vd["school_name"]); ?></td>
                     <td><?php echo ($hot_array[$vd['hot']]); ?></td>
                     <td><?php echo ($vd["category_name"]); ?></td>

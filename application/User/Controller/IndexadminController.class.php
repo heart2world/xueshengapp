@@ -13,7 +13,7 @@ class IndexadminController extends AdminbaseController {
         $request=I('request.');
         if(!empty($request['keyword'])){
             $keyword = $request['keyword'];
-            $where['u.mobile|u.user_nicename|s.school_name|p.pro_name'] = array('like',"%$keyword%");
+            $where['u.mobile|u.user_name|s.school_name|p.pro_name'] = array('like',"%$keyword%");
         }
         if(!empty($request['user_type'])){
             $user_type = $request['user_type'];
@@ -55,13 +55,13 @@ class IndexadminController extends AdminbaseController {
     	$users_model = M("Users");
     	$count = $users_model->alias('u')
             ->join('h2w_school as s on s.id=u.school_id')
-            ->join('h2w_school_professional as p on p.id=u.specialty_id')
+            ->join('left join h2w_school_professional as p on p.id=u.specialty_id')
             ->where($where)->count();
     	$page = $this->page($count, 20);
 
     	$list = $users_model->alias('u')
             ->join('h2w_school as s on s.id=u.school_id')
-            ->join('h2w_school_professional as p on p.id=u.specialty_id')
+            ->join('left join h2w_school_professional as p on p.id=u.specialty_id')
             ->where($where)
             ->field('u.*,s.type,s.school_name,p.pro_name')
             ->order("u.create_time DESC")

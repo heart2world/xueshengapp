@@ -22,20 +22,39 @@ class GiftController extends AdminbaseController{
 		$where = [];
 		/**搜索条件**/
 		$keyword = I('request.keyword');
-
-        $status = I('request.status');
-        if ($status!=""){
-            $where['status'] = $status;
-        }
-
         if($keyword){
-			$where['gift_name'] = array('like',"%$keyword%");
-		}
+            $where['gift_name'] = array('like',"%$keyword%");
+        }
+        $type = I('request.type');
+        if ($type){
+            $where['type'] = array('eq',$type);
+        }
+        $number_type = I('number_type',0,'intval');//商品单价/库存剩余
+        if($number_type && in_array($number_type,array(1,2))){
+            $num_last = I('request.num_last');
+            $num_next = I('request.num_next');
+            if($number_type == 1){
+                if($num_last >= 0 && $num_next >= 0 && $num_last != null && $num_next != null){
+                    $where['price'] = array('between',[$num_last,$num_next]);
+                }elseif ($num_last >= 0 && $num_last != null){
+                    $where['price'] = array('egt',$num_last);
+                }elseif ($num_next >= 0 && $num_next != null){
+                    $where['price'] = array('elt',$num_next);
+                }
+            }else{
+                if($num_last >= 0 && $num_next >= 0 && $num_last != null && $num_next != null){
+                    $where['surplus'] = array('between',[$num_last,$num_next]);
+                }elseif ($num_last >= 0 && $num_last != null){
+                    $where['surplus'] = array('egt',$num_last);
+                }elseif ($num_next >= 0 && $num_next != null){
+                    $where['surplus'] = array('elt',$num_next);
+                }
+            }
+        }
 
 		$count= $this->gift->where($where)->count();
 		$page = $this->page($count, 10);
-        $list =$this->gift
-            ->where($where)
+        $list =$this->gift->where($where)
             ->order("create_time DESC")
             ->limit($page->firstRow, $page->listRows)
             ->select();
@@ -54,6 +73,7 @@ class GiftController extends AdminbaseController{
 	public function add_post(){
         if (IS_POST) {
             $m = $this->gift;
+            $this->initImage();
             if($m->create()!==false){
                 if($m->add()!==false){
                     $this->success('保存成功!',U('Gift/index'));
@@ -102,24 +122,28 @@ class GiftController extends AdminbaseController{
         if ($img){
             $intro =[];
             foreach ($img as $k=>$item){
-                $intro[$k]=[
-                    'img'=>$item,
-                    'sort'=>$sort[$k],
-                ];
+                if(!empty($item)){
+                    $intro[]=[
+                        'img'=>$item,
+                        'sort'=>$sort[$k],
+                    ];
+                }
             }
-            $_POST['product_intro']=json_encode($intro);
+            if(count($intro) > 0){
+                $_POST['product_intro']=json_encode($intro,JSON_UNESCAPED_UNICODE);
+            }
         }
     }
 
 
     // 上传文件
     public function upload(){
-	    $path = '/data/upload';
+	    $path = '/data/upload/';
         $upload = new Upload();// 实例化上传类
         $upload->maxSize   =     3145728 ;// 设置附件上传大小
         $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
         $upload->rootPath  =     ".$path"; // 设置附件上传根目录
-        $upload->savePath  =     '/admin'; // 设置附件上传（子）目录
+        $upload->savePath  =     'admin'; // 设置附件上传（子）目录
         $upload->subName  =      "/". date("Ymd");
 
 
@@ -127,8 +151,8 @@ class GiftController extends AdminbaseController{
         if(!$info) {// 上传错误提示错误信息
             $this->error($upload->getError());
         }else{// 上传成功
-            $path.=$info['file']['savepath'].$info['file']['savename'];
-            $this->success('上传成功！',null,['img_path'=>$path]);
+            $res_path = $info['file']['savepath'].$info['file']['savename'];
+            $this->success('上传成功！',null,['img_path'=>$res_path]);
         }
     }
 

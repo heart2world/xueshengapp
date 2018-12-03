@@ -43,6 +43,12 @@
                 </div>
             </div>
             <div class="control-group">
+                <label class="control-label">商品库存</label>
+                <div class="controls">
+                    <input type="number" value="{$data.surplus}" name="surplus" placeholder="库存">
+                </div>
+            </div>
+            <div class="control-group">
                 <label class="control-label">商品封面</label>
                 <div class="controls">
 
@@ -75,15 +81,10 @@
                     <button type="button" class="btn btn-success" id="add_one_img">添加图片</button>
                 </div>
             </div>
-
-            <div class="control-group">
-                <div class="controls">
-                    <button type="submit" class="btn btn-success js-ajax-submit">{:L('SAVE')}</button>
-                </div>
-            </div>
         </fieldset>
-
-
+        <div class="form-actions">
+            <button type="submit" class="btn btn-success js-ajax-submit">{:L('SAVE')}</button>
+        </div>
     </form>
 </div>
 <script src="__PUBLIC__/js/common.js"></script>
@@ -94,7 +95,7 @@
             index = item.index||index;
     }}
     <div class="span3" style="width: 150px;margin-bottom: 10px;">
-        <img src="{{item.img}}" id="img_{{index}}" onerror="this.src='__TMPL__Public/assets/images/default-thumbnail.png'" />
+        <img src="/data/upload/{{item.img}}" id="img_{{index}}" onerror="this.src='__TMPL__Public/assets/images/default-thumbnail.png'" />
         <input type="hidden" name="img[{{index}}]" id="input_img_{{index}}" class="intro_info"  value="{{item.img}}">
         <input type="text" style="width: 135px;margin-top: 5px" name="sort[{{index}}]" placeholder="排序" value="{{item.sort}}">
     </div>
@@ -162,7 +163,7 @@
                 } ,done: function(res, index, upload){
                     if(res.state==='success'){
                         let img_path = res['img_path'];
-                        $("#"+id)[0].src = img_path;
+                        $("#"+id)[0].src = '/data/upload/'+img_path;
                         $("#input_"+id).val(img_path);
                     }
                     layer.closeAll('loading'); //关闭loading

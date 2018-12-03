@@ -1,0 +1,480 @@
+[ 2018-12-03T10:04:14+08:00 ] 222.182.197.0 /index.php?g=Admin&m=school&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000519s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001115s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000417s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002449s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001365s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001417s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0031s ]
+NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `h2w_school` (`school_name`,`first`,`professional_type`,`address`,`type`,`create_time`) VALUES ('重庆大学','C','985','重庆市沙坪坝区','1','1543802654') [ RunTime:0.0003s ]
+
+[ 2018-12-03T10:05:15+08:00 ] 222.182.197.0 /index.php?g=Admin&m=school&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000522s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001188s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000431s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002573s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001430s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001481s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0037s ]
+NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `h2w_school` (`school_name`,`first`,`professional_type`,`address`,`type`,`create_time`) VALUES ('北京大学','B','211','北京市三里屯','1','1543802715') [ RunTime:0.0002s ]
+
+[ 2018-12-03T10:05:41+08:00 ] 222.182.197.0 /index.php?g=Admin&m=school&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001128s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000470s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002484s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001398s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001448s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0031s ]
+NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `h2w_school` (`school_name`,`first`,`address`,`type`,`create_time`) VALUES ('重庆第一中学','C','重庆市沙坪坝区','2','1543802741') [ RunTime:0.0002s ]
+
+[ 2018-12-03T10:06:01+08:00 ] 222.182.197.0 /index.php?g=Admin&m=school&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000499s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001240s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000435s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002586s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001274s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001329s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0038s ]
+NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `h2w_school` (`school_name`,`first`,`address`,`type`,`create_time`) VALUES ('重庆巴蜀中学','C','重庆市渝中区','2','1543802761') [ RunTime:0.0002s ]
+
+[ 2018-12-03T10:06:26+08:00 ] 222.182.197.0 /index.php?g=Admin&m=school&a=add_pro_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000419s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000811s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000276s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001856s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000984s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001033s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0031s ]
+NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `h2w_school_professional` (`school_id`,`pro_name`,`status`) VALUES ('1','土木工程','0') [ RunTime:0.0003s ]
+
+[ 2018-12-03T10:06:40+08:00 ] 222.182.197.0 /index.php?g=Admin&m=school&a=add_pro_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000399s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000814s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000267s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001842s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000974s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001024s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0034s ]
+NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `h2w_school_professional` (`school_id`,`pro_name`,`status`) VALUES ('1','计算机','0') [ RunTime:0.0002s ]
+
+[ 2018-12-03T10:53:28+08:00 ] 222.182.197.0 /index.php?g=Admin&m=Discuss&a=cate_add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001127s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002617s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001573s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001621s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0031s ]
+NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `h2w_category` WHERE `name` = '动漫' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `h2w_category` (`listorder`,`name`,`create_time`) VALUES ('1','动漫','1543805608') [ RunTime:0.0037s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2018-12-03T10:53:34+08:00 ] 222.182.197.0 /index.php?g=Admin&m=Discuss&a=cate_add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000515s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001127s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000470s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002578s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001438s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001495s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0029s ]
+NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `h2w_category` WHERE `name` = '动漫' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2018-12-03T10:53:40+08:00 ] 222.182.197.0 /index.php?g=Admin&m=Discuss&a=cate_add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000487s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001064s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000532s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002501s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001344s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001400s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0055s ]
+SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0112s ]
+NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `h2w_category` WHERE `name` = '科幻' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `h2w_category` (`listorder`,`name`,`create_time`) VALUES ('2','科幻','1543805620') [ RunTime:0.0043s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2018-12-03T10:53:49+08:00 ] 222.182.197.0 /index.php?g=Admin&m=Discuss&a=cate_add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000532s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001124s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002520s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001391s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001442s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `h2w_category` WHERE `name` = '情感' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `h2w_category` (`listorder`,`name`,`create_time`) VALUES ('3','情感','1543805629') [ RunTime:0.0057s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2018-12-03T10:54:12+08:00 ] 222.182.197.0 /index.php?g=Admin&m=Discuss&a=cate_add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000513s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001107s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000434s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002484s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001397s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001448s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0035s ]
+NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `h2w_category` WHERE `name` = '学习' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `h2w_category` (`listorder`,`name`,`create_time`) VALUES ('2','学习','1543805652') [ RunTime:0.0035s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2018-12-03T10:56:41+08:00 ] 222.182.197.0 /index.php?g=Admin&m=Discuss&a=label_add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000499s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001073s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000352s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002325s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001326s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001381s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0037s ]
+NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `h2w_label` WHERE `name` = '吐槽' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `h2w_label` (`listorder`,`name`,`create_time`) VALUES ('1','吐槽','1543805801') [ RunTime:0.0038s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2018-12-03T10:56:48+08:00 ] 222.182.197.0 /index.php?g=Admin&m=Discuss&a=label_add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001202s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000412s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002665s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001386s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001437s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0029s ]
+NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `h2w_label` WHERE `name` = '情感' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `h2w_label` (`listorder`,`name`,`create_time`) VALUES ('2','情感','1543805808') [ RunTime:0.0037s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2018-12-03T10:56:58+08:00 ] 222.182.197.0 /index.php?g=Admin&m=Discuss&a=label_add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000588s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001203s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002632s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001417s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001466s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0031s ]
+NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `h2w_label` WHERE `name` = '学习' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `h2w_label` (`listorder`,`name`,`create_time`) VALUES ('2','学习','1543805818') [ RunTime:0.0025s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2018-12-03T10:57:06+08:00 ] 222.182.197.0 /index.php?g=Admin&m=Discuss&a=label_add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000573s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001291s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000422s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002741s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001526s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001578s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0028s ]
+NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `h2w_label` WHERE `name` = '问答' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `h2w_label` (`listorder`,`name`,`create_time`) VALUES ('1','问答','1543805826') [ RunTime:0.0028s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2018-12-03T11:16:51+08:00 ] 222.182.197.0 /index.php?g=Admin&m=gift&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000490s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000943s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000428s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002270s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001303s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001350s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_gift` [ RunTime:0.0032s ]
+NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+
+[ 2018-12-03T11:17:01+08:00 ] 222.182.197.0 /index.php?g=Admin&m=gift&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000977s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000426s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002448s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001366s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001414s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_gift` [ RunTime:0.0035s ]
+NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: status C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1217 行.
+NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `h2w_gift` (`gift_name`,`type`,`price`,`surplus`,`cover_img`,`create_time`) VALUES (' 2018新款ipad 9.7寸 32G','1','2499','100','admin/20181203/5c04a02b3229b.jpg','1543807021') [ RunTime:0.0004s ]
+
+[ 2018-12-03T11:17:48+08:00 ] 222.182.197.0 /index.php?g=Admin&m=gift&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000553s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001034s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000497s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002525s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001389s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001441s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_gift` [ RunTime:0.0033s ]
+NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+
+[ 2018-12-03T11:18:00+08:00 ] 222.182.197.0 /index.php?g=Admin&m=gift&a=edit_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000497s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000966s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000442s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002316s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001321s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001371s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_gift` [ RunTime:0.0031s ]
+NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: status C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1217 行.
+NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: UPDATE `h2w_gift` SET `gift_name`=' 2018新款ipad 9.7寸 32G',`type`='1',`price`='2499',`surplus`='100',`cover_img`='admin/20181203/5c04a02b3229b.jpg',`product_intro`='[{&quot;img&quot;:&quot;&quot;,&quot;sort&quot;:&quot;1&quot;}]' WHERE `id` = 1 [ RunTime:0.0004s ]
+
+[ 2018-12-03T11:21:31+08:00 ] 222.182.197.0 /index.php?g=Admin&m=gift&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000622s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001425s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000422s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002944s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001471s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001523s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_gift` [ RunTime:0.0039s ]
+NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+
+[ 2018-12-03T11:32:08+08:00 ] 222.182.197.0 /index.php?g=Admin&m=gift&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000588s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001170s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000347s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002541s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001409s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001457s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_gift` [ RunTime:0.0032s ]
+NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+
+[ 2018-12-03T11:33:37+08:00 ] 222.182.197.0 /index.php?g=Admin&m=gift&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000539s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001171s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000442s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002561s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001452s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001502s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_gift` [ RunTime:0.0032s ]
+NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: status C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1217 行.
+NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `h2w_gift` (`gift_name`,`type`,`price`,`surplus`,`cover_img`,`create_time`) VALUES (' 小米手机MIX3','1','3299','26','admin/20181203/5c04a40de174b.jpg','1543808017') [ RunTime:0.0002s ]
+
+[ 2018-12-03T11:34:26+08:00 ] 222.182.197.0 /index.php?g=Admin&m=gift&a=upload
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000882s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001701s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000631s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003794s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001929s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001976s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_gift` [ RunTime:0.0032s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given C:\www\xueshengapp\simplewind\Core\Library\Think\Upload.class.php 第 188 行.
+
+[ 2018-12-03T11:34:28+08:00 ] 222.182.197.0 /index.php?g=Admin&m=gift&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000880s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001702s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000664s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003833s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.002141s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.002193s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_gift` [ RunTime:0.0029s ]
+NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: status C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1217 行.
+NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `h2w_gift` (`gift_name`,`type`,`price`,`surplus`,`cover_img`,`create_time`) VALUES (' 苹果笔记本电脑','1','7699','36','admin/20181203/5c04a43abbf98.jpg','1543808068') [ RunTime:0.0002s ]
+
+[ 2018-12-03T11:36:51+08:00 ] 222.182.197.0 /index.php?g=Admin&m=gift&a=upload
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000962s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001872s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000745s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004225s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.002231s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.002287s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_gift` [ RunTime:0.0030s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given C:\www\xueshengapp\simplewind\Core\Library\Think\Upload.class.php 第 188 行.
+
+[ 2018-12-03T11:36:53+08:00 ] 222.182.197.0 /index.php?g=Admin&m=gift&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000934s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001818s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000724s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004084s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.002131s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.002182s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `h2w_gift` [ RunTime:0.0036s ]
+NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: status C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1217 行.
+NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `h2w_gift` (`gift_name`,`type`,`price`,`surplus`,`cover_img`,`product_intro`,`create_time`) VALUES ('小米电视4S 55寸 ','1','2699','56','admin/20181203/5c04a4cf06cff.jpg','[{&quot;img&quot;:&quot;admin\\/20181203\\/5c04a4d37f3d0.jpg&quot;,&quot;sort&quot;:&quot;1&quot;}]','1543808213') [ RunTime:0.0002s ]
+
+[ 2018-12-03T11:39:31+08:00 ] 222.182.197.0 /index.php?g=Admin&m=gift&a=edit_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000491s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001097s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000429s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002464s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001382s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001431s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_gift` [ RunTime:0.0039s ]
+NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: status C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1217 行.
+NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: UPDATE `h2w_gift` SET `gift_name`=' 2018新款ipad 9.7寸 32G',`type`='1',`price`='2499',`surplus`='100',`cover_img`='admin/20181203/5c04a02b3229b.jpg' WHERE `id` = 1 [ RunTime:0.0003s ]
+

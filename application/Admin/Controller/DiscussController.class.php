@@ -22,42 +22,42 @@ class DiscussController extends AdminbaseController{
 	    /*搜索条件*/
 	    $keyword = I('request.keyword');//文本搜索
 	    if($keyword){
-	        $where['d.name|u.user_nicename|s.school_name'] = array('like',"%$keyword%");
+	        $where['d.name|u.user_name|s.school_name'] = array('like',"%$keyword%");
         }
         $number_type = I('number_type',0,'intval');//量
 	    if($number_type && in_array($number_type,array(1,2,3,4))){
 	        $num_last = I('request.num_last');
 	        $num_next = I('request.num_next');
 	        if($number_type == 1){
-	            if($num_last >= 0 && $num_next >= 0){
+	            if($num_last >= 0 && $num_next >= 0 && $num_last != null && $num_next != null){
 	                $where['d.click_num'] = array('between',[$num_last,$num_next]);
-                }elseif ($num_last >= 0){
+                }elseif ($num_last >= 0 && $num_last != null){
                     $where['d.click_num'] = array('egt',$num_last);
-                }elseif ($num_next >= 0){
+                }elseif ($num_next >= 0 && $num_next != null){
                     $where['d.click_num'] = array('elt',$num_next);
                 }
             }elseif ($number_type == 2){
-                if($num_last >= 0 && $num_next >= 0){
+                if($num_last >= 0 && $num_next >= 0 && $num_last != null && $num_next != null){
                     $where['d.comment_num'] = array('between',[$num_last,$num_next]);
-                }elseif ($num_last >= 0){
+                }elseif ($num_last >= 0 && $num_last != null){
                     $where['d.comment_num'] = array('egt',$num_last);
-                }elseif ($num_next >= 0){
+                }elseif ($num_next >= 0 && $num_next != null){
                     $where['d.comment_num'] = array('elt',$num_next);
                 }
             }elseif ($number_type == 3){
-                if($num_last >= 0 && $num_next >= 0){
+                if($num_last >= 0 && $num_next >= 0 && $num_last != null && $num_next != null){
                     $where['d.collect_num'] = array('between',[$num_last,$num_next]);
-                }elseif ($num_last >= 0){
+                }elseif ($num_last >= 0 && $num_last != null){
                     $where['d.collect_num'] = array('egt',$num_last);
-                }elseif ($num_next >= 0){
+                }elseif ($num_next >= 0 && $num_next != null){
                     $where['d.collect_num'] = array('elt',$num_next);
                 }
             }else{
-                if($num_last >= 0 && $num_next >= 0){
+                if($num_last >= 0 && $num_next >= 0 && $num_last != null && $num_next != null){
                     $where['d.like_num'] = array('between',[$num_last,$num_next]);
-                }elseif ($num_last >= 0){
+                }elseif ($num_last >= 0 && $num_last != null){
                     $where['d.like_num'] = array('egt',$num_last);
-                }elseif ($num_next >= 0){
+                }elseif ($num_next >= 0 && $num_next != null){
                     $where['d.like_num'] = array('elt',$num_next);
                 }
             }
@@ -110,10 +110,20 @@ class DiscussController extends AdminbaseController{
             ->join('h2w_school as s on s.id=d.school_id')
             ->join('h2w_category as c on c.id=d.category_id')
             ->where($where)
-            ->field('d.*,u.user_nicename,s.school_name,c.name category_name')
+            ->field('d.*,u.user_name,s.school_name,c.name category_name')
             ->order('d.update_time desc')
             ->limit($page->firstRow,$page->listRows)
             ->select();
+	    foreach ($discuss as $k=>$v){
+	        $label = '';
+	        if(!empty($v['label'])){
+	            $labels = M('Label')->where(array('id'=>array('in',$v['label'])))->select();
+	            foreach ($labels as $m=>$n){
+                    ($label == '') ? $label = $n['name'] : $label.=','.$n['name'];
+                }
+                $discuss[$k]['label'] = $label;
+            }
+        }
         $this->assign("discuss",$discuss);
 	    $this->assign("page",$page->show('Admin'));
         $this->display();
@@ -166,10 +176,18 @@ class DiscussController extends AdminbaseController{
             ->join('h2w_users as u on u.id=d.user_id')
             ->join('h2w_school as s on s.id=d.school_id')
             ->join('h2w_category as c on c.id=d.category_id')
-            ->field('d.*,u.user_nicename,s.school_name,c.name category_name')
+            ->field('d.*,u.user_name,s.school_name,c.name category_name')
             ->where(array('d.id'=>$id))->find();
         if(!$discuss){
             $this->error("不存在该讨论信息",U('Discuss/index'));
+        }
+        $label = '';
+        if(!empty($discuss['label'])){
+            $labels = M('Label')->where(array('id'=>array('in',$discuss['label'])))->select();
+            foreach ($labels as $m=>$n){
+                ($label == '') ? $label = $n['name'] : $label.=','.$n['name'];
+            }
+            $discuss['label'] = $label;
         }
         $this->assign($discuss);
         $this->display();
@@ -182,7 +200,7 @@ class DiscussController extends AdminbaseController{
         /*搜索条件*/
         $keyword = I('request.keyword');//文本搜索
         if($keyword){
-            $where['c.content|u.user_nicename'] = array('like',"%$keyword%");
+            $where['c.content|u.user_name'] = array('like',"%$keyword%");
         }
         $number_type = I('number_type',0,'intval');//量
         if($number_type && in_array($number_type,array(1,2,3))){
@@ -234,7 +252,7 @@ class DiscussController extends AdminbaseController{
         $page = $this->page($count,20);
         $comment = $this->comment_model->alias('c')
             ->join('h2w_users as u on u.id=c.user_id')
-            ->field('c.*,u.user_nicename')
+            ->field('c.*,u.user_name')
             ->where($where)
             ->order('c.create_time desc')
             ->limit($page->firstRow,$page->listRows)
@@ -266,13 +284,13 @@ class DiscussController extends AdminbaseController{
     public function reply(){
         $id = I('request.id',0,'intval');
         $where['c.id'] = array('eq',$id);
-        $comment = $this->comment_model->alias('c')->join('h2w_users as u on u.id=c.user_id')->field('c.*,u.user_nicename')->where($where)->find();
+        $comment = $this->comment_model->alias('c')->join('h2w_users as u on u.id=c.user_id')->field('c.*,u.user_name')->where($where)->find();
         if(!$comment){
             $this->error("不存在该评论",U('Discuss/index'));
         }
         $count = $this->reply_model->where(array('comment_id'=>$id))->count();
         $page = $this->page($count,20);
-        $reply = $this->reply_model->alias('r')->join('h2w_users as u on u.id=r.user_id')->field('r.*,u.user_nicename')->where(array('r.comment_id'=>$id))->select();
+        $reply = $this->reply_model->alias('r')->join('h2w_users as u on u.id=r.user_id')->field('r.*,u.user_name')->where(array('r.comment_id'=>$id))->select();
         $this->assign($comment);
         $this->assign("reply",$reply);
         $this->assign("page",$page->show('Admin'));
@@ -385,6 +403,12 @@ class DiscussController extends AdminbaseController{
     //添加标签提交
     public function label_add_post(){
         if(IS_POST){
+            $name = I('post.name');
+            if(!empty($name)){
+                if(strpos($name,',') !==false){
+                    $this->ajaxReturn(['status'=>0,'info'=>"标签名字不能包含','"]);
+                }
+            }
             if($this->label_model->create() !== false){
                 if($this->label_model->add() !== false){
                     $this->ajaxReturn(['status'=>1,'info'=>'保存成功']);
@@ -408,6 +432,12 @@ class DiscussController extends AdminbaseController{
     //编辑标签提交
     public function label_edit_post(){
         if(IS_POST){
+            $name = I('post.name');
+            if(!empty($name)){
+                if(strpos($name,',') !==false){
+                    $this->ajaxReturn(['status'=>0,'info'=>"标签名字不能包含','"]);
+                }
+            }
             if($this->label_model->create() !== false){
                 if($this->label_model->save() !== false){
                     $this->ajaxReturn(['status'=>1,'info'=>'更新成功']);

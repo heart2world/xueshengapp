@@ -4,7 +4,9 @@
 	<div class="wrap js-check-wrap">
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="{:U('slide/index')}">{:L('ADMIN_SLIDE_INDEX')}</a></li>
+			<if condition="count($slides) lt 5">
 			<li><a href="{:U('slide/add')}">{:L('ADMIN_SLIDE_ADD')}</a></li>
+			</if>
 		</ul>
 		<form class="js-ajax-form" method="post">
 			<div class="table-actions">

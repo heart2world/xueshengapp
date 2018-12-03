@@ -54,7 +54,7 @@
 	<div class="wrap js-check-wrap">
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="<?php echo U('slide/index');?>"><?php echo L('ADMIN_SLIDE_INDEX');?></a></li>
-			<li><a href="<?php echo U('slide/add');?>"><?php echo L('ADMIN_SLIDE_ADD');?></a></li>
+			<?php if(count($slides) < 5): ?><li><a href="<?php echo U('slide/add');?>"><?php echo L('ADMIN_SLIDE_ADD');?></a></li><?php endif; ?>
 		</ul>
 		<form class="js-ajax-form" method="post">
 			<div class="table-actions">

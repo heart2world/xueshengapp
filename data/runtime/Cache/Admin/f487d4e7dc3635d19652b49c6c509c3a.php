@@ -86,11 +86,11 @@
 				<thead>
 					<tr>
 						<th width="50">ID</th>
-						<th>名称</th>
-						<?php if(($data["type"]) == "1"): ?><th>专业类型</th><?php endif; ?>
+						<th>学校名称</th>
 						<th>所在地区</th>
-						<?php if(($data["type"]) == "1"): ?><th>专业数</th><?php endif; ?>
-						<th>注册人数</th>
+						<?php if(($type) == "1"): ?><th>学校类型</th><?php endif; ?>
+						<?php if(($type) == "1"): ?><th>专业数</th><?php endif; ?>
+						<th>注册总人数</th>
 						<th width="45"><?php echo L('STATUS');?></th>
 						<th width="120"><?php echo L('ACTIONS');?></th>
 					</tr>
@@ -100,9 +100,9 @@
 					<?php if(is_array($list)): foreach($list as $key=>$vo): ?><tr>
 						<td><?php echo ($vo["id"]); ?></td>
 						<td><?php echo ($vo["school_name"]); ?></td>
-						<?php if(($data["type"]) == "1"): ?><td><?php echo ($vo["professional_type"]); ?></td><?php endif; ?>
                         <td><?php echo ($vo["address"]); ?></td>
-						<?php if(($data["type"]) == "1"): ?><td><?php echo ($vo["pros"]); ?></td><?php endif; ?>
+						<?php if(($type) == "1"): ?><td><?php echo ($vo["professional_type"]); ?></td><?php endif; ?>
+						<?php if(($type) == "1"): ?><td><?php echo ($vo["pros"]); ?></td><?php endif; ?>
 						<td><?php echo ($vo["regs"]); ?></td>
 						<td><?php echo ($status[$vo['status']]); ?></td>
 						<td>

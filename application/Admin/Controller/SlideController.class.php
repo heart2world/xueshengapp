@@ -56,8 +56,16 @@ class SlideController extends AdminbaseController{
 	// 幻灯片编辑提交
 	public function edit_post(){
 		if(IS_POST){
+		    $sid = $_POST['slide_id'];
+		    $slide_url = $_POST['slide_url'];
+		    $info = $this->slide_model->where(array('slide_id'=>$sid))->find();
 			if ($this->slide_model->create()!==false) {
 				if ($this->slide_model->save()!==false) {
+				    if($slide_url != $info['slide_url']){
+				        if(file_exists('/data/upload/'.$info['slide_url'])){
+				            unlink('/data/upload/'.$info['slide_url']);
+                        }
+                    }
 					$this->success("保存成功！", U("slide/index"));
 				} else {
 					$this->error("保存失败！");
@@ -81,7 +89,11 @@ class SlideController extends AdminbaseController{
 			}
 		}else{
 			$id = I("get.id",0,'intval');
+            $info = $this->slide_model->where(array('slide_id'=>$id))->find();
 			if ($this->slide_model->delete($id)!==false) {
+                if(file_exists('/data/upload/'.$info['slide_url'])){
+                    unlink('/data/upload/'.$info['slide_url']);
+                }
 				$this->success("删除成功！");
 			} else {
 				$this->error("删除失败！");

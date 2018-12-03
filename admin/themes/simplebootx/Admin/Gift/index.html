@@ -19,15 +19,19 @@
     <form class="well form-search" method="post" action="{:U('gift/index')}">
         文本搜索：
         <input type="hidden" name="type" value="{:I('type')}">
-        <input type="text" id="keyword" name="keyword" autocomplete="off" value="{:I('request.keyword')}"
-               placeholder="商品名称"/>
-        <select type="text" name="status" style="width: 120px;height: 35px">
-             <option value="">选择状态</option>
-             <foreach name="status" item="v">
-                 <php>$ck = I('request.status')==="$key"?"selected":"";</php>
-                 <option value="{$key}" {$ck}>{$v}</option>
-            </foreach>
+        <input type="text" id="keyword" name="keyword" autocomplete="off" value="{:I('request.keyword')}" placeholder="商品名称"/>
+        <select type="text" name="type" style="width: 120px;height: 35px">
+            <option value="">选择商品类型</option>
+            <option value="1" <if condition="I('request.type/s','') eq 1">selected</if>>积分</option>
+            <option value="2" <if condition="I('request.type/s','') eq 1">selected</if>>赞助</option>
         </select>
+        <select name="number_type" style="height: 36px;width: 180px;">
+            <option value="">商品单价/库存剩余</option>
+            <option value="1" <if condition="I('request.number_type/s','') eq 1">selected</if>>商品单价</option>
+            <option value="2" <if condition="I('request.number_type/s','') eq 2">selected</if>>库存剩余</option>
+        </select>
+        <input type="number" name="num_last" style="width: 60px;" value="{:I('request.num_last/s','')}" placeholder=""> —
+        <input type="number" name="num_next" style="width: 60px;" value="{:I('request.num_next/s','')}" placeholder="">
         <button type="submit" class="btn btn-primary">查询</button>
     </form>
 
@@ -35,13 +39,13 @@
         <table class="table table-hover table-bordered table-list">
             <thead>
             <tr>
-                <th width="50">ID</th>
+                <th width="50">商品ID</th>
                 <th>商品名称</th>
                 <th>商品类型</th>
-                <th>单价</th>
-                <th>剩余库存</th>
-                <th>添加时间</th>
-                <th width="45">状态</th>
+                <th>商品单价</th>
+                <th>库存剩余</th>
+                <th>添创建时间</th>
+                <th width="60">商品状态</th>
                 <th width="120">{:L('ACTIONS')}</th>
             </tr>
             </thead>

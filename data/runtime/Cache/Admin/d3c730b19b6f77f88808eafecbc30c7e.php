@@ -64,9 +64,9 @@
 		<table class="table table-hover table-bordered table-list">
 			<thead>
 			<tr>
-				<th width="60">分类序号</th>
-				<th>分类名称</th>
-				<th>分类状态</th>
+				<th width="60">标签序号</th>
+				<th>标签名称</th>
+				<th>标签状态</th>
 				<th width="60">操作</th>
 			</tr>
 			</thead>

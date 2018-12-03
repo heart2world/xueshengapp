@@ -10,10 +10,14 @@ class ScriptureModel extends CommonModel{
 	
 	protected function _before_write(&$data) {
 		parent::_before_write($data);
+        if(!empty($data['content'])){
+            $data['content']=htmlspecialchars_decode($data['content']);
+        }
 	}
 
     protected $_auto = array (
         array('create_time','time',1,'function'),
+        array ('cover_img', 'sp_asset_relative_url', self::MODEL_BOTH, 'function'),
     );
 
 }

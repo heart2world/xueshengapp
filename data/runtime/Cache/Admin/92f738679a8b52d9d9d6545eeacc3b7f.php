@@ -5,7 +5,7 @@
 <!-- Set render engine for 360 browser -->
 <meta name="renderer" content="webkit">
 <meta charset="utf-8">
-<title>ThinkCMF <?php echo L('ADMIN_CENTER');?></title>
+<title>学生APP <?php echo L('ADMIN_CENTER');?></title>
 
 <meta name="description" content="This is page-header (.page-header &gt; h1)">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -156,8 +156,8 @@ right: initial !important;}
 	<div class="navbar">
 		<div class="navbar-inner">
 			<div class="container-fluid">
-				<a href="<?php echo U('admin/index/index');?>" class="brand"> <small> 
-					ThinkCMF<?php echo L('ADMIN_CENTER');?>
+				<a href="<?php echo U('admin/index/index');?>" class="brand"> <small>
+					学生APP <?php echo L('ADMIN_CENTER');?>
 				</small>
 				</a>
 				<div class="pull-left nav_shortcuts" >

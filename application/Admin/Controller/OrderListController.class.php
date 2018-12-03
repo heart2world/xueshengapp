@@ -61,8 +61,25 @@ class OrderListController extends AdminbaseController{
                 $this->error("操作失败!请刷新后重试");
             }
             if (!empty($id)) {
+                $order = $this->order->where(array("id"=>$id ,'status'=>'0'))->find();
+                if(!$order){
+                    $this->error('操作失败！');
+                }
                 $result =  $this->order->where(array("id"=>$id ,'status'=>'0'))->setField('status',$status);
                 if ($result!==false) {
+                    if($status == 2){//关闭订单拒绝发货
+                        //获取用户信息
+                        $userInfo = M('Users')->where(array('id'=>$order['user_id']))->find();
+                        if($userInfo){
+                            //将用户积分加回去
+                            M('Users')->save(array('id'=>$userInfo['id'],'score'=>$userInfo['score']+$order['price']));
+                        }
+                        //获取商品信息
+                        $gift = M('Gift')->where(array('id'=>$order['gift_id']))->find();
+                        if($gift){
+                            M('Gift')->save(array('id'=>$gift['id'],'surplus'=>$gift['surplus']+$order['number']));
+                        }
+                    }
                     $this->success("操作成功！");
                 } else {
                     $this->error('操作失败！');
