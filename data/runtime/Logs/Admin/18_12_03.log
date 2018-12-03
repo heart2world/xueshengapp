@@ -1,480 +1,600 @@
-[ 2018-12-03T10:04:14+08:00 ] 222.182.197.0 /index.php?g=Admin&m=school&a=add_post
+[ 2018-12-03T16:55:32+08:00 ] 222.182.197.0 /index.php?g=Admin&m=Index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002105s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002581s ]
 INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000519s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001115s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000417s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002449s ]
-INFO: [ admin_begin ] --START--
-INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001365s ]
-INFO: [ admin_begin ] --END-- [ RunTime:0.001417s ]
-SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0055s ]
-SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
-SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0031s ]
-NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
-NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
-SQL: INSERT INTO `h2w_school` (`school_name`,`first`,`professional_type`,`address`,`type`,`create_time`) VALUES ('重庆大学','C','985','重庆市沙坪坝区','1','1543802654') [ RunTime:0.0003s ]
-
-[ 2018-12-03T10:05:15+08:00 ] 222.182.197.0 /index.php?g=Admin&m=school&a=add_post
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000522s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001188s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000431s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002573s ]
-INFO: [ admin_begin ] --START--
-INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001430s ]
-INFO: [ admin_begin ] --END-- [ RunTime:0.001481s ]
-SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0037s ]
-SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
-SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0037s ]
-NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
-NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
-SQL: INSERT INTO `h2w_school` (`school_name`,`first`,`professional_type`,`address`,`type`,`create_time`) VALUES ('北京大学','B','211','北京市三里屯','1','1543802715') [ RunTime:0.0002s ]
-
-[ 2018-12-03T10:05:41+08:00 ] 222.182.197.0 /index.php?g=Admin&m=school&a=add_post
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000492s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001128s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000470s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002484s ]
-INFO: [ admin_begin ] --START--
-INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001398s ]
-INFO: [ admin_begin ] --END-- [ RunTime:0.001448s ]
-SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0036s ]
-SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
-SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0031s ]
-NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
-NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
-SQL: INSERT INTO `h2w_school` (`school_name`,`first`,`address`,`type`,`create_time`) VALUES ('重庆第一中学','C','重庆市沙坪坝区','2','1543802741') [ RunTime:0.0002s ]
-
-[ 2018-12-03T10:06:01+08:00 ] 222.182.197.0 /index.php?g=Admin&m=school&a=add_post
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000499s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001240s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000435s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002586s ]
-INFO: [ admin_begin ] --START--
-INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001274s ]
-INFO: [ admin_begin ] --END-- [ RunTime:0.001329s ]
-SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0041s ]
-SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
-SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0038s ]
-NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
-NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
-SQL: INSERT INTO `h2w_school` (`school_name`,`first`,`address`,`type`,`create_time`) VALUES ('重庆巴蜀中学','C','重庆市渝中区','2','1543802761') [ RunTime:0.0002s ]
-
-[ 2018-12-03T10:06:26+08:00 ] 222.182.197.0 /index.php?g=Admin&m=school&a=add_pro_post
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000419s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000811s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000276s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001856s ]
-INFO: [ admin_begin ] --START--
-INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000984s ]
-INFO: [ admin_begin ] --END-- [ RunTime:0.001033s ]
-SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0037s ]
-SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
-SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0035s ]
-SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0031s ]
-NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
-NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
-SQL: INSERT INTO `h2w_school_professional` (`school_id`,`pro_name`,`status`) VALUES ('1','土木工程','0') [ RunTime:0.0003s ]
-
-[ 2018-12-03T10:06:40+08:00 ] 222.182.197.0 /index.php?g=Admin&m=school&a=add_pro_post
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000399s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000814s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000267s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001842s ]
-INFO: [ admin_begin ] --START--
-INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000974s ]
-INFO: [ admin_begin ] --END-- [ RunTime:0.001024s ]
-SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0039s ]
-SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
-SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0030s ]
-SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0034s ]
-NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
-NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
-SQL: INSERT INTO `h2w_school_professional` (`school_id`,`pro_name`,`status`) VALUES ('1','计算机','0') [ RunTime:0.0002s ]
-
-[ 2018-12-03T10:53:28+08:00 ] 222.182.197.0 /index.php?g=Admin&m=Discuss&a=cate_add_post
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000576s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001127s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000501s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002617s ]
-INFO: [ admin_begin ] --START--
-INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001573s ]
-INFO: [ admin_begin ] --END-- [ RunTime:0.001621s ]
-SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0044s ]
-SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
-SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0033s ]
-SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0032s ]
-SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0032s ]
-SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0031s ]
-SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0031s ]
-NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
-SQL: SELECT * FROM `h2w_category` WHERE `name` = '动漫' LIMIT 1   [ RunTime:0.0003s ]
-NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
-SQL: INSERT INTO `h2w_category` (`listorder`,`name`,`create_time`) VALUES ('1','动漫','1543805608') [ RunTime:0.0037s ]
-NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
-
-[ 2018-12-03T10:53:34+08:00 ] 222.182.197.0 /index.php?g=Admin&m=Discuss&a=cate_add_post
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000515s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001127s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000470s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002578s ]
-INFO: [ admin_begin ] --START--
-INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001438s ]
-INFO: [ admin_begin ] --END-- [ RunTime:0.001495s ]
-SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0073s ]
-SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
-SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0037s ]
-SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0032s ]
-SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0033s ]
-SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0033s ]
-SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0029s ]
-NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
-SQL: SELECT * FROM `h2w_category` WHERE `name` = '动漫' LIMIT 1   [ RunTime:0.0002s ]
-NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
-
-[ 2018-12-03T10:53:40+08:00 ] 222.182.197.0 /index.php?g=Admin&m=Discuss&a=cate_add_post
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000487s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001064s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000532s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002501s ]
-INFO: [ admin_begin ] --START--
-INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001344s ]
-INFO: [ admin_begin ] --END-- [ RunTime:0.001400s ]
-SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0040s ]
-SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
-SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0030s ]
-SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0028s ]
-SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0055s ]
-SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0030s ]
-SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0112s ]
-NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
-SQL: SELECT * FROM `h2w_category` WHERE `name` = '科幻' LIMIT 1   [ RunTime:0.0003s ]
-NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
-SQL: INSERT INTO `h2w_category` (`listorder`,`name`,`create_time`) VALUES ('2','科幻','1543805620') [ RunTime:0.0043s ]
-NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
-
-[ 2018-12-03T10:53:49+08:00 ] 222.182.197.0 /index.php?g=Admin&m=Discuss&a=cate_add_post
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000532s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001124s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000433s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002520s ]
-INFO: [ admin_begin ] --START--
-INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001391s ]
-INFO: [ admin_begin ] --END-- [ RunTime:0.001442s ]
-SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0054s ]
-SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
-SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0041s ]
-SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0034s ]
-SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0030s ]
-SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0030s ]
-SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0030s ]
-NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
-SQL: SELECT * FROM `h2w_category` WHERE `name` = '情感' LIMIT 1   [ RunTime:0.0002s ]
-NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
-SQL: INSERT INTO `h2w_category` (`listorder`,`name`,`create_time`) VALUES ('3','情感','1543805629') [ RunTime:0.0057s ]
-NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
-
-[ 2018-12-03T10:54:12+08:00 ] 222.182.197.0 /index.php?g=Admin&m=Discuss&a=cate_add_post
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000513s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001107s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000434s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002484s ]
-INFO: [ admin_begin ] --START--
-INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001397s ]
-INFO: [ admin_begin ] --END-- [ RunTime:0.001448s ]
-SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0039s ]
-SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
-SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0034s ]
-SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0032s ]
-SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0032s ]
-SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0030s ]
-SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0035s ]
-NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
-SQL: SELECT * FROM `h2w_category` WHERE `name` = '学习' LIMIT 1   [ RunTime:0.0002s ]
-NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
-SQL: INSERT INTO `h2w_category` (`listorder`,`name`,`create_time`) VALUES ('2','学习','1543805652') [ RunTime:0.0035s ]
-NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
-
-[ 2018-12-03T10:56:41+08:00 ] 222.182.197.0 /index.php?g=Admin&m=Discuss&a=label_add_post
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000499s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001073s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000352s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002325s ]
-INFO: [ admin_begin ] --START--
-INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001326s ]
-INFO: [ admin_begin ] --END-- [ RunTime:0.001381s ]
-SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0046s ]
-SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
-SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0035s ]
-SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0032s ]
-SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0038s ]
-SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0037s ]
-SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0037s ]
-NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
-SQL: SELECT * FROM `h2w_label` WHERE `name` = '吐槽' LIMIT 1   [ RunTime:0.0002s ]
-NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
-SQL: INSERT INTO `h2w_label` (`listorder`,`name`,`create_time`) VALUES ('1','吐槽','1543805801') [ RunTime:0.0038s ]
-NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
-
-[ 2018-12-03T10:56:48+08:00 ] 222.182.197.0 /index.php?g=Admin&m=Discuss&a=label_add_post
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000590s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001202s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000412s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002665s ]
-INFO: [ admin_begin ] --START--
-INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001386s ]
-INFO: [ admin_begin ] --END-- [ RunTime:0.001437s ]
-SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0040s ]
-SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
-SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0034s ]
-SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0030s ]
-SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0037s ]
-SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0030s ]
-SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0029s ]
-NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
-SQL: SELECT * FROM `h2w_label` WHERE `name` = '情感' LIMIT 1   [ RunTime:0.0003s ]
-NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
-SQL: INSERT INTO `h2w_label` (`listorder`,`name`,`create_time`) VALUES ('2','情感','1543805808') [ RunTime:0.0037s ]
-NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
-
-[ 2018-12-03T10:56:58+08:00 ] 222.182.197.0 /index.php?g=Admin&m=Discuss&a=label_add_post
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000588s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001203s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000433s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002632s ]
-INFO: [ admin_begin ] --START--
-INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001417s ]
-INFO: [ admin_begin ] --END-- [ RunTime:0.001466s ]
-SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0044s ]
-SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
-SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0033s ]
-SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0037s ]
-SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0034s ]
-SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0035s ]
-SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0031s ]
-NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
-SQL: SELECT * FROM `h2w_label` WHERE `name` = '学习' LIMIT 1   [ RunTime:0.0003s ]
-NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
-SQL: INSERT INTO `h2w_label` (`listorder`,`name`,`create_time`) VALUES ('2','学习','1543805818') [ RunTime:0.0025s ]
-NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
-
-[ 2018-12-03T10:57:06+08:00 ] 222.182.197.0 /index.php?g=Admin&m=Discuss&a=label_add_post
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000573s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001291s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000422s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002741s ]
-INFO: [ admin_begin ] --START--
-INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001526s ]
-INFO: [ admin_begin ] --END-- [ RunTime:0.001578s ]
-SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0049s ]
-SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
-SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0031s ]
-SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0029s ]
-SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0029s ]
-SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0028s ]
-SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0028s ]
-NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
-SQL: SELECT * FROM `h2w_label` WHERE `name` = '问答' LIMIT 1   [ RunTime:0.0002s ]
-NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
-SQL: INSERT INTO `h2w_label` (`listorder`,`name`,`create_time`) VALUES ('1','问答','1543805826') [ RunTime:0.0028s ]
-NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
-
-[ 2018-12-03T11:16:51+08:00 ] 222.182.197.0 /index.php?g=Admin&m=gift&a=add_post
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000490s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000943s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000428s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002270s ]
-INFO: [ admin_begin ] --START--
-INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001303s ]
-INFO: [ admin_begin ] --END-- [ RunTime:0.001350s ]
-SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0042s ]
-SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
-SQL: SHOW COLUMNS FROM `h2w_gift` [ RunTime:0.0032s ]
-NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
-
-[ 2018-12-03T11:17:01+08:00 ] 222.182.197.0 /index.php?g=Admin&m=gift&a=add_post
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000540s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000977s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000426s ]
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000581s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001261s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000499s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.002448s ]
 INFO: [ admin_begin ] --START--
-INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001366s ]
-INFO: [ admin_begin ] --END-- [ RunTime:0.001414s ]
-SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0044s ]
-SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
-SQL: SHOW COLUMNS FROM `h2w_gift` [ RunTime:0.0035s ]
-NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
-NOTIC: [8] Undefined index: status C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1217 行.
-NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
-SQL: INSERT INTO `h2w_gift` (`gift_name`,`type`,`price`,`surplus`,`cover_img`,`create_time`) VALUES (' 2018新款ipad 9.7寸 32G','1','2499','100','admin/20181203/5c04a02b3229b.jpg','1543807021') [ RunTime:0.0004s ]
-
-[ 2018-12-03T11:17:48+08:00 ] 222.182.197.0 /index.php?g=Admin&m=gift&a=add_post
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000553s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001034s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000497s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002525s ]
-INFO: [ admin_begin ] --START--
-INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001389s ]
-INFO: [ admin_begin ] --END-- [ RunTime:0.001441s ]
-SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0041s ]
-SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
-SQL: SHOW COLUMNS FROM `h2w_gift` [ RunTime:0.0033s ]
-NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
-
-[ 2018-12-03T11:18:00+08:00 ] 222.182.197.0 /index.php?g=Admin&m=gift&a=edit_post
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000497s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000966s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000442s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002316s ]
-INFO: [ admin_begin ] --START--
-INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001321s ]
-INFO: [ admin_begin ] --END-- [ RunTime:0.001371s ]
-SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0038s ]
-SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
-SQL: SHOW COLUMNS FROM `h2w_gift` [ RunTime:0.0031s ]
-NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
-NOTIC: [8] Undefined index: status C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1217 行.
-NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
-SQL: UPDATE `h2w_gift` SET `gift_name`=' 2018新款ipad 9.7寸 32G',`type`='1',`price`='2499',`surplus`='100',`cover_img`='admin/20181203/5c04a02b3229b.jpg',`product_intro`='[{&quot;img&quot;:&quot;&quot;,&quot;sort&quot;:&quot;1&quot;}]' WHERE `id` = 1 [ RunTime:0.0004s ]
-
-[ 2018-12-03T11:21:31+08:00 ] 222.182.197.0 /index.php?g=Admin&m=gift&a=add_post
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000622s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001425s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000422s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002944s ]
-INFO: [ admin_begin ] --START--
-INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001471s ]
-INFO: [ admin_begin ] --END-- [ RunTime:0.001523s ]
-SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0038s ]
-SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
-SQL: SHOW COLUMNS FROM `h2w_gift` [ RunTime:0.0039s ]
-NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
-
-[ 2018-12-03T11:32:08+08:00 ] 222.182.197.0 /index.php?g=Admin&m=gift&a=add_post
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000588s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001170s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000347s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002541s ]
-INFO: [ admin_begin ] --START--
-INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001409s ]
-INFO: [ admin_begin ] --END-- [ RunTime:0.001457s ]
-SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0038s ]
-SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
-SQL: SHOW COLUMNS FROM `h2w_gift` [ RunTime:0.0032s ]
-NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
-
-[ 2018-12-03T11:33:37+08:00 ] 222.182.197.0 /index.php?g=Admin&m=gift&a=add_post
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000539s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001171s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000442s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002561s ]
-INFO: [ admin_begin ] --START--
-INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001452s ]
-INFO: [ admin_begin ] --END-- [ RunTime:0.001502s ]
-SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0059s ]
-SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
-SQL: SHOW COLUMNS FROM `h2w_gift` [ RunTime:0.0032s ]
-NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
-NOTIC: [8] Undefined index: status C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1217 行.
-NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
-SQL: INSERT INTO `h2w_gift` (`gift_name`,`type`,`price`,`surplus`,`cover_img`,`create_time`) VALUES (' 小米手机MIX3','1','3299','26','admin/20181203/5c04a40de174b.jpg','1543808017') [ RunTime:0.0002s ]
-
-[ 2018-12-03T11:34:26+08:00 ] 222.182.197.0 /index.php?g=Admin&m=gift&a=upload
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000882s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001701s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000631s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.003794s ]
-INFO: [ admin_begin ] --START--
-INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001929s ]
-INFO: [ admin_begin ] --END-- [ RunTime:0.001976s ]
-SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0089s ]
-SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
-SQL: SHOW COLUMNS FROM `h2w_gift` [ RunTime:0.0032s ]
-NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given C:\www\xueshengapp\simplewind\Core\Library\Think\Upload.class.php 第 188 行.
-
-[ 2018-12-03T11:34:28+08:00 ] 222.182.197.0 /index.php?g=Admin&m=gift&a=add_post
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000880s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001702s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000664s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.003833s ]
-INFO: [ admin_begin ] --START--
-INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.002141s ]
-INFO: [ admin_begin ] --END-- [ RunTime:0.002193s ]
-SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0047s ]
-SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
-SQL: SHOW COLUMNS FROM `h2w_gift` [ RunTime:0.0029s ]
-NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
-NOTIC: [8] Undefined index: status C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1217 行.
-NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
-SQL: INSERT INTO `h2w_gift` (`gift_name`,`type`,`price`,`surplus`,`cover_img`,`create_time`) VALUES (' 苹果笔记本电脑','1','7699','36','admin/20181203/5c04a43abbf98.jpg','1543808068') [ RunTime:0.0002s ]
-
-[ 2018-12-03T11:36:51+08:00 ] 222.182.197.0 /index.php?g=Admin&m=gift&a=upload
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000962s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001872s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000745s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.004225s ]
-INFO: [ admin_begin ] --START--
-INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.002231s ]
-INFO: [ admin_begin ] --END-- [ RunTime:0.002287s ]
-SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0041s ]
-SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
-SQL: SHOW COLUMNS FROM `h2w_gift` [ RunTime:0.0030s ]
-NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given C:\www\xueshengapp\simplewind\Core\Library\Think\Upload.class.php 第 188 行.
-
-[ 2018-12-03T11:36:53+08:00 ] 222.182.197.0 /index.php?g=Admin&m=gift&a=add_post
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000934s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001818s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000724s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.004084s ]
-INFO: [ admin_begin ] --START--
-INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.002131s ]
-INFO: [ admin_begin ] --END-- [ RunTime:0.002182s ]
-SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0047s ]
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001497s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001552s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0043s ]
 SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0005s ]
-SQL: SHOW COLUMNS FROM `h2w_gift` [ RunTime:0.0036s ]
-NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
-NOTIC: [8] Undefined index: status C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1217 行.
-NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
-SQL: INSERT INTO `h2w_gift` (`gift_name`,`type`,`price`,`surplus`,`cover_img`,`product_intro`,`create_time`) VALUES ('小米电视4S 55寸 ','1','2699','56','admin/20181203/5c04a4cf06cff.jpg','[{&quot;img&quot;:&quot;admin\\/20181203\\/5c04a4d37f3d0.jpg&quot;,&quot;sort&quot;:&quot;1&quot;}]','1543808213') [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_menu` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 0 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 134 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 190 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 191 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 192 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 193 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 194 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 189 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 198 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 197 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 188 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 195 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 196 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 187 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 109 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 200 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 54 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 199 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 139 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 140 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 149 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0029s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000150s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000192s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013170s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013221s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000390s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000481s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000927s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000537s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000574s ]
 
-[ 2018-12-03T11:39:31+08:00 ] 222.182.197.0 /index.php?g=Admin&m=gift&a=edit_post
+[ 2018-12-03T16:55:33+08:00 ] 222.182.197.0 /index.php?g=Admin&m=Main&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002720s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003308s ]
 INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000491s ]
-INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001097s ]
-INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000429s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002464s ]
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000638s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001630s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000741s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003141s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.002510s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.002576s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: select VERSION() as version [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0034s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000123s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011393s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011444s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000462s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000603s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001137s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000503s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000539s ]
+
+[ 2018-12-03T16:56:38+08:00 ] 222.182.197.0 /index.php?g=Admin&m=Public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001896s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002277s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000617s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001227s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000473s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002416s ]
 INFO: [ admin_begin ] --START--
 INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001382s ]
-INFO: [ admin_begin ] --END-- [ RunTime:0.001431s ]
-SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0041s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001434s ]
+
+[ 2018-12-03T16:56:39+08:00 ] 222.182.197.0 /index.php?g=admin&m=index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002255s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002638s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000678s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001221s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000550s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002565s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001472s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001525s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `h2w_menu` [ RunTime:0.0067s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 0 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 134 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 190 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 191 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 192 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 193 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 194 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 189 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 198 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 197 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 188 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 195 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 196 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 187 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 109 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 200 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 54 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 199 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 139 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 140 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 149 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0029s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000151s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000192s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013863s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013915s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000501s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000497s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001058s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000649s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000691s ]
+
+[ 2018-12-03T16:56:39+08:00 ] 222.182.197.0 /index.php?g=Admin&m=Main&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001923s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002298s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000607s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001446s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000482s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002648s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001665s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001719s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: select VERSION() as version [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0030s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000117s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009691s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009733s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000450s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000515s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001031s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000610s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000646s ]
+
+[ 2018-12-03T16:58:32+08:00 ] 222.182.197.0 /index.php?g=Admin&m=Index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001981s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002397s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000505s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001188s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002245s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001452s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001506s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0092s ]
 SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
-SQL: SHOW COLUMNS FROM `h2w_gift` [ RunTime:0.0039s ]
-NOTIC: [8] Undefined index: validate C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
-NOTIC: [8] Undefined index: status C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1217 行.
-NOTIC: [8] Undefined index: auto C:\www\xueshengapp\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
-SQL: UPDATE `h2w_gift` SET `gift_name`=' 2018新款ipad 9.7寸 32G',`type`='1',`price`='2499',`surplus`='100',`cover_img`='admin/20181203/5c04a02b3229b.jpg' WHERE `id` = 1 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_menu` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 0 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 134 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 190 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 191 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 192 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 193 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 194 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 189 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 198 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 197 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 188 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 195 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 196 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 187 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 109 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 200 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 54 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 199 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 139 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 140 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 149 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0038s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000178s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000222s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023430s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023495s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000435s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000449s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000943s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000647s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000692s ]
+
+[ 2018-12-03T16:58:32+08:00 ] 222.182.197.0 /index.php?g=Admin&m=Main&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001878s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002275s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001359s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000425s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002381s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.002082s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.002151s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0005s ]
+SQL: select VERSION() as version [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0033s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000121s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010201s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010245s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000311s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000428s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000799s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000470s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000507s ]
+
+[ 2018-12-03T16:58:34+08:00 ] 222.182.197.0 /index.php?g=Admin&m=Index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002809s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003376s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000820s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001608s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000606s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003137s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001892s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.002093s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_menu` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 0 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 134 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 190 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 191 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 192 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 193 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 194 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 189 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 198 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 197 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 188 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 195 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 196 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 187 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 109 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 200 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 54 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 199 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 139 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 140 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 149 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0041s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000159s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000201s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024006s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024059s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000648s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001403s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000849s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000888s ]
+
+[ 2018-12-03T16:58:34+08:00 ] 222.182.197.0 /index.php?g=Admin&m=Main&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002800s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003372s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000813s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002489s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000674s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004189s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.002248s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.002306s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: select VERSION() as version [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0030s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000081s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000122s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011977s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012023s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000665s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000610s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001335s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000811s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000856s ]
+
+[ 2018-12-03T16:58:47+08:00 ] 222.182.197.0 /index.php?g=Admin&m=Rbac&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003003s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003613s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000865s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002026s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000643s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003641s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.002327s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.002382s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_role` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `h2w_role` ORDER BY `listorder` ASC,`id` DESC  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0035s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000110s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011811s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011865s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000660s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000630s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001351s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000823s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000862s ]
+
+[ 2018-12-03T16:58:50+08:00 ] 222.182.197.0 /index.php?g=Admin&m=User&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003242s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003868s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000934s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002243s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000725s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004021s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.002747s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.002802s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `h2w_role` [ RunTime:0.0032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_users u INNER JOIN h2w_role_user as r on r.user_id=u.id  WHERE `user_type` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT u.*,r.role_id FROM h2w_users u left join h2w_role_user as r on r.user_id=u.id  WHERE `user_type` = 1 ORDER BY u.create_time DESC LIMIT 0,20   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_role`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0034s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000117s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014517s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014569s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000868s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000633s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001569s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000849s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000901s ]
+
+[ 2018-12-03T16:58:56+08:00 ] 222.182.197.0 /index.php?g=Admin&m=School&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003632s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000858s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001685s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000660s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003321s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.002006s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.002060s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_school` WHERE `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_school` WHERE `type` = 1 ORDER BY create_time DESC LIMIT 0,20   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_school_professional` WHERE `school_id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users` WHERE `school_id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_school_professional` WHERE `school_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users` WHERE `school_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0042s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000108s ]
+NOTIC: [8] Undefined variable: url C:\www\xueshengapp\data\runtime\Cache\Admin\f487d4e7dc3635d19652b49c6c509c3a.php 第 72 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014493s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014536s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000697s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000696s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001458s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000876s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000915s ]
+
+[ 2018-12-03T16:59:01+08:00 ] 222.182.197.0 /index.php?g=Admin&m=FilterKeyword&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001799s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002206s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000474s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001061s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000302s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001945s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001007s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001063s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_filter_keyword` [ RunTime:0.0044s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_filter_keyword` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_filter_keyword` ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0035s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000109s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000156s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010855s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010908s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000390s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000349s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000797s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000502s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000542s ]
+
+[ 2018-12-03T17:06:14+08:00 ] 222.182.197.0 /index.php?g=Admin&m=FilterKeyword&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002416s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002864s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000603s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001421s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000454s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002590s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001574s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001630s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_filter_keyword` [ RunTime:0.0033s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_filter_keyword` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_filter_keyword` ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0032s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000075s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000116s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010692s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010745s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000403s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000443s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000905s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000543s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000581s ]
+
+[ 2018-12-03T17:06:16+08:00 ] 222.182.197.0 /index.php?g=Admin&m=FilterKeyword&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001877s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002272s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000565s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001344s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000427s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002444s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001479s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001533s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_filter_keyword` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_filter_keyword` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_filter_keyword` ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0029s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000177s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011272s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011328s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000448s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000436s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000955s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000614s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000653s ]
+
+[ 2018-12-03T17:06:22+08:00 ] 222.182.197.0 /index.php?g=Admin&m=FilterKeyword&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001932s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002343s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001265s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000422s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002374s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001506s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001565s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_filter_keyword` [ RunTime:0.0029s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_filter_keyword` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_filter_keyword` ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0032s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000075s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000116s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010351s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010405s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000429s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000429s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000917s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000572s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000610s ]
 

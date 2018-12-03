@@ -70,6 +70,14 @@ class BaseController extends AppframeController
         }else{
             $user_info['certification'] = 2;
         }
+        //判断该用户今日是否签到
+        $today_time = strtotime(date('Y-m-d'));
+        $sign = M('UsersSign')->where(array('user_id'=>$user_info['id'],'sign_time'=>$today_time))->find();
+        if($sign){
+            $user_info['sign'] = 1;
+        }else{
+            $user_info['sign'] = 0;
+        }
         return $user_info;
     }
 

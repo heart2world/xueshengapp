@@ -29,8 +29,15 @@ class PublicController extends AppframeController
             $user = M('Users')->where($where)->find();
             if($user){
                 if(sp_password($password) == $user['user_pass']){
+                    if($user['user_status'] != 1){
+                        $this->ajaxReturn(['status'=>0,'info'=>'当前账号已被禁用']);
+                    }
                     if($user['user_type'] == 0 || empty($user['school_id'])){
-                        $this->ajaxReturn(['status'=>-3,'info'=>'用户信息还未完善','user_id'=>$user['id']]);
+                        $this->ajaxReturn(['status'=>-3,'info'=>'用户信息还未完善','id'=>$user['id']]);
+                    }
+                    $label_count = M('UsersLabel')->where(array('user_id'=>$user['id']))->count();
+                    if($label_count < 1){
+                        $this->ajaxReturn(['status'=>-4,'info'=>'用户标签信息为空','id'=>$user['id']]);
                     }
                     $dataInfo['id'] = $user['id'];
                     $dataInfo['uu_id'] = md5(time().$user['id'].rand(10000,99999));
@@ -118,7 +125,7 @@ class PublicController extends AppframeController
             $result_id = M('Users')->add($dataInfo);
             if($result_id){
                 M('Users')->save(array('id'=>$result_id,'user_name'=>'用户'.$result_id));
-                $this->ajaxReturn(['status'=>1,'info'=>'注册成功','user_id'=>$result_id]);
+                $this->ajaxReturn(['status'=>1,'info'=>'注册成功','id'=>$result_id]);
             }else{
                 $this->ajaxReturn(['status'=>-1,'info'=>'网络错误,请稍后再试']);
             }
@@ -170,7 +177,7 @@ class PublicController extends AppframeController
         $where['status'] = array('eq',0);
         $keyword = I('request.keyword');
         if($keyword){
-            $where['keyword'] = array('like',"%$keyword%");
+            $where['school_name'] = array('like',"%$keyword%");
         }
         $school_group = M('School')->where($where)->group('first')->select();
         $group_array = array();
@@ -220,9 +227,13 @@ class PublicController extends AppframeController
             }
             M('UsersLabel')->where(array('user_id'=>$user_id))->delete();
             if(empty($label)){
-                $this->ajaxReturn(['status'=>1,'info'=>'设置成功','user'=>$user_info]);
+                $this->ajaxReturn(['status'=>0,'info'=>'请至少选择一条您感兴趣的标签']);
             }
-            $where['id'] = array('in',$label);
+            $labelArray = explode(',',$label);
+            if(count($labelArray) > 5){
+                $this->ajaxReturn(['status'=>0,'info'=>'标签选择上限为5条']);
+            }
+            $where['id'] = array('in',$labelArray);
             $labelInfo = M('Label')->where($where)->select();
             $relationArray = array();
             foreach ($labelInfo as $k=>$v){
@@ -341,6 +352,14 @@ class PublicController extends AppframeController
             }
         }else{
             $user_info['certification'] = 2;
+        }
+        //判断该用户今日是否签到
+        $today_time = strtotime(date('Y-m-d'));
+        $sign = M('UsersSign')->where(array('user_id'=>$user_info['id'],'sign_time'=>$today_time))->find();
+        if($sign){
+            $user_info['sign'] = 1;
+        }else{
+            $user_info['sign'] = 0;
         }
         return $user_info;
     }

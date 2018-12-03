@@ -51,44 +51,44 @@
 	</style><?php endif; ?>
 </head>
 <body>
-<div class="wrap">
-	<ul class="nav nav-tabs">
-		<li><a href="<?php echo U('Discuss/index');?>">讨论管理</a></li>
-		<li class="active"><a href="<?php echo U('Discuss/category');?>">分类管理</a></li>
-		<li><a href="<?php echo U('Discuss/label');?>">标签管理</a></li>
-	</ul>
-	<div style="margin-bottom: 12px;">
-		<a type="button" class="btn btn-info" href="<?php echo U('Discuss/cate_add');?>">新增分类</a>
-	</div>
-	<div>
-		<table class="table table-hover table-bordered table-list">
-			<thead>
-			<tr>
-				<th width="60">分类序号</th>
-				<th>分类名称</th>
-				<th>分类状态</th>
-				<th width="60">操作</th>
-			</tr>
-			</thead>
-			<tbody>
-			<?php if(empty($category)): ?><tr><td colspan="4" class="no_data">暂无数据</td></tr><?php endif; ?>
-			<?php $status_array = array(0=>'隐藏',1=>'正常'); ?>
-			<?php if(is_array($category)): foreach($category as $key=>$vc): ?><tr>
-					<td><?php echo ($vc["listorder"]); ?></td>
-					<td><?php echo ($vc["name"]); ?></td>
-					<td><?php echo ($status_array[$vc['status']]); ?></td>
-					<td class="action">
-						<?php if($vc["status"] == 1): ?><a href="<?php echo U('Discuss/cate_action',array('id'=>$vc['id']));?>" class="js-ajax-dialog-btn" data-msg="确定隐藏该分类吗？">隐藏</a> |
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="<?php echo U('rbac/index');?>"><?php echo L('ADMIN_RBAC_INDEX');?></a></li>
+			<li><a href="<?php echo U('rbac/roleadd');?>"><?php echo L('ADMIN_RBAC_ROLEADD');?></a></li>
+		</ul>
+		<form action="<?php echo U('Rbac/listorders');?>" method="post">
+			<table class="table table-hover table-bordered">
+				<thead>
+					<tr>
+						<th width="30">ID</th>
+						<th align="left"><?php echo L('ROLE_NAME');?></th>
+						<th align="left"><?php echo L('ROLE_DESCRIPTION');?></th>
+						<th width="40" align="left"><?php echo L('STATUS');?></th>
+						<th width="120"><?php echo L('ACTIONS');?></th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php if(is_array($roles)): foreach($roles as $key=>$vo): ?><tr>
+						<td><?php echo ($vo["id"]); ?></td>
+						<td><?php echo ($vo["name"]); ?></td>
+						<td><?php echo ($vo["remark"]); ?></td>
+						<td>
+							<?php if($vo['status'] == 1): ?><font color="red">√</font>
+							<?php else: ?> 
+								<font color="red">╳</font><?php endif; ?>
+						</td>
+						<td>
+							<?php if($vo['id'] == 1): ?><font color="#cccccc"><?php echo L('EDIT');?></font> | <font color="#cccccc"><?php echo L('DELETE');?></font>
 							<?php else: ?>
-							<a href="<?php echo U('Discuss/cate_action',array('id'=>$vc['id']));?>" class="js-ajax-dialog-btn" data-msg="确定显示该分类吗？">显示</a> |<?php endif; ?>
-						<a href="<?php echo U('Discuss/cate_edit',array('id'=>$vc['id']));?>">编辑</a>
-					</td>
-				</tr><?php endforeach; endif; ?>
-			</tbody>
-		</table>
-		<div class="pagination"><?php echo ($page); ?></div>
+								<a href="<?php echo U('Rbac/authorize',array('id'=>$vo['id']));?>"><?php echo L('ROLE_SETTING');?></a>|
+								<a href="<?php echo U('Rbac/roleedit',array('id'=>$vo['id']));?>"><?php echo L('EDIT');?></a>|
+								<a class="js-ajax-delete" href="<?php echo U('Rbac/roledelete',array('id'=>$vo['id']));?>"><?php echo L('DELETE');?></a><?php endif; ?>
+						</td>
+					</tr><?php endforeach; endif; ?>
+				</tbody>
+			</table>
+		</form>
 	</div>
-</div>
-<script src="/public/js/common.js"></script>
+	<script src="/public/js/common.js"></script>
 </body>
 </html>

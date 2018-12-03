@@ -47,10 +47,7 @@
                 <tr>
                     <td>{$vo.id}</td>
                     <td>{$vo.keyword}</td>
-                    <td>
-                        <php>$ks = explode(",",$vo['effect_area']);</php>
-                        <foreach name="ks" item="v">{$li[$v]}、</foreach>
-                    </td>
+                    <td>{$vo.effect_area}</td>
                     <td style="text-align: center">
                         <a class="js-ajax-delete" href="{:U('FilterKeyword/delete',array('id'=>$vo['id']))}"  data-msg="">删除</a>
                     </td>

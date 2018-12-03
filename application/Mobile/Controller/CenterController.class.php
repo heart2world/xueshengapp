@@ -11,6 +11,16 @@ namespace Mobile\Controller;
 
 class CenterController extends BaseController
 {
+    //获取个人信息
+    public function mine(){
+        $user_id = intval(I('request.uid'));
+        $user_info = $this->user_info($user_id);//获取用户信息
+        if($user_info == false){
+            $this->ajaxReturn(['status'=>0,'info'=>'当前用户不存在']);
+        }
+        $this->ajaxReturn(['status'=>1,'user'=>$user_info]);
+    }
+
     //个人中心
     public function index(){
         $user_id = intval(I('request.uid'));

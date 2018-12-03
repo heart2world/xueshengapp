@@ -16,7 +16,7 @@ class FilterKeywordController extends AdminbaseController{
         $this->order = D("Common/FilterKeyword");
 	}
 
-	// 学校列表
+	// 关键词列表
 	public function index(){
 		$where = [];
 		/**搜索条件**/
@@ -30,6 +30,16 @@ class FilterKeywordController extends AdminbaseController{
         $list =$this->order->where($where)->order("create_time DESC")
             ->limit($page->firstRow, $page->listRows)
             ->select();
+
+        $filter = [1=>"用户昵称",2=>"评论及回复",3=>"讨论标题及正文"];
+        foreach ($list as $k=>$v){
+            $name = '';
+            $filter_ids = explode(',',$v['effect_area']);
+            foreach ($filter_ids as $n){
+                ($name == '') ? $name.=$filter[$n] : $name.='、'.$filter[$n];
+            }
+            $list[$k]['effect_area'] = $name;
+        }
 
 		$this->assign("page", $page->show('Admin'));
 		$this->assign("list",$list);

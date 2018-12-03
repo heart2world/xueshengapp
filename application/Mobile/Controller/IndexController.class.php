@@ -20,11 +20,10 @@ class IndexController extends BaseController
                 $this->ajaxReturn(['status'=>0,'info'=>'当前用户不存在']);
             }
             //判断该用户今日是否签到
-            $today_time = strtotime(date('Y-m-d'));
-            $sign = M('UsersSign')->where(array('user_id'=>$user_id,'sign_time'=>$today_time))->find();
-            if($sign){
+            if($user_info['sign'] == 1){
                 $this->ajaxReturn(['status'=>0,'info'=>'当天已签到']);
             }
+            $today_time = strtotime(date('Y-m-d'));
             //获取缓存数据
             $set_score = S('score_setting');
             if (empty($set_score) || $set_score == false) {
@@ -82,7 +81,9 @@ class IndexController extends BaseController
         ($page > 1) ? $now_page = $page : $now_page = 1;
         $pageSize = 6;
         $start = ($now_page - 1) * $pageSize;
-//        $where['d.status'] = array('eq',1);
+
+        $total_count = 0;//总数
+        $discuss = array();//讨论数组
         //获取用户感兴趣的标签
         $users_label = M('UsersLabel')->where(array('user_id'=>$user_id))->select();
         if(count($users_label) > 0){
@@ -116,7 +117,7 @@ class IndexController extends BaseController
             $Model = new \Think\Model();
             $total_info = $Model->query("select count(*) AS number from h2w_discuss d, h2w_discuss_label dl where d.id=dl.discuss_id and d.status=1 and dl.label_id in($label_array) GROUP BY dl.discuss_id");
             $total_count = $total_info[0]['number'];
-            $discuss = $Model->query("select d.* from h2w_discuss d, h2w_discuss_label dl where d.id=dl.discuss_id and d.status=1 and dl.label_id in($label_array) GROUP BY dl.discuss_id order by count(dl.label_id) desc,d.update_time desc limit $start,$pageSize");
+            $discuss = $Model->query("select d.* from h2w_discuss d, h2w_discuss_label dl where d.id=dl.discuss_id and d.status=1 and dl.label_id in($label_array) GROUP BY dl.discuss_id order by count(dl.label_id) desc,d.create_time desc limit $start,$pageSize");
             foreach ($discuss as $k=>$v){
                 $userInfo = M('Users')->where(array('id'=>$v['user_id']))->find();
                 $discuss[$k]['user_name'] = $userInfo['user_name'];
@@ -125,18 +126,18 @@ class IndexController extends BaseController
                 $schoolInfo = M('School')->where(array('id'=>$v['school_id']))->find();
                 $discuss[$k]['school_name'] = $schoolInfo['school_name'];
             }
-        }else{
-            $total_count = 0;
-            $discuss = array();
-//            $total_count = M('Discuss')->alias('d')->where($where)->count();
-//            $discuss = M('Discuss')->alias('d')
-//                ->join('h2w_users as u on u.id=d.user_id')
-//                ->join('h2w_school as s on s.id=d.school_id')
-//                ->where($where)
-//                ->field('d.*,u.user_name,u.avatar,u.user_type,s.school_name')
-//                ->order('d.create_time desc')
-//                ->limit($start,$pageSize)
-//                ->select();
+        }
+        if($total_count == 0) {
+            $where['d.status'] = array('eq', 1);
+            $total_count = M('Discuss')->alias('d')->where($where)->count();
+            $discuss = M('Discuss')->alias('d')
+                ->join('h2w_users as u on u.id=d.user_id')
+                ->join('h2w_school as s on s.id=d.school_id')
+                ->where($where)
+                ->field('d.*,u.user_name,u.avatar,u.user_type,s.school_name')
+                ->order('d.update_time desc,d.click_num desc')
+                ->limit($start, $pageSize)
+                ->select();
         }
         $total_page = ceil($total_count/$pageSize);
         //处理讨论信息

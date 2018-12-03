@@ -162,9 +162,9 @@ right: initial !important;}
 				</a>
 				<div class="pull-left nav_shortcuts" >
 					
-					<a class="btn btn-small btn-warning" href="/" title="<?php echo L('WEBSITE_HOME_PAGE');?>" target="_blank">
-						<i class="fa fa-home"></i>
-					</a>
+					<!--<a class="btn btn-small btn-warning" href="/" title="<?php echo L('WEBSITE_HOME_PAGE');?>" target="_blank">-->
+						<!--<i class="fa fa-home"></i>-->
+					<!--</a>-->
 					
 					<!--<?php if(sp_auth_check(sp_get_current_admin_id(),'portal/AdminTerm/index')): ?>-->
 					<!--<a class="btn btn-small btn-success" href="javascript:openapp('<?php echo U('portal/AdminTerm/index');?>','index_termlist','<?php echo L('PORTAL_ADMINTERM_INDEX');?>');" title="<?php echo L('PORTAL_ADMINTERM_INDEX');?>">-->
@@ -182,9 +182,11 @@ right: initial !important;}
 						<i class="fa fa-trash-o"></i>
 					</a><?php endif; ?>
 					
-					<?php if(APP_DEBUG): ?><a class="btn btn-small" href="javascript:openapp('<?php echo U('admin/menu/index');?>','index_menu','<?php echo L('ADMIN_MENU_INDEX');?>');" title="<?php echo L('ADMIN_MENU_INDEX');?>">
-						<i class="fa fa-list"></i>
-					</a><?php endif; ?>
+					<!--<?php if(APP_DEBUG): ?>-->
+					<!--<a class="btn btn-small" href="javascript:openapp('<?php echo U('admin/menu/index');?>','index_menu','<?php echo L('ADMIN_MENU_INDEX');?>');" title="<?php echo L('ADMIN_MENU_INDEX');?>">-->
+						<!--<i class="fa fa-list"></i>-->
+					<!--</a>-->
+					<!--<?php endif; ?>-->
 				</div>
 				<ul class="nav simplewind-nav pull-right">
 					<li class="light-blue">

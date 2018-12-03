@@ -1,0 +1,13 @@
+[ 2018-12-03T16:56:38+08:00 ] 222.182.197.0 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001885s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002260s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000660s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001235s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000464s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002478s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `h2w_options` WHERE ( option_name='site_options' ) LIMIT 1   [ RunTime:0.0003s ]
+

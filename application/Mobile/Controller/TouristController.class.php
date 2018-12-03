@@ -37,7 +37,7 @@ class TouristController extends AppframeController
             ->join('h2w_school as s on s.id=d.school_id')
             ->where($where)
             ->field('d.*,u.user_name,u.avatar,u.user_type,s.school_name')
-            ->order('d.update_time desc')
+            ->order('d.create_time desc')
             ->limit($start,$pageSize)
             ->select();
         //处理讨论信息
@@ -75,7 +75,7 @@ class TouristController extends AppframeController
             ->join('h2w_school as s on s.id=d.school_id')
             ->where($where)
             ->field('d.*,u.user_name,u.avatar,u.user_type,s.school_name')
-            ->order('d.create_time desc')
+            ->order('d.update_time desc')
             ->limit($start,$pageSize)
             ->select();
         //处理讨论信息
