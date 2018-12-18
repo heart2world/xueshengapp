@@ -17,7 +17,7 @@ class IndexController extends BaseController
             $user_id = intval(I('request.uid'));
             $user_info = $this->user_info($user_id);//获取用户信息
             if($user_info == false){
-                $this->ajaxReturn(['status'=>0,'info'=>'当前用户不存在']);
+                $this->ajaxReturn(['status'=>0,'info'=>'当前用户不存在或禁用']);
             }
             //判断该用户今日是否签到
             if($user_info['sign'] == 1){
@@ -31,9 +31,9 @@ class IndexController extends BaseController
             }
             $gain_score = 0;//应该获得的积分
             $continue_day = 0;//连续签到天数
-            $first_day = $set_score['first_day'];//首次登录获得积分
-            $increase_progressively = $set_score['increase_progressively'];//连续登录增长积分
-            $max_single_time = $set_score['max_single_time'];//连续登录单次最多获得积分
+            $first_day = $set_score['first_day'];//首次登录获得积分20
+            $increase_progressively = $set_score['increase_progressively'];//连续登录增长积分1
+            $max_single_time = $set_score['max_single_time'];//连续登录单次最多获得积分10
             if($user_info['continuous_day'] == 0){//第一次签到
                 $gain_score = $first_day;
                 $continue_day = 1;
@@ -123,8 +123,7 @@ class IndexController extends BaseController
                 $discuss[$k]['user_name'] = $userInfo['user_name'];
                 $discuss[$k]['avatar'] = $userInfo['avatar'];
                 $discuss[$k]['user_type'] = $userInfo['user_type'];
-                $schoolInfo = M('School')->where(array('id'=>$v['school_id']))->find();
-                $discuss[$k]['school_name'] = $schoolInfo['school_name'];
+                $discuss[$k]['usc_id'] = $userInfo['school_id'];
             }
         }
         if($total_count == 0) {
@@ -132,9 +131,8 @@ class IndexController extends BaseController
             $total_count = M('Discuss')->alias('d')->where($where)->count();
             $discuss = M('Discuss')->alias('d')
                 ->join('h2w_users as u on u.id=d.user_id')
-                ->join('h2w_school as s on s.id=d.school_id')
                 ->where($where)
-                ->field('d.*,u.user_name,u.avatar,u.user_type,s.school_name')
+                ->field('d.*,u.user_name,u.avatar,u.user_type,u.school_id usc_id')
                 ->order('d.update_time desc,d.click_num desc')
                 ->limit($start, $pageSize)
                 ->select();
@@ -151,7 +149,7 @@ class IndexController extends BaseController
             $user_id = intval(I('request.uid'));
             $user_info = $this->user_info($user_id);//获取用户信息
             if($user_info == false){
-                $this->ajaxReturn(['status'=>0,'info'=>'当前用户不存在']);
+                $this->ajaxReturn(['status'=>0,'info'=>'当前用户不存在或禁用']);
             }
             $discuss_id = intval(I('post.did'));
             $discuss = M('Discuss')->where(array('id'=>$discuss_id,'status'=>1))->find();
@@ -159,9 +157,9 @@ class IndexController extends BaseController
                 $this->ajaxReturn(['status'=>0,'info'=>'当前讨论不存在或已被停用']);
             }
             //判断是否已经收藏
-            $collect = M('UsersDiscuss')->where(array('user_id'=>$user_id,'discuss_id'=>$discuss_id,'type'=>1))->find();
+            $collect = M('UsersCollect')->where(array('user_id'=>$user_id,'collect_id'=>$discuss_id,'type'=>1))->find();
             if($collect){//取消收藏
-                $result = M('UsersDiscuss')->where(array('id'=>$collect['id']))->delete();
+                $result = M('UsersCollect')->where(array('id'=>$collect['id']))->delete();
                 if($result !== false){
                     M('Discuss')->save(array('id'=>$discuss_id,'collect_num'=>$discuss['collect_num']-1));
                     $this->ajaxReturn(['status'=>1,'info'=>'取消收藏成功']);
@@ -169,11 +167,11 @@ class IndexController extends BaseController
             }else{//收藏
                 $dataInfo = [
                     'user_id' => $user_id,
-                    'discuss_id' => $discuss_id,
+                    'collect_id' => $discuss_id,
                     'type' => 1,
                     'create_time' => time()
                 ];
-                $result = M('UsersDiscuss')->add($dataInfo);
+                $result = M('UsersCollect')->add($dataInfo);
                 if($result !== false){
                     M('Discuss')->save(array('id'=>$discuss_id,'collect_num'=>$discuss['collect_num']+1));
                     $this->ajaxReturn(['status'=>1,'info'=>'收藏成功']);
@@ -192,9 +190,9 @@ class IndexController extends BaseController
         $pageSize = 20;
         $start = ($now_page - 1) * $pageSize;
         //关键词
-        $keyword = I('request.keyword');
-        if(empty($keyword)){
-            $this->ajaxReturn(['status'=>0,'discuss'=>array(),'total_page'=>0]);
+        $keyword = trim(I('request.keyword'));
+        if($keyword == ''){
+            $this->ajaxReturn(['status'=>0,'info'=>'请输入搜索内容']);
         }
         $where['d.name|d.content'] = array('like',"%$keyword%");
         $where['d.status'] = array('eq',1);
@@ -202,9 +200,8 @@ class IndexController extends BaseController
         $total_page = ceil($total_count/$pageSize);
         $discuss = M('Discuss')->alias('d')
             ->join('h2w_users as u on u.id=d.user_id')
-            ->join('h2w_school as s on s.id=d.school_id')
             ->where($where)
-            ->field('d.*,u.user_name,u.avatar,u.user_type,s.school_name')
+            ->field('d.*,u.user_name,u.avatar,u.user_type,u.school_id usc_id')
             ->order('d.create_time desc')
             ->limit($start,$pageSize)
             ->select();
@@ -228,11 +225,15 @@ class IndexController extends BaseController
             if($school){
                 $comment['school_name'] = $school['school_name'];
             }
+            if(empty($comment['avatar'])){
+                $comment['avatar'] = 'mobile/avatar.jpg';
+            }
+            $comment['avatar'] = sp_get_image_preview_url($comment['avatar']);
             $time_comment = time()-$comment['create_time'];
             if($time_comment >= 3600*24*5){
                 $comment['time_ago'] = date('Y-m-d',$comment['create_time']);
             } elseif ($time_comment >= 3600 * 24) {
-                $comment['time_ago'] = floor($time_comment / 3600 * 24) . '天前';
+                $comment['time_ago'] = floor($time_comment / 86400) . '天前';
             } elseif ($time_comment >= 3600) {
                 $comment['time_ago'] = floor($time_comment / 3600) . '小时前';
             } else {
@@ -250,7 +251,7 @@ class IndexController extends BaseController
                 if($time_dis >= 3600*24*5){
                     $reply[$x]['time_ago'] = date('Y-m-d',$y['create_time']);
                 } elseif ($time_dis >= 3600 * 24) {
-                    $reply[$x]['time_ago'] = floor($time_dis / 3600 * 24) . '天前';
+                    $reply[$x]['time_ago'] = floor($time_dis / 86400) . '天前';
                 } elseif ($time_dis >= 3600) {
                     $reply[$x]['time_ago'] = floor($time_dis / 3600) . '小时前';
                 } else {
@@ -268,13 +269,13 @@ class IndexController extends BaseController
     public function comment_action(){
         if(IS_POST){
             $user_id = intval(I('request.uid'));
-            $content = I('post.content');
-            if(empty($content)){
+            $content = trim(I('post.content'));
+            if($content == ''){
                 $this->ajaxReturn(['status'=>0,'info'=>'评论信息不能为空']);
             }
             $user_info = $this->user_info($user_id);//获取用户信息
             if($user_info == false){
-                $this->ajaxReturn(['status'=>0,'info'=>'当前用户不存在']);
+                $this->ajaxReturn(['status'=>0,'info'=>'当前用户不存在或禁用']);
             }
             $discuss_id = intval(I('post.did'));
             $discuss = M('Discuss')->where(array('id'=>$discuss_id,'status'=>1))->find();
@@ -307,6 +308,13 @@ class IndexController extends BaseController
                     //添加积分记录
                     $this->save_score($user_id,$gain_score,3);
                 }
+                //发送极光推送
+                if($user_id != $discuss['user_id']) {
+                    $purposeUser = M('Users')->where(array('id' => $discuss['user_id']))->field('id,push,aurora')->find();
+                    if ($purposeUser && $purposeUser['push'] == 1 && !empty($purposeUser['aurora'])) {
+                        $this->send_pub($purposeUser['aurora'], $user_info['user_name'] . "评论了您");
+                    }
+                }
                 $this->ajaxReturn(['status'=>1,'info'=>'评论成功','score'=>$gain_score]);
             }else{
                 $this->ajaxReturn(['status'=>0,'info'=>'网络错误,请稍后再试']);
@@ -318,13 +326,13 @@ class IndexController extends BaseController
     public function reply_action(){
         if(IS_POST){
             $user_id = intval(I('request.uid'));
-            $content = I('post.content');
-            if(empty($content)){
+            $content = trim(I('post.content'));
+            if($content == ''){
                 $this->ajaxReturn(['status'=>0,'info'=>'回复信息不能为空']);
             }
             $user_info = $this->user_info($user_id);//获取用户信息
             if($user_info == false){
-                $this->ajaxReturn(['status'=>0,'info'=>'当前用户不存在']);
+                $this->ajaxReturn(['status'=>0,'info'=>'当前用户不存在或禁用']);
             }
             $comment_id = intval(I('post.comment_id'));
             $comment = M('Comment')->where(array('id'=>$comment_id))->find();
@@ -363,6 +371,13 @@ class IndexController extends BaseController
                     //添加积分记录
                     $this->save_score($user_id,$gain_score,3);
                 }
+                //发送极光推送
+                if($user_id != $comment['user_id']) {
+                    $purposeUser = M('Users')->where(array('id' => $comment['user_id']))->field('id,push,aurora')->find();
+                    if ($purposeUser && $purposeUser['push'] == 1 && !empty($purposeUser['aurora'])) {
+                        $this->send_pub($purposeUser['aurora'], $user_info['user_name'] . "回复了您");
+                    }
+                }
                 $this->ajaxReturn(['status'=>1,'info'=>'回复成功','score'=>$gain_score]);
             }else{
                 $this->ajaxReturn(['status'=>0,'info'=>'网络错误,请稍后再试']);
@@ -376,7 +391,7 @@ class IndexController extends BaseController
             $user_id = intval(I('request.uid'));
             $user_info = $this->user_info($user_id);//获取用户信息
             if($user_info == false){
-                $this->ajaxReturn(['status'=>0,'info'=>'当前用户不存在']);
+                $this->ajaxReturn(['status'=>0,'info'=>'当前用户不存在或禁用']);
             }
             $comment_id = intval(I('post.comment_id'));
             $comment = M('Comment')->where(array('id'=>$comment_id))->find();
@@ -398,12 +413,13 @@ class IndexController extends BaseController
                 if($result !== false){
                     M('Comment')->save(array('id'=>$comment_id,'like_num'=>$comment['like_num']+1));
                     $discuss = M('Discuss')->where(array('id'=>$comment['discuss']))->find();
+                    $like_num = $discuss['like_num']+1;
                     if($discuss){
-                        M('Discuss')->save(array('id'=>$discuss['id'],'like_num'=>$discuss['like_num']+1));
+                        M('Discuss')->save(array('id'=>$discuss['id'],'like_num'=>$like_num));
                     }
                     //发送消息
                     $this->save_message($comment['user_id'],$user_id,1);
-                    $this->ajaxReturn(['status'=>1,'info'=>'点赞成功']);
+                    $this->ajaxReturn(['status'=>1,'info'=>'点赞成功','like_num'=>$like_num,'cid'=>$comment_id]);
                 }
             }
             $this->ajaxReturn(['status'=>-1,'info'=>'网络错误,请稍后再试']);
@@ -425,13 +441,24 @@ class IndexController extends BaseController
             $user_id = intval(I('request.uid'));
             $user_info = $this->user_info($user_id);//获取用户信息
             if($user_info == false){
-                $this->ajaxReturn(['status'=>0,'info'=>'当前用户不存在']);
+                $this->ajaxReturn(['status'=>0,'info'=>'当前用户不存在或禁用']);
             }
             $name = trim(I('post.name'));
             $content = trim(I('post.content'));
             $image = I('post.image');
-            if(empty($content)){
+            if($content == ''){
                 $this->ajaxReturn(['status'=>0,'info'=>'内容不能为空']);
+            }
+            if(!empty($image)){
+                $images = explode(',',$image);
+                if(count($images) > 5){
+                    $this->ajaxReturn(['status'=>0,'info'=>'发布失败,图片上限为5张']);
+                }
+            }
+            $school_id = intval(I('post.sid'));
+            $school = M('School')->where(array('id'=>$school_id,'status'=>0,'type'=>1))->find();
+            if(!$school){
+                $this->ajaxReturn(['status'=>0,'info'=>'发布失败,该大学讨论区已关闭']);
             }
             //获取关键词并过滤
             $effect = 3;
@@ -454,13 +481,13 @@ class IndexController extends BaseController
             $label = I('post.label');
             $fit_number = 0;//契合度
             //获取用户的标签信息
-            $users_label = M('UsersLabel')->where(array('user_id'=>$user_id))->select();
-            if(count($users_label) > 0){
-                $label_array = array();
-                foreach ($users_label as $k=>$v){
-                    $label_array[] = $v['label_id'];
-                }
-                if(!empty($label)){
+            if(!empty($label)){
+                $users_label = M('UsersLabel')->where(array('user_id'=>$user_id))->select();
+                if(count($users_label) > 0){
+                    $label_array = array();
+                    foreach ($users_label as $k=>$v){
+                        $label_array[] = $v['label_id'];
+                    }
                     $post_label = explode(',',$label);
                     foreach ($post_label as $v){
                         if(in_array($v,$label_array)){
@@ -471,7 +498,7 @@ class IndexController extends BaseController
             }
             $dateInfo = [
                 'user_id' => $user_id,
-                'school_id' => $user_info['school_id'],
+                'school_id' => $school['id'],
                 'name' => $name,
                 'content' => $content,
                 'image' => $image,
@@ -521,18 +548,24 @@ class IndexController extends BaseController
         $to_user_id = intval(I('request.to_uid'));
         $user_info = $this->user_info($to_user_id);//获取用户信息
         if ($user_info == false) {
-            $this->ajaxReturn(['status' => 0, 'info' => '当前用户不存在']);
+            $this->ajaxReturn(['status' => 0, 'info' => '当前用户不存在或禁用']);
         }
+
+        //讨论数量
+        $where_discuss['user_id'] = array('eq',$to_user_id);
+        $where_discuss['status'] = array('eq',1);
+        $total_count_dis = M('Discuss')->where($where_discuss)->count();
+        //评论数量
+        $where_comment['user_id'] = array('eq',$to_user_id);
+        $total_count_com = M('Comment')->where($where_comment)->count();
+
         //获取类型
         $type = I('request.type',1,'intval');
         if($type == 1){//获取讨论
-            $where_discuss['user_id'] = array('eq',$to_user_id);
-            $where_discuss['status'] = array('eq',1);
-            $total_count = M('Discuss')->where($where_discuss)->count();
-            $total_page = ceil($total_count/$pageSize);
+            $total_page = ceil($total_count_dis/$pageSize);
             $discuss = M('Discuss')->where($where_discuss)->order('create_time desc')->limit($start,$pageSize)->select();
             foreach ($discuss as $k=>$v){
-                $collect = M('UsersDiscuss')->where(array('user_id'=>$user_id,'discuss_id'=>$v['id'],'type'=>1))->find();
+                $collect = M('UsersCollect')->where(array('user_id'=>$user_id,'collect_id'=>$v['id'],'type'=>1))->find();
                 if($collect){
                     $discuss[$k]['collect'] = 1;
                 }else{
@@ -551,7 +584,7 @@ class IndexController extends BaseController
                 if($time_distance >= 3600*24*5){
                     $discuss[$k]['time_ago'] = date('Y-m-d',$v['create_time']);
                 }elseif ($time_distance >= 3600*24){
-                    $discuss[$k]['time_ago'] = floor($time_distance/3600*24).'天前';
+                    $discuss[$k]['time_ago'] = floor($time_distance/86400).'天前';
                 }elseif ($time_distance >= 3600){
                     $discuss[$k]['time_ago'] = floor($time_distance/3600).'小时前';
                 }else{
@@ -562,18 +595,16 @@ class IndexController extends BaseController
                     $discuss[$k]['name'] = mb_substr($content, 0, 30,"utf-8");
                 }
             }
-            $this->ajaxReturn(['status'=>1,'user'=>$user_info,'discuss'=>$discuss,'total_page'=>$total_page]);
+            $this->ajaxReturn(['status'=>1,'user'=>$user_info,'discuss'=>$discuss,'total_page'=>$total_page,'dis_count'=>$total_count_dis,'com_count'=>$total_count_com]);
         }else{//获取评论
-            $where_comment['user_id'] = array('eq',$to_user_id);
-            $total_count = M('Comment')->where($where_comment)->count();
-            $total_page = ceil($total_count/$pageSize);
+            $total_page = ceil($total_count_com/$pageSize);
             $comment = M('Comment')->where($where_comment)->order('create_time desc')->limit($start,$pageSize)->select();
             foreach ($comment as $k=>$v){
                 $time_comment = time()-$v['create_time'];
                 if($time_comment >= 3600*24*5){
                     $comment[$k]['time_ago'] = date('Y-m-d',$v['create_time']);
                 } elseif ($time_comment >= 3600 * 24) {
-                    $comment[$k]['time_ago'] = floor($time_comment / 3600 * 24) . '天前';
+                    $comment[$k]['time_ago'] = floor($time_comment / 86400) . '天前';
                 } elseif ($time_comment >= 3600) {
                     $comment[$k]['time_ago'] = floor($time_comment / 3600) . '小时前';
                 } else {
@@ -592,7 +623,7 @@ class IndexController extends BaseController
                     if($time_dis >= 3600*24*5){
                         $reply[$x]['time_ago'] = date('Y-m-d',$y['create_time']);
                     } elseif ($time_dis >= 3600 * 24) {
-                        $reply[$x]['time_ago'] = floor($time_dis / 3600 * 24) . '天前';
+                        $reply[$x]['time_ago'] = floor($time_dis / 86400) . '天前';
                     } elseif ($time_dis >= 3600) {
                         $reply[$x]['time_ago'] = floor($time_dis / 3600) . '小时前';
                     } else {
@@ -601,7 +632,7 @@ class IndexController extends BaseController
                 }
                 $comment[$k]['reply'] = $reply;
             }
-            $this->ajaxReturn(['status'=>1,'user'=>$user_info,'comment'=>$comment,'total_page'=>$total_page]);
+            $this->ajaxReturn(['status'=>1,'user'=>$user_info,'comment'=>$comment,'total_page'=>$total_page,'dis_count'=>$total_count_dis,'com_count'=>$total_count_com]);
         }
     }
 
@@ -614,18 +645,22 @@ class IndexController extends BaseController
         $pageSize = 20;
         $start = ($now_page - 1) * $pageSize;
         $where['user_id'] = array('eq',$user_id);
-        $total_count = M('UsersMessage')->where($where)->count();
+        $userMessage = M('UsersMessage');
+        $total_count = $userMessage->where($where)->count();
         $total_page = ceil($total_count/$pageSize);
-        $message = M('UsersMessage')->where($where)->order('`read` desc,create_time desc')->limit($start,$pageSize)->select();
+        $message = $userMessage->where($where)->order('`read` asc,create_time desc')->limit($start,$pageSize)->select();
 
+        $where['read'] = array('eq',0);
+        $unread = $userMessage->where($where)->count();
         foreach ($message as $k=>$v){
             if(!empty($v['from_avatar'])){
                 $message[$k]['from_avatar'] = sp_get_image_preview_url($v['from_avatar']);
             }
             if($v['read'] == 0){
-                M('UsersMessage')->save(array('id'=>$v['id'],'read'=>1));
+                $unread--;
+                $userMessage->save(array('id'=>$v['id'],'read'=>1));
             }
         }
-        $this->ajaxReturn(['status'=>1,'message'=>$message,'total_page'=>$total_page]);
+        $this->ajaxReturn(['status'=>1,'message'=>$message,'total_page'=>$total_page,'unread'=>$unread]);
     }
 }

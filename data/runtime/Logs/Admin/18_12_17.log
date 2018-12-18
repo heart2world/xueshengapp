@@ -1,0 +1,43 @@
+[ 2018-12-17T09:41:53+08:00 ] 222.182.199.82 /index.php?g=Admin&m=Index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002852s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000966s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002050s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000646s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003786s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.002743s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.002795s ]
+
+[ 2018-12-17T09:41:53+08:00 ] 222.182.199.82 /index.php?g=admin&m=public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002752s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003295s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000802s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001872s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000709s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003498s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.002112s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.002166s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0039s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000112s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026343s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026386s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001232s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.001228s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002521s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001641s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001679s ]
+

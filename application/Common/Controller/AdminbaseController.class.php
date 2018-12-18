@@ -52,7 +52,7 @@ class AdminbaseController extends AppframeController {
 	public function initMenu() {
 		$Menu = F("Menu");
 		if (!$Menu) {
-			$Menu=D("Common/Menu")->menu_cache();
+			$Menu=D("Common/Menu")->where(array("shows"=>1))->menu_cache();
 		}
 		return $Menu;
 	}
@@ -216,7 +216,7 @@ class AdminbaseController extends AppframeController {
 		}
 
 		$rule=MODULE_NAME.CONTROLLER_NAME.ACTION_NAME;
-		$no_need_check_rules=array("AdminIndexindex","AdminMainindex");
+		$no_need_check_rules=array("AdminIndexindex","AdminMainindex","AdminSettingclearcache","AdminSettingpassword","AdminSettingpassword_post");
 
 		if( !in_array($rule,$no_need_check_rules) ){
 			return sp_auth_check($uid);

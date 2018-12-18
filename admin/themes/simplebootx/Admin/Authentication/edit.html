@@ -3,6 +3,8 @@
 <style type="text/css">
     .action a {color: #00a2d4;}
     .form-horizontal .controls{padding-top: 6px;}
+    .controls button{margin-right: 20px;}
+    .label{cursor: default;}
 </style>
 </head>
 <body>
@@ -65,7 +67,11 @@
                 <div class="control-group">
                     <label class="control-label">状态</label>
                     <div class="controls">
-                        <a href="javascript:;" style="cursor: default;" class="btn btn-info">{$data['status']==1?'已通过':'已拒绝'}</a>
+                        <if condition="$data.status eq 1">
+                            <label class="label label-success">已通过</label>
+                            <else/>
+                            <label class="label">未通过</label>
+                        </if>
                     </div>
                 </div>
             </eq>

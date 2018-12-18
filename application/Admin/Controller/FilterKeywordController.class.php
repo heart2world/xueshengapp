@@ -26,7 +26,7 @@ class FilterKeywordController extends AdminbaseController{
 		}
 
 		$count= $this->order->where($where)->count();
-		$page = $this->page($count, 10);
+		$page = $this->page($count, 20);
         $list =$this->order->where($where)->order("create_time DESC")
             ->limit($page->firstRow, $page->listRows)
             ->select();

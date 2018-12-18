@@ -37,10 +37,10 @@ class OrderListController extends AdminbaseController{
 		}
 
 		$count= $this->order->where($where)->count();
-		$page = $this->page($count, 10);
+		$page = $this->page($count, 20);
         $list =$this->order
             ->where($where)
-            ->order("create_time DESC")
+            ->order("status ASC,create_time DESC")
             ->limit($page->firstRow, $page->listRows)
             ->select();
 
@@ -73,6 +73,7 @@ class OrderListController extends AdminbaseController{
                         if($userInfo){
                             //将用户积分加回去
                             M('Users')->save(array('id'=>$userInfo['id'],'score'=>$userInfo['score']+$order['price']));
+                            $this->save_score($userInfo['id'],$order['price'],6);
                         }
                         //获取商品信息
                         $gift = M('Gift')->where(array('id'=>$order['gift_id']))->find();
@@ -90,4 +91,18 @@ class OrderListController extends AdminbaseController{
 		}
 	}
 
+    //保存积分记录
+    function save_score($user_id,$score,$type){
+        $month = strtotime(date('Y-m-01'));
+        ($type == 5) ? $status = 0 : $status = 1;
+        $dataInfo = [
+            'user_id' => $user_id,
+            'status' => $status,
+            'score' => $score,
+            'type' => $type,
+            'month' => $month,
+            'create_time' => time()
+        ];
+        M('UsersScore')->add($dataInfo);
+    }
 }

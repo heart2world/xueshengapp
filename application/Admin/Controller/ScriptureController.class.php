@@ -61,7 +61,7 @@ class ScriptureController extends AdminbaseController{
         }
 
 		$count= $this->scripture->where($where)->count();
-		$page = $this->page($count, 10);
+		$page = $this->page($count, 20);
         $list =$this->scripture
             ->where($where)
             ->order("create_time DESC")
@@ -125,6 +125,7 @@ class ScriptureController extends AdminbaseController{
 		    $m = $this->scripture;
 		    if($m->create()!==false){
                 if($m->save()!==false){
+
                     $this->success('保存成功!',U("scripture/index"));
                 }else{
                     $this->error("保存失败!");

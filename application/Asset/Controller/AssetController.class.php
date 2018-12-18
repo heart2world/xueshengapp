@@ -89,8 +89,17 @@ class AssetController extends AdminbaseController {
                 	$preview_url=$url;
                 }
                 $filepath = $savepath.$first['savename'];
-                
-				$this->ajaxReturn(array('preview_url'=>$preview_url,'filepath'=>$filepath,'url'=>$url,'name'=>$oriName,'status'=>1,'message'=>'success'));
+                if(in_array($file_extension,$image_extensions)){//压缩图片
+                    //获取图片宽高
+                    $image_size = getimagesize('.'.$url);
+                    $res = $this->makeImgthumb('.'.$url,$image_size[0],$image_size[1]);
+                    $res_arr = explode('/',$res);
+                    $preview_url = '/'.$res_arr[1].'/'.$res_arr[2].'/'.$res_arr[3].'/'.$res_arr[4].'/'.$res_arr[5];
+                    $filepath = $res_arr[3].'/'.$res_arr[4].'/'.$res_arr[5];
+                    $url = $preview_url;
+                }
+                $info = array('preview_url'=>$preview_url,'filepath'=>$filepath,'url'=>$url,'name'=>$oriName,'status'=>1,'message'=>'success');
+				$this->ajaxReturn($info);
             } else {
                 $this->ajaxReturn(array('name'=>'','status'=>0,'message'=>$upload->getError()));
             }
@@ -115,7 +124,23 @@ class AssetController extends AdminbaseController {
             $this->display(':plupload');
         }
     }
-    
-    
 
+    /**
+     * 裁剪原图
+     * @params $img 原图
+     * @params $width 宽度
+     * @params $height 高度
+     */
+    function makeImgthumb($img,$width,$height)
+    {
+        //构造缩略图路径
+        $img_arr = explode('/',$img);
+        $thumb_path = $img_arr[0].'/'.$img_arr[1].'/'.$img_arr[2].'/'.$img_arr[3].'/'.$img_arr[4].'/tmb_'.$img_arr[5];
+        //实例化图片处理类
+        $image = new \Think\Image();
+        // 在图片右下角添加水印文字 ThinkPHP 并保存为new.jpg
+        $image->open($img)->thumb($width,$height,3)->save($thumb_path);
+        unlink($img);
+        return $thumb_path;
+    }
 }

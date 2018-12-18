@@ -51,35 +51,21 @@
             <div class="control-group">
                 <label class="control-label">商品封面</label>
                 <div class="controls">
-
-                    <div class="span3">
-                        <div style="text-align: center;">
-                            <input type="hidden" name="cover_img" id="thumb" value="{$data.cover_img}">
-                            <a href="javascript:upload_one_image('图片上传','#thumb');">
-                                <img src="{:sp_get_image_preview_url($data['cover_img'])}" onerror="this.src='__TMPL__Public/assets/images/default-thumbnail.png'" id="thumb-preview" width="135" style="cursor: hand" />
-                            </a>
-                            <input type="button" class="btn btn-small" onclick="
+                    <input type="hidden" name="cover_img" id="thumb" value="{$data.cover_img}">
+                    <a href="javascript:upload_one_image('图片上传','#thumb');">
+                        <img src="{:sp_get_image_preview_url($data['cover_img'])}" onerror="this.src='__TMPL__Public/assets/images/default-thumbnail.png'" id="thumb-preview" width="135" style="cursor: hand" />
+                    </a>
+                    <input type="button" class="btn btn-small" onclick="
                             $('#thumb-preview').attr('src','__TMPL__Public/assets/images/default-thumbnail.png');
                             $('#thumb').val('');return false;" value="取消图片">
-                        </div>
-                    </div>
-
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label">商品介绍</label>
-                <div class="controls clearfix" id="intro_box">
-                    <!--  <foreach name="intro_arr" item="img">
-                          <div class="span3" style="width: 150px;margin-bottom: 10px;">
-                              <img src="{:sp_get_image_preview_url($img['img'])}" onerror="this.src='__TMPL__Public/assets/images/default-thumbnail.png'" />
-                              <input type="hidden" name="img[{$key}]" class="intro_info" id="info_{$key}" value="{$img['img']}">
-                              <input type="text" style="width: 135px;margin-top: 5px" name="sort[{$key}]" placeholder="排序" value="{$img.sort}">
-                          </div>
-                      </foreach>-->
-                </div>
                 <div class="controls">
                     <button type="button" class="btn btn-success" id="add_one_img">添加图片</button>
                 </div>
+                <div class="controls clearfix" id="intro_box"></div>
             </div>
         </fieldset>
         <div class="form-actions">
@@ -94,7 +80,7 @@
     {{#  layui.each(d, function(index, item){
             index = item.index||index;
     }}
-    <div class="span3" style="width: 150px;margin-bottom: 10px;">
+    <div class="int_list" style="width: 150px;margin-top: 10px;float: left;margin-right: 10px;">
         <img src="/data/upload/{{item.img}}" id="img_{{index}}" onerror="this.src='__TMPL__Public/assets/images/default-thumbnail.png'" />
         <input type="hidden" name="img[{{index}}]" id="input_img_{{index}}" class="intro_info"  value="{{item.img}}">
         <input type="text" style="width: 135px;margin-top: 5px" name="sort[{{index}}]" placeholder="排序" value="{{item.sort}}">
@@ -129,8 +115,8 @@
 
         //追加一张
         $("#add_one_img").on("click",function () {
-            let span = $("#intro_box .span3");
-            let sort = span.hasClass("span3") ? span.length:0;
+            let intList = $("#intro_box .int_list");
+            let sort = intList.hasClass("int_list") ? intList.length:0;
             if(sort>=10){
                 layer.msg("最多上传10张图片",{icon:7});
                 return false;

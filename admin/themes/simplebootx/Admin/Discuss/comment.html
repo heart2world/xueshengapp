@@ -47,7 +47,7 @@
             <php>$hot_array = array(1=>'—',2=>'是');</php>
             <foreach name="comment" item="vc">
                 <tr>
-                    <td>{$vc.id}</td>
+                    <td>{$key+1}</td>
                     <td>{$vc.content}</td>
                     <td>{$vc.user_name}</td>
                     <td>{$vc.like_num}</td>
@@ -55,7 +55,7 @@
                     <td><php>echo date('Y-m-d H:i:s',$vc['create_time']);</php></td>
                     <td class="action">
                         <a href="{:U('Discuss/comment_delete',array('id'=>$vc['id']))}" class="js-ajax-delete" data-msg="会一并删除该评论下回复，确定删除？">删除</a>
-                        <a href="{:U('Discuss/reply',array('id'=>$vc['id']))}">评论回复</a>
+                        <a href="{:U('Discuss/reply',array('id'=>$vc['id']))}">评论详情</a>
                     </td>
                 </tr>
             </foreach>

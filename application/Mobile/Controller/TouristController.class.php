@@ -34,9 +34,8 @@ class TouristController extends AppframeController
         $total_page = ceil($total_count/$pageSize);
         $discuss = M('Discuss')->alias('d')
             ->join('h2w_users as u on u.id=d.user_id')
-            ->join('h2w_school as s on s.id=d.school_id')
             ->where($where)
-            ->field('d.*,u.user_name,u.avatar,u.user_type,s.school_name')
+            ->field('d.*,u.user_name,u.avatar,u.user_type,u.school_id usc_id')
             ->order('d.create_time desc')
             ->limit($start,$pageSize)
             ->select();
@@ -49,6 +48,9 @@ class TouristController extends AppframeController
     public function discuss_area(){
         $user_id = intval(I('request.uid'));
         $school_id = intval(I('request.sid'));
+        if(empty($school_id)){
+            $school_id = 1;
+        }
         $category_id = I('request.cid',0,'intval');
         //分页
         $page = I('request.page',1,'intval');
@@ -58,6 +60,9 @@ class TouristController extends AppframeController
         $school = M('School')->where(array('id'=>$school_id,'status'=>0))->find();
         if(!$school){
             $this->ajaxReturn(['status'=>0,'info'=>'该大学讨论区已关闭']);
+        }
+        if($school['type'] != 1){
+            $this->ajaxReturn(['status'=>0,'info'=>'只有大学才存在讨论区']);
         }
         /*搜索条件*/
         $where['d.school_id'] = array('eq',$school_id);
@@ -72,25 +77,34 @@ class TouristController extends AppframeController
         $total_page = ceil($total_count/$pageSize);
         $discuss = M('Discuss')->alias('d')
             ->join('h2w_users as u on u.id=d.user_id')
-            ->join('h2w_school as s on s.id=d.school_id')
             ->where($where)
-            ->field('d.*,u.user_name,u.avatar,u.user_type,s.school_name')
+            ->field('d.*,u.user_name,u.avatar,u.user_type,u.school_id usc_id')
             ->order('d.update_time desc')
             ->limit($start,$pageSize)
             ->select();
         //处理讨论信息
         $discuss = $this->discuss_action($discuss,$user_id);
-        $this->ajaxReturn(['status'=>1,'category'=>$category,'discuss'=>$discuss,'total_page'=>$total_page]);
+        //更新用户所属大学讨论区
+        M('Users')->save(array('id'=>$user_id,'school_area'=>$school_id));
+        $this->ajaxReturn(['status'=>1,'category'=>$category,'discuss'=>$discuss,'total_page'=>$total_page,'school_id'=>$school_id,'school_name'=>$school['school_name']]);
     }
 
     //处理讨论信息
     function discuss_action($discuss,$user_id = '',$keyword = ''){
         foreach ($discuss as $k=>$v){
-            if(!empty($v['avatar'])){
-                $discuss[$k]['avatar'] = sp_get_image_preview_url($v['avatar']);
+            $discuss[$k]['school_name'] = '';//获取学校名称
+            if($v['usc_id'] > 0){
+                $school = M('School')->where(array('id'=>$v['usc_id']))->find();
+                if($school){
+                    $discuss[$k]['school_name'] = $school['school_name'];
+                }
             }
-            if(!empty($user_id)) {
-                $collect = M('UsersDiscuss')->where(array('user_id' => $user_id, 'discuss_id' => $v['id'], 'type' => 1))->find();
+            if(empty($v['avatar'])){//头像
+                $v['avatar'] = 'mobile/avatar.jpg';
+            }
+            $discuss[$k]['avatar'] = sp_get_image_preview_url($v['avatar']);
+            if(!empty($user_id)) {//收藏
+                $collect = M('UsersCollect')->where(array('user_id' => $user_id, 'collect_id' => $v['id'], 'type' => 1))->find();
                 if ($collect) {
                     $discuss[$k]['collect'] = 1;
                 } else {
@@ -99,7 +113,7 @@ class TouristController extends AppframeController
             }else{
                 $discuss[$k]['collect'] = 0;
             }
-            if(!empty($v['image'])) {
+            if(!empty($v['image'])) {//图片
                 $images = explode(',', $v['image']);
                 foreach ($images as $x => $y) {
                     $images[$x] = sp_get_image_preview_url($y);
@@ -108,16 +122,17 @@ class TouristController extends AppframeController
                 $images = array();
             }
             $discuss[$k]['image'] = $images;
-            $time_distance = time()-$v['create_time'];
+            $time_distance = time()-$v['create_time'];//多久之前
             if($time_distance >= 3600*24*5){
                 $discuss[$k]['time_ago'] = date('Y-m-d',$v['create_time']);
             }elseif ($time_distance >= 3600*24){
-                $discuss[$k]['time_ago'] = floor($time_distance/3600*24).'天前';
+                $discuss[$k]['time_ago'] = floor($time_distance/86400).'天前';
             }elseif ($time_distance >= 3600){
                 $discuss[$k]['time_ago'] = floor($time_distance/3600).'小时前';
             }else{
                 $discuss[$k]['time_ago'] = floor($time_distance/60).'分钟前';
             }
+            //处理名称及内容
             if($keyword == '') {
                 if (empty($v['name'])) {
                     $content = strip_tags(htmlspecialchars_decode($v['content']));
@@ -135,7 +150,7 @@ class TouristController extends AppframeController
                     if($position < 10){
                         $length = $position;
                     }
-                    $the_info = mb_substr($content,$start,$length,"utf-8").mb_substr($content,$position,mb_strlen($keyword)+20,"utf-8");
+                    $the_info = mb_substr($content,$start,$length,"utf-8")."<span style='color: #FF0000;'>$keyword</span>".mb_substr($content,$position+mb_strlen($keyword),20,"utf-8");
                 }else{
                     $the_info = mb_substr($content, 0, 30, "utf-8");
                 }
@@ -143,6 +158,7 @@ class TouristController extends AppframeController
                     $discuss[$k]['name'] = $the_info;//则内容变为标题
                     $discuss[$k]['content'] = '';//内容再变为空
                 }else{//如果有标题
+                    $discuss[$k]['name'] = str_replace($keyword,"<span style='color: #FF0000;'>$keyword</span>",$v['name']);
                     if($position){//如果内容符合
                         if($position > 10){//如果符合位置大于10
                             $discuss[$k]['content'] = '...'.$the_info.'...';
@@ -173,15 +189,24 @@ class TouristController extends AppframeController
             $where['d.status'] = array('eq', 1);
             $discuss = M('Discuss')->alias('d')
                 ->join('h2w_users as u on u.id=d.user_id')
-                ->join('h2w_school as s on s.id=d.school_id')
                 ->where($where)
-                ->field('d.*,u.user_name,u.avatar,u.user_type,s.school_name')
+                ->field('d.*,u.user_name,u.avatar,u.user_type,u.school_id usc_id')
                 ->find();
             if ($discuss) {
+                $discuss['school_name'] = '';//学校
+                if($discuss['usc_id'] > 0){
+                    $schoolInfo = M('School')->where(array('id'=>$discuss['usc_id']))->find();
+                    if($schoolInfo){
+                        $discuss['school_name'] = $schoolInfo['school_name'];
+                    }
+                }
                 M('Discuss')->save(array('id'=>$discuss_id,'click_num'=>$discuss['click_num']+1));
+                if(empty($discuss['avatar'])){
+                    $discuss['avatar'] = 'mobile/avatar.jpg';
+                }
                 $discuss['avatar'] = sp_get_image_preview_url($discuss['avatar']);
                 if(!empty($user_id)) {
-                    $collect = M('UsersDiscuss')->where(array('user_id' => $user_id, 'discuss_id' => $discuss_id, 'type' => 1))->find();
+                    $collect = M('UsersCollect')->where(array('user_id' => $user_id, 'collect_id' => $discuss_id, 'type' => 1))->find();
                     if ($collect) {
                         $discuss['collect'] = 1;
                     } else {
@@ -203,7 +228,7 @@ class TouristController extends AppframeController
                 if($time_distance >= 3600*24*5){
                     $discuss['time_ago'] = date('Y-m-d',$discuss['create_time']);
                 } elseif ($time_distance >= 3600 * 24) {
-                    $discuss['time_ago'] = floor($time_distance / 3600 * 24) . '天前';
+                    $discuss['time_ago'] = floor($time_distance / 86400) . '天前';
                 } elseif ($time_distance >= 3600) {
                     $discuss['time_ago'] = floor($time_distance / 3600) . '小时前';
                 } else {
@@ -239,11 +264,15 @@ class TouristController extends AppframeController
             if($school){
                 $comment[$k]['school_name'] = $school['school_name'];
             }
+            if(empty($v['avatar'])){
+                $v['avatar'] = 'mobile/avatar.jpg';
+            }
+            $comment[$k]['avatar'] = sp_get_image_preview_url($v['avatar']);
             $time_comment = time()-$v['create_time'];
             if($time_comment >= 3600*24*5){
                 $comment[$k]['time_ago'] = date('Y-m-d',$v['create_time']);
             } elseif ($time_comment >= 3600 * 24) {
-                $comment[$k]['time_ago'] = floor($time_comment / 3600 * 24) . '天前';
+                $comment[$k]['time_ago'] = floor($time_comment / 86400) . '天前';
             } elseif ($time_comment >= 3600) {
                 $comment[$k]['time_ago'] = floor($time_comment / 3600) . '小时前';
             } else {
@@ -262,7 +291,7 @@ class TouristController extends AppframeController
                 if($time_dis >= 3600*24*5){
                     $reply[$x]['time_ago'] = date('Y-m-d',$y['create_time']);
                 } elseif ($time_dis >= 3600 * 24) {
-                    $reply[$x]['time_ago'] = floor($time_dis / 3600 * 24) . '天前';
+                    $reply[$x]['time_ago'] = floor($time_dis / 86400) . '天前';
                 } elseif ($time_dis >= 3600) {
                     $reply[$x]['time_ago'] = floor($time_dis / 3600) . '小时前';
                 } else {
@@ -296,6 +325,9 @@ class TouristController extends AppframeController
             if(!empty($v['cover_img'])){
                 $note[$k]['cover_img'] = sp_get_image_preview_url($v['cover_img']);
             }
+            if(!empty($v['content'])){
+                $note[$k]['content'] = strip_tags($v['content']);
+            }
         }
         $this->ajaxReturn(['status'=>1,'link'=>$link,'note'=>$note,'total_page'=>$total_page]);
     }
@@ -308,21 +340,24 @@ class TouristController extends AppframeController
         if(!$note){
             $this->ajaxReturn(['status'=>0,'info'=>'当前笔记不存在或已被禁用']);
         }
+        if(!empty($note['content'])){
+            $note['content'] = htmlspecialchars_decode($note['content']);
+        }
         if(!empty($note['cover_img'])){
             $note['cover_img'] = sp_get_image_preview_url($note['cover_img']);
         }
         //查询该笔记是否被收藏
         if(!empty($user_id)) {
-            $collect = M('UsersScripture')->where(array('user_id' => $user_id, 'scripture_id' => $note_id))->find();
+            $collect = M('UsersCollect')->where(array('user_id' => $user_id, 'collect_id' => $note_id, 'type'=>2))->find();
             if ($collect) {
                 $note['keep'] = 1;
             } else {
                 $note['keep'] = 0;
             }
+            M('Scripture')->save(array('id'=>$note_id,'views'=>$note['views']+1));
         }else{
             $note['keep'] = 0;
         }
-        M('Scripture')->save(array('id'=>$note_id,'views'=>$note['views']+1));
         $this->ajaxReturn(['status'=>1,'note'=>$note]);
     }
 

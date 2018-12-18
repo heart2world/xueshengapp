@@ -5,15 +5,15 @@
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="{:U('slide/index')}">{:L('ADMIN_SLIDE_INDEX')}</a></li>
 			<if condition="count($slides) lt 5">
-			<li><a href="{:U('slide/add')}">{:L('ADMIN_SLIDE_ADD')}</a></li>
+			<li><a href="{:U('slide/add')}">新增轮播图</a></li>
 			</if>
 		</ul>
 		<form class="js-ajax-form" method="post">
 			<div class="table-actions">
 				<button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('slide/listorders')}">{:L('SORT')}</button>
-				<button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('slide/toggle',array('display'=>1))}" data-subcheck="true">{:L('DISPLAY')}</button>
-				<button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('slide/toggle',array('hide'=>1))}" data-subcheck="true">{:L('HIDDEN')}</button>
-				<button class="btn btn-danger btn-small js-ajax-submit" type="submit" data-action="{:U('slide/delete')}" data-subcheck="true" data-msg="你确定删除吗？">{:L('DELETE')}</button>
+				<!--<button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('slide/toggle',array('display'=>1))}" data-subcheck="true">{:L('DISPLAY')}</button>-->
+				<!--<button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('slide/toggle',array('hide'=>1))}" data-subcheck="true">{:L('HIDDEN')}</button>-->
+				<!--<button class="btn btn-danger btn-small js-ajax-submit" type="submit" data-action="{:U('slide/delete')}" data-subcheck="true" data-msg="你确定删除吗？">{:L('DELETE')}</button>-->
 			</div>
 			<php> $status=array("1"=>L('DISPLAY'),"0"=>L('HIDDEN')); </php>
 			<table class="table table-hover table-bordered table-list">
@@ -50,9 +50,9 @@
 					<td>
 						<a href="{:U('slide/delete',array('id'=>$vo['slide_id']))}" class="js-ajax-delete">{:L('DELETE')}</a> |
 						<if condition="empty($vo['slide_status']) eq 1">
-							<a href="{:U('slide/cancelban',array('id'=>$vo['slide_id']))}" class="js-ajax-dialog-btn" data-msg="确定显示此幻灯片吗？">{:L('DISPLAY')}</a>
+							<a href="{:U('slide/cancelban',array('id'=>$vo['slide_id']))}" class="js-ajax-dialog-btn" data-msg="确定显示此轮播图吗？">{:L('DISPLAY')}</a>
 						<else /> 
-							<a href="{:U('slide/ban',array('id'=>$vo['slide_id']))}" class="js-ajax-dialog-btn" data-msg="确定隐藏此幻灯片吗？">{:L('HIDE')}</a>
+							<a href="{:U('slide/ban',array('id'=>$vo['slide_id']))}" class="js-ajax-dialog-btn" data-msg="确定隐藏此轮播图吗？">{:L('HIDE')}</a>
 						</if>
 						| <a href="{:U('slide/edit',array('id'=>$vo['slide_id']))}">{:L('EDIT')}</a>
 					</td>

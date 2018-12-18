@@ -16,31 +16,26 @@
         <fieldset>
 
             <div class="control-group">
-                <label class="control-label">标题</label>
+                <label class="control-label">笔记标题</label>
                 <div class="controls">
-                    <input type="text" autocomplete="off"  placeholder="输入文章标题" name="title">
+                    <input type="text" autocomplete="off"  placeholder="输入笔记标题" name="title">
                 </div>
             </div>
 
             <div class="control-group">
-                <label class="control-label">封面</label>
+                <label class="control-label">笔记封面</label>
                 <div class="controls">
-
-                    <div class="span3">
-                        <div style="text-align: center;">
-                            <input type="hidden" name="cover_img" id="thumb" value="">
-                            <a href="javascript:upload_one_image('图片上传','#thumb');">
-                                <img src="" onerror="this.src='__TMPL__Public/assets/images/default-thumbnail.png'" id="thumb-preview" width="135" style="cursor: hand" />
-                            </a>
-                            <input type="button" class="btn btn-small" onclick="
+                    <input type="hidden" name="cover_img" id="thumb" value="">
+                    <a href="javascript:upload_one_image('图片上传','#thumb');">
+                        <img src="" onerror="this.src='__TMPL__Public/assets/images/default-thumbnail.png'" id="thumb-preview" width="135" style="cursor: hand" />
+                    </a>
+                    <input type="button" class="btn btn-small" onclick="
                             $('#thumb-preview').attr('src','__TMPL__Public/assets/images/default-thumbnail.png');
                             $('#thumb').val('');return false;" value="取消图片">
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label">商品介绍</label>
+                <label class="control-label">笔记正文</label>
                 <div class="controls clearfix" style="min-width: 800px;width:60%">
                     <script type="text/plain" id="content" name="content" ></script>
                 </div>

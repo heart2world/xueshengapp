@@ -40,30 +40,30 @@
             </if>
 
             <div class="control-group">
-                <label class="control-label">所在地址</label>
+                <label class="control-label">所在地区</label>
                 <div class="controls">
                     <textarea name="address" placeholder="学校所在地址" rows="5" cols="57">{$data.address}</textarea>
                     <span class="form-required">*</span>
                 </div>
             </div>
 
-            <div class="control-group">
-                <div class="controls">
-                    <input type="hidden" value="{$data.id}" name="id">
-                    <a class="btn" href="javascript:history.back(-1);">{:L('BACK')}</a>
-                    <button type="submit" class="btn btn-success js-ajax-submit">{:L('SAVE')}</button>
-                </div>
+            <div class="form-actions">
+                <input type="hidden" value="{$data.id}" name="id">
+                <a class="btn" href="javascript:history.back(-1);">{:L('BACK')}</a>
+                <button type="submit" class="btn btn-success js-ajax-submit">{:L('SAVE')}</button>
             </div>
         </fieldset>
 
         <eq name="data.type" value="1">
             <php>$status=array(0=>'正常',1=>'停用');</php>
-            <div class="form-actions" style="background: #fff">
+            <label class="control-label">学校专业</label>
+            <div class="form-actions" style="background: #fff;margin-top: -15px;">
                 <button id="add_pro" type="button" class="btn btn-info" style="margin-bottom: 10px">新增专业</button>
-                <table class="table table-hover table-bordered table-list" style="width: 200px">
+                <table class="table table-hover table-bordered table-list" style="width: 50%;">
                     <thead>
                     <tr>
                         <th>专业名称</th>
+                        <th>专业注册人数</th>
                         <th>状态</th>
                         <th>操作</th>
                     </tr>
@@ -72,6 +72,7 @@
                     <foreach name="pro_list" item="vo">
                         <tr>
                             <td>{$vo.pro_name}</td>
+                            <td>{$vo.count}</td>
                             <td>{$status[$vo['status']]}</td>
                             <td class="action">
                                 <eq name="vo.status" value="0">
@@ -98,9 +99,7 @@
             <label class="layui-form-label">专业名称</label>
             <div class="layui-input-block">
                 <input type="hidden" name="school_id" value="{$data.id}"/>
-                <input type="text" name="pro_name" lay-verify="required"
-                       placeholder="请输入名称"
-                       autocomplete="off">
+                <input type="text" name="pro_name" lay-verify="required" maxlength="20" placeholder="请输入名称" autocomplete="off">
             </div>
         </div>
 

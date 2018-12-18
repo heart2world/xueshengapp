@@ -178,9 +178,9 @@ right: initial !important;}
 					<!--</a>-->
 					<!--<?php endif; ?>-->
 
-					<?php if(sp_auth_check(sp_get_current_admin_id(),'admin/setting/clearcache')): ?><a class="btn btn-small btn-danger" href="javascript:openapp('<?php echo U('admin/setting/clearcache');?>','index_clearcache','<?php echo L('ADMIN_SETTING_CLEARCACHE');?>');" title="<?php echo L('ADMIN_SETTING_CLEARCACHE');?>">
+					<a class="btn btn-small btn-danger" href="javascript:openapp('<?php echo U('admin/setting/clearcache');?>','index_clearcache','<?php echo L('ADMIN_SETTING_CLEARCACHE');?>');" title="<?php echo L('ADMIN_SETTING_CLEARCACHE');?>">
 						<i class="fa fa-trash-o"></i>
-					</a><?php endif; ?>
+					</a>
 					
 					<!--<?php if(APP_DEBUG): ?>-->
 					<!--<a class="btn btn-small" href="javascript:openapp('<?php echo U('admin/menu/index');?>','index_menu','<?php echo L('ADMIN_MENU_INDEX');?>');" title="<?php echo L('ADMIN_MENU_INDEX');?>">-->
@@ -206,7 +206,7 @@ right: initial !important;}
 							<!--<?php if(sp_auth_check(sp_get_current_admin_id(),'admin/user/userinfo')): ?>-->
 								<!--<li><a href="javascript:openapp('<?php echo U('user/userinfo');?>','index_userinfo','<?php echo L('ADMIN_USER_USERINFO');?>');"><i class="fa fa-user"></i> <?php echo L('ADMIN_USER_USERINFO');?></a></li>-->
 							<!--<?php endif; ?>-->
-							<?php if(sp_auth_check(sp_get_current_admin_id(),'admin/setting/password')): ?><li><a href="javascript:openapp('<?php echo U('setting/password');?>','index_password','<?php echo L('ADMIN_SETTING_PASSWORD');?>');"><i class="fa fa-lock"></i> <?php echo L('ADMIN_SETTING_PASSWORD');?></a></li><?php endif; ?>
+							<li><a href="javascript:openapp('<?php echo U('setting/password');?>','index_password','<?php echo L('ADMIN_SETTING_PASSWORD');?>');"><i class="fa fa-lock"></i> <?php echo L('ADMIN_SETTING_PASSWORD');?></a></li>
 							<li><a href="<?php echo U('Public/logout');?>"><i class="fa fa-sign-out"></i> <?php echo L('LOGOUT');?></a></li>
 						</ul>
 					</li>
@@ -262,7 +262,7 @@ right: initial !important;}
     });
     $("#nav_wraper .nav-list li .submenu a").on("click",function (e) {
 		e.stopPropagation();
-    })
+    });
 	$(".nav-list").on( "click",function(event) {
 		var closest_a = $(event.target).closest("a");
 		if (!closest_a || closest_a.length == 0) {

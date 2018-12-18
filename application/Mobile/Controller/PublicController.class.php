@@ -120,6 +120,7 @@ class PublicController extends AppframeController
                 'create_time' => date('Y-m-d H:i:s'),
                 'user_status' => 1,
                 'user_type' => 0,//先默认0
+                'avatar' => 'mobile/avatar.jpg',//设置默认头像
                 'mobile' => $mobile
             ];
             $result_id = M('Users')->add($dataInfo);
@@ -136,6 +137,10 @@ class PublicController extends AppframeController
     public function user_setting(){
         if(IS_POST){
             $user_id = intval(I('post.uid'));
+            $userInfo = M('Users')->where(array('id'=>$user_id))->find();
+            if(!$userInfo){
+                $this->ajaxReturn(['status'=>-2,'info'=>'当前用户不存在或禁用']);
+            }
             $type = intval(I('post.type'));
             if(!in_array($type,array(2,3))){
                 $type = 2;
@@ -152,12 +157,16 @@ class PublicController extends AppframeController
                     $this->ajaxReturn(['status' => 0, 'info' => '选择失败,不存在该专业']);
                 }
                 $dataInfo['specialty_id'] = $specialty_id;
+            }else{
+                $dataInfo['specialty_id'] = null;
             }
             $dataInfo['id'] = $user_id;
-            $dataInfo['user_type'] = $type;
             $dataInfo['school_id'] = $school_id;
-            if($type == 3){//家长类型用户直接认证通过
-                $dataInfo['verify'] = 1;
+            if($userInfo['user_type'] == 0) {
+                $dataInfo['user_type'] = $type;
+                if ($type == 3) {//家长类型用户直接认证通过
+                    $dataInfo['verify'] = 1;
+                }
             }
             if(M('Users')->save($dataInfo) !== false){
                 $this->ajaxReturn(['status'=>1,'info'=>'设置成功']);
@@ -173,22 +182,35 @@ class PublicController extends AppframeController
         if(!in_array($type,array(1,2))){//默认大学
             $type = 1;
         }
-        $where['type'] = array('eq',$type);
-        $where['status'] = array('eq',0);
+        $status = intval(I('request.status'));//区分获取数据的请求位置 0 默认
+        /*搜索条件*/
+        $where['type'] = array('eq', $type);
+        $where['status'] = array('eq', 0);
         $keyword = I('request.keyword');
-        if($keyword){
-            $where['school_name'] = array('like',"%$keyword%");
+        if ($keyword) {
+            $where['school_name'] = array('like', "%$keyword%");
         }
-        $school_group = M('School')->where($where)->group('first')->select();
+
         $group_array = array();
-        foreach ($school_group as $k=>$v){
+        if($status == 1) {
+            $the_school = M('School')->where(array('id'=>1))->find();
+            $list = array('id' => 1,'school_name' => $the_school['school_name'],'first' => 'SZ');
+            $group_array[] = [
+                'name' => 'SZ',
+                'list' => [$list]
+            ];
+            $where['id'] = array('neq',1);
+        }
+
+        $school_group = M('School')->where($where)->group('first')->select();
+        foreach ($school_group as $k => $v) {
             $group_array[]['name'] = $v['first'];
         }
-        if(count($group_array) > 0){
+        if (count($group_array) > 0) {
             $school = M('School')->where($where)->field('id,school_name,first')->select();
-            foreach ($group_array as $k=>$v){
-                foreach ($school as $x=>$y){
-                    if($y['first'] == $v['name']){
+            foreach ($group_array as $k => $v) {
+                foreach ($school as $x => $y) {
+                    if ($y['first'] == $v['name']) {
                         $group_array[$k]['list'][] = $y;
                     }
                 }
@@ -223,7 +245,7 @@ class PublicController extends AppframeController
             $label = I('post.label');
             $user_info = $this->user_info($user_id);
             if($user_info == false){
-                $this->ajaxReturn(['status'=>0,'info'=>'当前用户不存在']);
+                $this->ajaxReturn(['status'=>-2,'info'=>'当前用户不存在或禁用']);
             }
             M('UsersLabel')->where(array('user_id'=>$user_id))->delete();
             if(empty($label)){
@@ -313,13 +335,15 @@ class PublicController extends AppframeController
             $where['mobile'] = array('eq',$key);
         }
         $where['user_type'] = array('in','2,3');
-        $user_info = M('Users')->where($where)->field('id,user_name,avatar,signature,create_time,score,user_type,mobile,school_id,specialty_id,verify,continuous_day,aurora,push,uu_id')->find();
+        $where['user_status'] = array('eq',1);
+        $user_info = M('Users')->where($where)->field('id,user_name,avatar,signature,create_time,score,user_type,mobile,school_id,specialty_id,verify,continuous_day,aurora,push,uu_id,school_area,invitation_code')->find();
         if(!$user_info){
             return false;
         }
-        if(!empty($user_info['avatar'])){
-            $user_info['avatar'] = sp_get_image_preview_url($user_info['avatar']);
+        if(empty($user_info['avatar'])){
+            $user_info['avatar'] = 'mobile/avatar.jpg';
         }
+        $user_info['avatar'] = sp_get_image_preview_url($user_info['avatar']);
         $user_info['school_name'] = '';
         $user_info['school_type'] = '';
         if($user_info['school_id'] > 0){//获取学校信息
@@ -361,6 +385,12 @@ class PublicController extends AppframeController
         }else{
             $user_info['sign'] = 0;
         }
+        if(empty($user_info['signature'])){
+            $user_info['signature'] = '';
+        }
+        //获取未读消息数量
+        $unread = M('UsersMessage')->where(array('user_id'=>$user_info['id'],'read'=>0))->count();
+        $user_info['unread'] = $unread;
         return $user_info;
     }
 
@@ -378,9 +408,9 @@ class PublicController extends AppframeController
         $sendUrl = 'http://v.juhe.cn/sms/send'; //短信接口的URL
         $code = rand(100000,999999);  // 随机验证码
         $smsConf = array(
-            'key'   => '0051ec9c4dfa573886c7415d74d2dc48', //您申请的APPKEY
+            'key'   => 'fcb1a8674acea13f793614b345ff184c', //您申请的APPKEY
             'mobile'    => $mobile, //接受短信的用户手机号码
-            'tpl_id'    => '110935', //您申请的短信模板ID，根据实际情况修改
+            'tpl_id'    => '120988', //您申请的短信模板ID，根据实际情况修改
             'tpl_value' =>urlencode('#code#='.$code) //您设置的模板变量，根据实际情况修改
         );
         $content = $this->http_data_send($sendUrl,$smsConf); //请求发送短信
@@ -406,9 +436,9 @@ class PublicController extends AppframeController
         $sendUrl = 'http://v.juhe.cn/sms/send'; //短信接口的URL
         $code = rand(100000,999999);  // 随机验证码
         $smsConf = array(
-            'key'   => '0051ec9c4dfa573886c7415d74d2dc48', //您申请的APPKEY
+            'key'   => 'fcb1a8674acea13f793614b345ff184c', //您申请的APPKEY
             'mobile'    => $mobile, //接受短信的用户手机号码
-            'tpl_id'    => '110935', //您申请的短信模板ID，根据实际情况修改
+            'tpl_id'    => '120988', //您申请的短信模板ID，根据实际情况修改
             'tpl_value' =>urlencode('#code#='.$code) //您设置的模板变量，根据实际情况修改
         );
         $content = $this->http_data_send($sendUrl,$smsConf); //请求发送短信

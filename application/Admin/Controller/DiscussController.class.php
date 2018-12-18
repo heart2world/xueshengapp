@@ -123,6 +123,15 @@ class DiscussController extends AdminbaseController{
                 }
                 $discuss[$k]['label'] = $label;
             }
+            if(empty($v['name'])){
+	            $content = strip_tags(htmlspecialchars_decode($v['content']));
+                $length = mb_strlen($content);
+	            if($length > 15) {
+                    $discuss[$k]['name'] = mb_substr($content, 0, 15, "utf-8").'...';
+                }else{
+                    $discuss[$k]['name'] = $content;
+                }
+            }
         }
         $this->assign("discuss",$discuss);
 	    $this->assign("page",$page->show('Admin'));
@@ -189,6 +198,15 @@ class DiscussController extends AdminbaseController{
             }
             $discuss['label'] = $label;
         }
+        if(empty($discuss['name'])){
+            $content = strip_tags(htmlspecialchars_decode($discuss['content']));
+            $length = mb_strlen($content);
+            if($length > 15) {
+                $discuss['name'] = mb_substr($content, 0, 15, "utf-8").'...';
+            }else{
+                $discuss['name'] = $content;
+            }
+        }
         $this->assign($discuss);
         $this->display();
     }
@@ -254,7 +272,7 @@ class DiscussController extends AdminbaseController{
             ->join('h2w_users as u on u.id=c.user_id')
             ->field('c.*,u.user_name')
             ->where($where)
-            ->order('c.create_time desc')
+            ->order('c.create_time asc')
             ->limit($page->firstRow,$page->listRows)
             ->select();
         $this->assign('id',$id);

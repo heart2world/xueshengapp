@@ -132,7 +132,10 @@ class SchoolController extends AdminbaseController{
 	    $id = I('get.id',0,'intval');
 	    $data = $this->school->find($id);
         $pro_list = D("Common/SchoolProfessional")->where(['school_id'=>$id])->select();
-
+        foreach ($pro_list as $k=>$v){
+            $count = M('Users')->where(array('specialty_id'=>$v['id']))->count();
+            $pro_list[$k]['count'] = $count;
+        }
 		$this->assign("data",$data);
 		$this->assign("pro_list",$pro_list);
 		$this->display();

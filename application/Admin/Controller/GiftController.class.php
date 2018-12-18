@@ -53,7 +53,7 @@ class GiftController extends AdminbaseController{
         }
 
 		$count= $this->gift->where($where)->count();
-		$page = $this->page($count, 10);
+		$page = $this->page($count, 20);
         $list =$this->gift->where($where)
             ->order("create_time DESC")
             ->limit($page->firstRow, $page->listRows)

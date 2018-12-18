@@ -4,19 +4,32 @@
 	<div class="wrap js-check-wrap">
 		<ul class="nav nav-tabs">
 			<li><a href="{:U('slide/index')}">{:L('ADMIN_SLIDE_INDEX')}</a></li>
-			<li><a href="{:U('slide/add')}">{:L('ADMIN_SLIDE_ADD')}</a></li>
-			<li class="active"><a>编辑幻灯片</a></li>
+			<li class="active"><a>编辑轮播图</a></li>
 		</ul>
 		<form action="{:U('slide/edit_post')}" method="post" class="form-horizontal js-ajax-forms" enctype="multipart/form-data">
 			<div class="row-fluid">
 				<div class="span9">
 					<table class="table table-bordered">
 						<tr>
-							<th width="80">幻灯片名称</th>
+							<th width="80">{:L('TITLE')}</th>
 							<td>
-								<input type="text" style="width: 400px;" name="slide_name" value="{$slide_name}" placeholder="请输入幻灯片名称"/>
+								<input type="text" style="width: 400px;" name="slide_name" value="{$slide_name}" placeholder="请输入轮播图名称"/>
 								<span class="form-required">*</span>
 								<input type="hidden" name="slide_id" value="{$slide_id}"/>
+							</td>
+						</tr>
+						<tr>
+							<th>图片</th>
+							<td>
+								<input type="hidden" name="slide_pic" id="thumb" value="{$slide_pic}">
+								<a href="javascript:upload_one_image('图片上传','#thumb');">
+									<if condition="empty($slide_pic)">
+										<img src="__TMPL__Public/assets/images/default-thumbnail.png" id="thumb-preview" width="135" style="cursor: hand"/>
+										<else />
+										<img src="{:sp_get_image_preview_url($slide_pic)}" id="thumb-preview" width="135" style="cursor: hand; height: 113px;"/>
+									</if>
+								</a>
+								<input type="button" class="btn btn-small" onclick="$('#thumb-preview').attr('src','__TMPL__Public/assets/images/default-thumbnail.png');$('#thumb').val('');return false;" value="取消图片">
 							</td>
 						</tr>
 						<tr>
@@ -26,28 +39,6 @@
 						<tr>
 							<th width="80">描述</th>
 							<td><input type="text" name="slide_des" value="{$slide_des}" style="width: 400px"></td>
-						</tr>
-					</table>
-				</div>
-				<div class="span3">
-					<table class="table table-bordered">
-						<tr>
-							<td><b>缩略图</b></td>
-						</tr>
-						<tr>
-							<td>
-								<div style="text-align: center;">
-									<input type="hidden" name="slide_pic" id="thumb" value="{$slide_pic}">
-									<a href="javascript:upload_one_image('图片上传','#thumb');">
-										<if condition="empty($slide_pic)">
-											<img src="__TMPL__Public/assets/images/default-thumbnail.png" id="thumb-preview" width="135" style="cursor: hand"/>
-										<else />
-											<img src="{:sp_get_image_preview_url($slide_pic)}" id="thumb-preview" width="135" style="cursor: hand; height: 113px;"/>
-										</if>
-									</a>
-									<input type="button" class="btn btn-small" onclick="$('#thumb-preview').attr('src','__TMPL__Public/assets/images/default-thumbnail.png');$('#thumb').val('');return false;" value="取消图片">
-								</div>
-							</td>
 						</tr>
 					</table>
 				</div>

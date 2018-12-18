@@ -189,11 +189,9 @@ right: initial !important;}
 					<!--</a>-->
 					<!--</if>-->
 
-					<if condition="sp_auth_check(sp_get_current_admin_id(),'admin/setting/clearcache')">
 					<a class="btn btn-small btn-danger" href="javascript:openapp('{:U('admin/setting/clearcache')}','index_clearcache','{:L('ADMIN_SETTING_CLEARCACHE')}');" title="{:L('ADMIN_SETTING_CLEARCACHE')}">
 						<i class="fa fa-trash-o"></i>
 					</a>
-					</if>
 					
 					<!--<if condition="APP_DEBUG">-->
 					<!--<a class="btn btn-small" href="javascript:openapp('{:U('admin/menu/index')}','index_menu','{:L('ADMIN_MENU_INDEX')}');" title="{:L('ADMIN_MENU_INDEX')}">-->
@@ -221,9 +219,7 @@ right: initial !important;}
 							<!--<if condition="sp_auth_check(sp_get_current_admin_id(),'admin/user/userinfo')">-->
 								<!--<li><a href="javascript:openapp('{:U('user/userinfo')}','index_userinfo','{:L('ADMIN_USER_USERINFO')}');"><i class="fa fa-user"></i> {:L('ADMIN_USER_USERINFO')}</a></li>-->
 							<!--</if>-->
-							<if condition="sp_auth_check(sp_get_current_admin_id(),'admin/setting/password')">
-								<li><a href="javascript:openapp('{:U('setting/password')}','index_password','{:L('ADMIN_SETTING_PASSWORD')}');"><i class="fa fa-lock"></i> {:L('ADMIN_SETTING_PASSWORD')}</a></li>
-							</if>
+							<li><a href="javascript:openapp('{:U('setting/password')}','index_password','{:L('ADMIN_SETTING_PASSWORD')}');"><i class="fa fa-lock"></i> {:L('ADMIN_SETTING_PASSWORD')}</a></li>
 							<li><a href="{:U('Public/logout')}"><i class="fa fa-sign-out"></i> {:L('LOGOUT')}</a></li>
 						</ul>
 					</li>
@@ -279,7 +275,7 @@ right: initial !important;}
     });
     $("#nav_wraper .nav-list li .submenu a").on("click",function (e) {
 		e.stopPropagation();
-    })
+    });
 	$(".nav-list").on( "click",function(event) {
 		var closest_a = $(event.target).closest("a");
 		if (!closest_a || closest_a.length == 0) {

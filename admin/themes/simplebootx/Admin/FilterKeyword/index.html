@@ -1,15 +1,10 @@
 <admintpl file="header"/>
 <link rel="stylesheet" href="__PUBLIC__/layui/css/layui.css">
 <style>
-    .type_pane {
-        padding-bottom: 15px;
-    }
-    table tr td:first-child {
-        text-align: center;
-    }
-    .status {
-        text-decoration: solid !important;
-    }
+    .type_pane {padding-bottom: 15px;}
+    table tr td:first-child {text-align: center;}
+    .status {text-decoration: solid !important;}
+    .table-list a{color: #1abc9c !important;cursor: pointer;}
 </style>
 </head>
 <body>
@@ -62,9 +57,9 @@
 <script src="__PUBLIC__/layui/layui.js"></script>
 <script src="__PUBLIC__/js/app.js"></script>
 <script id="temp" type="text/html">
-    <form action="" class="layui-form" style="padding: 20px 10px;">
+    <form action="" class="layui-form" autocomplete="off" style="padding: 20px 10px;">
         <div class="layui-form-item">
-            <label for="kwd">过滤关键字</label> <input type="text" id="kwd" placeholder="请输入过滤关键词" />
+            <label for="kwd">过滤关键字</label> <input type="text" id="kwd" maxlength="25" placeholder="请输入过滤关键词" />
         </div>
         <div class="layui-form-item">
             <label >生效区域</label>

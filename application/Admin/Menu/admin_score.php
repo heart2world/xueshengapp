@@ -6,5 +6,5 @@
   'publish_discussion_every_day_max' => '1',
   'publish_reply' => '1',
   'publish_reply_every_day_max' => '1',
-  'pass_authentication' => '1',
+  'pass_authentication' => '2',
 );
