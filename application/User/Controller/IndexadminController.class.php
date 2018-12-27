@@ -76,7 +76,9 @@ class IndexadminController extends AdminbaseController {
     public function ban(){
     	$id= I('get.id',0,'intval');
     	if ($id) {
-    		$result = M("Users")->where(array("id"=>$id,"user_type"=>2))->setField('user_status',0);
+    	    $where['id'] = array('eq',$id);
+    	    $where['user_type'] = array('in','2,3');
+    		$result = M("Users")->where($where)->setField('user_status',0);
     		if ($result) {
     			$this->success("停用成功！", U("indexadmin/index"));
     		} else {
@@ -91,7 +93,9 @@ class IndexadminController extends AdminbaseController {
     public function cancelban(){
     	$id= I('get.id',0,'intval');
     	if ($id) {
-    		$result = M("Users")->where(array("id"=>$id,"user_type"=>2))->setField('user_status',1);
+            $where['id'] = array('eq',$id);
+            $where['user_type'] = array('in','2,3');
+    		$result = M("Users")->where($where)->setField('user_status',1);
     		if ($result) {
     			$this->success("恢复正常成功！", U("indexadmin/index"));
     		} else {

@@ -128,9 +128,9 @@ class SlideController extends AdminbaseController{
     	if ($id) {
     		$rst = $this->slide_model->where(array('slide_id'=>$id))->save(array('slide_status'=>0));
     		if ($rst) {
-    			$this->success("幻灯片隐藏成功！");
+    			$this->success("隐藏成功！",U('Slide/index'));
     		} else {
-    			$this->error('幻灯片隐藏失败！');
+    			$this->error('隐藏失败！');
     		}
     	} else {
     		$this->error('数据传入失败！');
@@ -143,9 +143,9 @@ class SlideController extends AdminbaseController{
     	if ($id) {
     		$result = $this->slide_model->where(array('slide_id'=>$id))->save(array('slide_status'=>1));
     		if ($result) {
-    			$this->success("幻灯片启用成功！");
+    			$this->success("启用成功！",U('Slide/index'));
     		} else {
-    			$this->error('幻灯片启用失败！');
+    			$this->error('启用失败！');
     		}
     	} else {
     		$this->error('数据传入失败！');

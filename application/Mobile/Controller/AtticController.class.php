@@ -22,7 +22,7 @@ class AtticController extends BaseController
             $note_id = intval(I('post.nid'));
             $note = M('Scripture')->where(array('id'=>$note_id,'status'=>0))->find();
             if(!$note){
-                $this->ajaxReturn(['status'=>0,'info'=>'当前笔记不存在或已被禁用']);
+                $this->ajaxReturn(['status'=>-7,'info'=>'当前笔记不存在或已被禁用']);
             }
             //判断是否已经收藏
             $collect = M('UsersCollect')->where(array('user_id'=>$user_id,'collect_id'=>$note_id,'type'=>2))->find();
@@ -59,7 +59,7 @@ class AtticController extends BaseController
         $goods_id = intval(I('request.gid'));
         $goods = M('Gift')->where(array('id'=>$goods_id,'status'=>0))->field('id,gift_name,price,surplus,cover_img,type')->find();
         if(!$goods){
-            $this->ajaxReturn(['status'=>0,'info'=>'该商品不存在或已下架']);
+            $this->ajaxReturn(['status'=>-8,'info'=>'该商品不存在或已下架']);
         }
         if($goods['type'] != 1){
             $this->ajaxReturn(['status'=>0,'info'=>'只能兑换积分商城商品']);
@@ -84,7 +84,7 @@ class AtticController extends BaseController
             $goods_id = intval(I('post.gid'));
             $goods = M('Gift')->where(array('id'=>$goods_id,'status'=>0))->field('id,gift_name,price,surplus,cover_img,type')->find();
             if(!$goods){
-                $this->ajaxReturn(['status'=>0,'info'=>'该商品不存在或已下架']);
+                $this->ajaxReturn(['status'=>-8,'info'=>'该商品不存在或已下架']);
             }
             if($goods['type'] != 1){
                 $this->ajaxReturn(['status'=>0,'info'=>'只能兑换积分商城商品']);

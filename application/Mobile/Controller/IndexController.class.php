@@ -115,15 +115,15 @@ class IndexController extends BaseController
 //                $discuss = array();
 //            }
             $Model = new \Think\Model();
-            $total_info = $Model->query("select count(*) AS number from h2w_discuss d, h2w_discuss_label dl where d.id=dl.discuss_id and d.status=1 and dl.label_id in($label_array) GROUP BY dl.discuss_id");
-            $total_count = $total_info[0]['number'];
+            $total_info = $Model->query("select count(*) from h2w_discuss d, h2w_discuss_label dl where d.id=dl.discuss_id and d.status=1 and dl.label_id in($label_array) GROUP BY dl.discuss_id");
+            $total_count = count($total_info);
             $discuss = $Model->query("select d.* from h2w_discuss d, h2w_discuss_label dl where d.id=dl.discuss_id and d.status=1 and dl.label_id in($label_array) GROUP BY dl.discuss_id order by count(dl.label_id) desc,d.create_time desc limit $start,$pageSize");
             foreach ($discuss as $k=>$v){
                 $userInfo = M('Users')->where(array('id'=>$v['user_id']))->find();
                 $discuss[$k]['user_name'] = $userInfo['user_name'];
                 $discuss[$k]['avatar'] = $userInfo['avatar'];
                 $discuss[$k]['user_type'] = $userInfo['user_type'];
-                $discuss[$k]['usc_id'] = $userInfo['school_id'];
+                $discuss[$k]['usc_id'] = $userInfo['verify_id'];
             }
         }
         if($total_count == 0) {
@@ -132,7 +132,7 @@ class IndexController extends BaseController
             $discuss = M('Discuss')->alias('d')
                 ->join('h2w_users as u on u.id=d.user_id')
                 ->where($where)
-                ->field('d.*,u.user_name,u.avatar,u.user_type,u.school_id usc_id')
+                ->field('d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify')
                 ->order('d.update_time desc,d.click_num desc')
                 ->limit($start, $pageSize)
                 ->select();
@@ -154,7 +154,11 @@ class IndexController extends BaseController
             $discuss_id = intval(I('post.did'));
             $discuss = M('Discuss')->where(array('id'=>$discuss_id,'status'=>1))->find();
             if(!$discuss){
-                $this->ajaxReturn(['status'=>0,'info'=>'当前讨论不存在或已被停用']);
+                $this->ajaxReturn(['status'=>-6,'info'=>'当前讨论不存在或已被停用']);
+            }
+            $school = M('School')->where(array('id'=>$discuss['school_id'],'status'=>0))->find();
+            if(!$school){
+                $this->ajaxReturn(['status'=>-5,'info'=>'该大学讨论区已关闭']);
             }
             //判断是否已经收藏
             $collect = M('UsersCollect')->where(array('user_id'=>$user_id,'collect_id'=>$discuss_id,'type'=>1))->find();
@@ -201,68 +205,13 @@ class IndexController extends BaseController
         $discuss = M('Discuss')->alias('d')
             ->join('h2w_users as u on u.id=d.user_id')
             ->where($where)
-            ->field('d.*,u.user_name,u.avatar,u.user_type,u.school_id usc_id')
+            ->field('d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify')
             ->order('d.create_time desc')
             ->limit($start,$pageSize)
             ->select();
         //处理讨论信息
         $discuss = $this->discuss_action($discuss,$user_id,$keyword);
         $this->ajaxReturn(['status'=>1,'discuss'=>$discuss,'total_page'=>$total_page]);
-    }
-
-    //获取评论详情信息
-    public function comment_info(){
-        $comment_id = intval(I('request.comment_id'));
-        $where['c.id'] = array('eq',$comment_id);
-        $comment = M('Comment')->alias('c')
-            ->join('h2w_users as u on u.id=c.user_id')
-            ->where($where)
-            ->field('c.*,u.user_name,u.avatar,u.user_type,u.school_id')
-            ->find();
-        if($comment){
-            $comment['school_name'] = '';
-            $school = M('School')->where(array('id'=>$comment['school_id']))->find();
-            if($school){
-                $comment['school_name'] = $school['school_name'];
-            }
-            if(empty($comment['avatar'])){
-                $comment['avatar'] = 'mobile/avatar.jpg';
-            }
-            $comment['avatar'] = sp_get_image_preview_url($comment['avatar']);
-            $time_comment = time()-$comment['create_time'];
-            if($time_comment >= 3600*24*5){
-                $comment['time_ago'] = date('Y-m-d',$comment['create_time']);
-            } elseif ($time_comment >= 3600 * 24) {
-                $comment['time_ago'] = floor($time_comment / 86400) . '天前';
-            } elseif ($time_comment >= 3600) {
-                $comment['time_ago'] = floor($time_comment / 3600) . '小时前';
-            } else {
-                $comment['time_ago'] = floor($time_comment / 60) . '分钟前';
-            }
-            //获取该评论下的回复
-            $reply = M('Reply')->alias('r')
-                ->join('h2w_users as u on u.id=r.user_id')
-                ->where(array('r.comment_id'=>$comment_id))
-                ->field('r.*,u.user_name')
-                ->order('r.create_time asc')
-                ->select();
-            foreach ($reply as $x=>$y){
-                $time_dis = time()-$y['create_time'];
-                if($time_dis >= 3600*24*5){
-                    $reply[$x]['time_ago'] = date('Y-m-d',$y['create_time']);
-                } elseif ($time_dis >= 3600 * 24) {
-                    $reply[$x]['time_ago'] = floor($time_dis / 86400) . '天前';
-                } elseif ($time_dis >= 3600) {
-                    $reply[$x]['time_ago'] = floor($time_dis / 3600) . '小时前';
-                } else {
-                    $reply[$x]['time_ago'] = floor($time_dis / 60) . '分钟前';
-                }
-            }
-            $comment['reply'] = $reply;
-            $this->ajaxReturn(['status'=>1,'comment'=>$comment]);
-        }else{
-            $this->ajaxReturn(['status'=>0,'info'=>'当前评论不存在']);
-        }
     }
 
     //发布评论
@@ -280,15 +229,19 @@ class IndexController extends BaseController
             $discuss_id = intval(I('post.did'));
             $discuss = M('Discuss')->where(array('id'=>$discuss_id,'status'=>1))->find();
             if(!$discuss){
-                $this->ajaxReturn(['status'=>0,'info'=>'当前讨论不存在或已被停用']);
+                $this->ajaxReturn(['status'=>-6,'info'=>'当前讨论不存在或已被停用']);
+            }
+            $school = M('School')->where(array('id'=>$discuss['school_id'],'status'=>0))->find();
+            if(!$school){
+                $this->ajaxReturn(['status'=>-5,'info'=>'该大学讨论区已关闭']);
             }
             //获取关键词并过滤
             $effect = 2;
             $where['effect_area'] = array('like',"%$effect%");
             $filter_keyword = M('FilterKeyword')->where($where)->select();
             foreach ($filter_keyword as $k=>$v){
-                if(strpos($v['keyword'],$content) !== false){
-                    $this->ajaxReturn(['status'=>0,'info'=>"评论失败,评论内容存在非法字符"]);
+                if(strpos($content,$v['keyword']) !== false){
+                    $this->ajaxReturn(['status'=>0,'info'=>"您输入的内容包含敏感信息,请检查"]);
                 }
             }
             $dataInfo = [
@@ -300,7 +253,7 @@ class IndexController extends BaseController
             if(M('Comment')->add($dataInfo) !== false){
                 M('Discuss')->save(array('id'=>$discuss_id,'comment_num'=>$discuss['comment_num']+1,'update_time'=>time()));
                 //发送消息
-                $this->save_message($discuss['user_id'],$user_id,2,$content);
+                $this->save_message($discuss['user_id'],$user_id,2,$discuss_id,$content);
                 //是否获得积分
                 $gain_score = $this->whether_score($user_id,2);
                 if($gain_score > 0){
@@ -341,15 +294,19 @@ class IndexController extends BaseController
             }
             $discuss = M('Discuss')->where(array('id'=>$comment['discuss_id'],'status'=>1))->find();
             if(!$discuss){
-                $this->ajaxReturn(['status'=>0,'info'=>'当前评论所属讨论不存在或已被停用']);
+                $this->ajaxReturn(['status'=>-6,'info'=>'当前评论所属讨论不存在或已被停用']);
+            }
+            $school = M('School')->where(array('id'=>$discuss['school_id'],'status'=>0))->find();
+            if(!$school){
+                $this->ajaxReturn(['status'=>-5,'info'=>'该大学讨论区已关闭']);
             }
             //获取关键词并过滤
             $effect = 2;
             $where['effect_area'] = array('like',"%$effect%");
             $filter_keyword = M('FilterKeyword')->where($where)->select();
             foreach ($filter_keyword as $k=>$v){
-                if(strpos($v['keyword'],$content) !== false){
-                    $this->ajaxReturn(['status'=>0,'info'=>"回复失败,回复内容存在非法字符"]);
+                if(strpos($content,$v['keyword']) !== false){
+                    $this->ajaxReturn(['status'=>0,'info'=>"您输入的内容包含敏感信息,请检查"]);
                 }
             }
             $dataInfo = [
@@ -363,7 +320,7 @@ class IndexController extends BaseController
                 M('Comment')->save(array('id'=>$comment_id,'reply_num'=>$comment['reply_num']+1));
                 M('Discuss')->save(array('id'=>$discuss['id'],'update_time'=>time()));
                 //发送消息
-                $this->save_message($comment['user_id'],$user_id,3,$content);
+                $this->save_message($comment['user_id'],$user_id,3,$comment_id,$content);
                 //是否获得积分
                 $gain_score = $this->whether_score($user_id,2);
                 if($gain_score > 0){
@@ -396,12 +353,27 @@ class IndexController extends BaseController
             $comment_id = intval(I('post.comment_id'));
             $comment = M('Comment')->where(array('id'=>$comment_id))->find();
             if(!$comment){
-                $this->ajaxReturn(['status'=>0,'info'=>'当前评论不存在']);
+                $this->ajaxReturn(['status'=>-6,'info'=>'当前评论不存在']);
+            }
+            $discuss = M('Discuss')->where(array('id'=>$comment['discuss_id'],'status'=>1))->find();
+            if(!$discuss){
+                $this->ajaxReturn(['status'=>-6,'info'=>'当前评论所属讨论不存在或已被停用']);
+            }
+            $school = M('School')->where(array('id'=>$discuss['school_id'],'status'=>0))->find();
+            if(!$school){
+                $this->ajaxReturn(['status'=>-5,'info'=>'该大学讨论区已关闭']);
             }
             //判断是否已经点赞
             $like = M('UsersComment')->where(array('user_id'=>$user_id,'comment_id'=>$comment_id,'type'=>1))->find();
             if($like){//已经点过赞
-                $this->ajaxReturn(['status'=>0,'info'=>'你已点赞过该评论,不能重复点赞哦']);
+                $like_num = $comment['like_num']-1;
+                M('Comment')->save(array('id'=>$comment_id,'like_num'=>$like_num));
+                $discuss = M('Discuss')->where(array('id'=>$comment['discuss_id']))->find();
+                if($discuss){
+                    M('Discuss')->save(array('id'=>$discuss['id'],'like_num'=>$discuss['like_num']-1));
+                }
+                M('UsersComment')->where(array('id'=>$like['id']))->delete();
+                $this->ajaxReturn(['status'=>1,'info'=>'取消点赞成功','like_num'=>$like_num,'cid'=>$comment_id,'like_state'=>0]);
             }else{//点赞
                 $dataInfo = [
                     'user_id' => $user_id,
@@ -411,15 +383,15 @@ class IndexController extends BaseController
                 ];
                 $result = M('UsersComment')->add($dataInfo);
                 if($result !== false){
-                    M('Comment')->save(array('id'=>$comment_id,'like_num'=>$comment['like_num']+1));
-                    $discuss = M('Discuss')->where(array('id'=>$comment['discuss']))->find();
-                    $like_num = $discuss['like_num']+1;
+                    $like_num = $comment['like_num']+1;
+                    M('Comment')->save(array('id'=>$comment_id,'like_num'=>$like_num));
+                    $discuss = M('Discuss')->where(array('id'=>$comment['discuss_id']))->find();
                     if($discuss){
-                        M('Discuss')->save(array('id'=>$discuss['id'],'like_num'=>$like_num));
+                        M('Discuss')->save(array('id'=>$discuss['id'],'like_num'=>$discuss['like_num']+1));
                     }
                     //发送消息
-                    $this->save_message($comment['user_id'],$user_id,1);
-                    $this->ajaxReturn(['status'=>1,'info'=>'点赞成功','like_num'=>$like_num,'cid'=>$comment_id]);
+                    $this->save_message($comment['user_id'],$user_id,1,$comment_id);
+                    $this->ajaxReturn(['status'=>1,'info'=>'点赞成功','like_num'=>$like_num,'cid'=>$comment_id,'like_state'=>1]);
                 }
             }
             $this->ajaxReturn(['status'=>-1,'info'=>'网络错误,请稍后再试']);
@@ -458,19 +430,19 @@ class IndexController extends BaseController
             $school_id = intval(I('post.sid'));
             $school = M('School')->where(array('id'=>$school_id,'status'=>0,'type'=>1))->find();
             if(!$school){
-                $this->ajaxReturn(['status'=>0,'info'=>'发布失败,该大学讨论区已关闭']);
+                $this->ajaxReturn(['status'=>-5,'info'=>'发布失败,该大学讨论区已关闭']);
             }
             //获取关键词并过滤
             $effect = 3;
             $where['effect_area'] = array('like',"%$effect%");
             $filter_keyword = M('FilterKeyword')->where($where)->select();
             foreach ($filter_keyword as $k=>$v){
-                if(strpos($v['keyword'],$content) !== false){
-                    $this->ajaxReturn(['status'=>0,'info'=>"发布失败,发布内容存在非法字符"]);
+                if(strpos($content,$v['keyword']) !== false){
+                    $this->ajaxReturn(['status'=>0,'info'=>"您输入的内容包含敏感信息,请检查"]);
                 }
                 if(!empty($name)){
-                    if(strpos($v['keyword'],$name) !== false){
-                        $this->ajaxReturn(['status'=>0,'info'=>"发布失败,发布标题存在非法字符"]);
+                    if(strpos($name,$v['keyword']) !== false){
+                        $this->ajaxReturn(['status'=>0,'info'=>"您输入的内容包含敏感信息,请检查"]);
                     }
                 }
             }
@@ -550,6 +522,9 @@ class IndexController extends BaseController
         if ($user_info == false) {
             $this->ajaxReturn(['status' => 0, 'info' => '当前用户不存在或禁用']);
         }
+        if(empty($user_info['verify_id']) || $user_info['user_type'] == 3 || $user_info['verify'] == 0){
+            $user_info['school_name'] = '';
+        }
 
         //讨论数量
         $where_discuss['user_id'] = array('eq',$to_user_id);
@@ -610,6 +585,17 @@ class IndexController extends BaseController
                 } else {
                     $comment[$k]['time_ago'] = floor($time_comment / 60) . '分钟前';
                 }
+                if(!empty($user_id)) {
+                    $like = M('UsersComment')->where(array('user_id'=>$user_id,'comment_id'=>$v['id'],'type'=>1))->find();
+                    if ($like) {
+                        $comment[$k]['like'] = 1;
+                    } else {
+                        $comment[$k]['like'] = 0;
+                    }
+                }else{
+                    $comment[$k]['like'] = 0;
+                }
+                $reply_count = M('Reply')->where(array('comment_id'=>$v['id']))->count();//回复数量
                 //获取该评论下的回复
                 $reply = M('Reply')->alias('r')
                     ->join('h2w_users as u on u.id=r.user_id')
@@ -630,6 +616,7 @@ class IndexController extends BaseController
                         $reply[$x]['time_ago'] = floor($time_dis / 60) . '分钟前';
                     }
                 }
+                $comment[$k]['reply_count'] = $reply_count;
                 $comment[$k]['reply'] = $reply;
             }
             $this->ajaxReturn(['status'=>1,'user'=>$user_info,'comment'=>$comment,'total_page'=>$total_page,'dis_count'=>$total_count_dis,'com_count'=>$total_count_com]);

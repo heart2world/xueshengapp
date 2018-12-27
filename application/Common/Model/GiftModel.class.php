@@ -6,8 +6,12 @@ class GiftModel extends CommonModel{
 	    //gift_name,type,price,,cover_img,product_intro,status,create_time
         //array(验证字段,验证规则,错误提示,验证条件,附加规则,验证时间)
         array('gift_name', 'require', '商品名称不能为空！', 1, 'regex', CommonModel:: MODEL_BOTH),
+        array('price', 'require', '商品单价不能为空！', 1, 'regex', CommonModel:: MODEL_BOTH ),
+        array('price', '/^\d+$/', '商品单价只能为0或正整数！', 1, 'regex', CommonModel:: MODEL_BOTH ),
+        array('surplus', 'require', '库存剩余不能为空！', 1, 'regex', CommonModel:: MODEL_BOTH ),
+        array('surplus', '/^\d+$/', '库存剩余只能为0或正整数！', 1, 'regex', CommonModel:: MODEL_BOTH ),
         array('cover_img', 'require', '商品封面不能为空！', 1, 'regex', CommonModel:: MODEL_BOTH ),
-        array('surplus', 'require', '请填写商品库存！', 1, 'regex', CommonModel:: MODEL_BOTH ),
+        array('product_intro', 'require', '商品介绍不能为空！', 1, 'regex', CommonModel:: MODEL_BOTH ),
         array('status',array(0,1),'上架状态错误！',2,'in'), // 当值不为空的时候判断是否在一个范围内
 	);
 	

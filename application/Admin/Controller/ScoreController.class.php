@@ -34,7 +34,13 @@ class ScoreController extends AdminbaseController
             $postData = I('post.');
             foreach ($postData as $k=>$v){
                 if($v <= 0){
-                    $this->error("积分不能小于0");
+                    $this->error("积分或次数不能小于0");
+                }
+                if($v > 99999){
+                    $this->error("积分或次数不能大于99999");
+                }
+                if(preg_match('/^\d+$/',$v) < 1){
+                    $this->error("积分或次数只能为0或正整数");
                 }
             }
             $first_day = $postData['first_day'];

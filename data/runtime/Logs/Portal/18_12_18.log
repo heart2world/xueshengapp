@@ -1,6 +1,0 @@
-[ 2018-12-18T15:40:57+08:00 ] 222.182.199.82 /favicon.ico
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
-INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002007s ]
-INFO: [ app_init ] --END-- [ RunTime:0.002396s ]
-

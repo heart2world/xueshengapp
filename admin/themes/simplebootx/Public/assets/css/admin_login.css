@@ -1,11 +1,3 @@
-/*
-===================
-@explain: 系统后台登录页面
-@copyright: Copyright 2012,phpwind.com
-@author: longwenid@gmail.com
-$Id: admin_login.css 22060 2012-12-19 03:01:55Z yanchixia $
-===================
-*/
 html{
 	padding:0;
 	margin:0;
@@ -17,13 +9,23 @@ body {
 	font-family:Arial, "Microsoft Yahei";
 }
 .wrap {
-	width: 250px;
 	overflow:hidden;
-	margin: 180px auto 0;
-	/*	-webkit-animation: bounceIn 600ms linear;
-        -moz-animation: bounceIn 600ms linear;
-        -o-animation: bounceIn 600ms linear;
-        animation: bounceIn 600ms linear;*/
+	margin: 0 auto;
+	width: 460px;
+	height: 540px;
+	background: url("/admin/themes/simplebootx/Public/assets/images/login.png") #fff no-repeat;
+	background-position:132px -19px;
+	box-sizing: border-box;
+	box-shadow: 0 0 30px #1262b73d;
+	border-radius: 10px;
+	position: absolute;
+	top: 204px;
+	right: 167px;
+	padding: 128px 74px;
+	-webkit-animation: bounceIn 600ms linear;
+	-moz-animation: bounceIn 600ms linear;
+	-o-animation: bounceIn 600ms linear;
+	animation: bounceIn 600ms linear;
 }
 .wrap h1{
 	margin:0;
@@ -61,7 +63,7 @@ h1 a {
 	overflow:hidden;
 }
 .login li{
-	/* border-top:1px solid #d3d4d4; */
+
 	margin: 15px 15px;
 }
 
@@ -74,14 +76,17 @@ h1 a {
 	padding: 0px 20px;
 	vertical-align: middle;
 	border:0 none;
-	background: #f5f5f5;
+	background: #e2e2e2db;
 	font-size: 15px;
 	border-radius: 50px;
-	color: #666;
+	color: #717171;
 	font-family:Arial,"Microsoft Yahei";
 }
+.login input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill{ background-color: #d8d8d8db !important;}
 .login .input::placeholder{
-	color: #ddd;
+	color: #ffffff;
 }
 
 .verify_imgbox{
@@ -92,7 +97,7 @@ h1 a {
 	border-radius:0 50px 50px 0;
 	height: 38px;
 	position: absolute;
-	right: 2px;
+	right: 1px;
 	top: 1px;
 }
 
@@ -125,7 +130,44 @@ h1 a {
 .placeholder{
 	color:#999;
 }
-/*登录框动画*/
+
+
+#login_btn_wraper{
+	text-align: center;
+}
+#login_btn_wraper .tips_success{
+	color:#fff;
+}
+#login_btn_wraper .tips_error{
+	color:#DFC05D;
+}
+#login_btn_wraper button:focus{outline:none;}
+.layui-layer-msg{border:1px solid white !important;}
+body{
+	background: url("/admin/themes/simplebootx/Public/assets/images/bg.png") no-repeat center;
+	background-size: cover;
+	height: 100vh;
+	position: relative;
+}
+
+.login_right{
+	background: url("/admin/themes/simplebootx/Public/assets/images/login_right.png") no-repeat right top;
+	background-size: cover;
+	height: 848px;
+	width: 615px;
+	position: fixed;
+	right: 0px;
+	top: -59px;
+}
+
+@media screen and (max-height: 780px) {
+	.login_right{
+		top:-189px;
+	}
+	.wrap{    top: 75px;}
+}
+
+
 @-webkit-keyframes bounceIn {
 	0% {
 		opacity: 0;

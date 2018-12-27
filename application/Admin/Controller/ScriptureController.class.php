@@ -32,9 +32,14 @@ class ScriptureController extends AdminbaseController{
 			$where['title'] = array('like',"%$keyword%");
 		}
 
-        $time = I('request.time');
-        if ($time){
-            $where['create_time'] = ['EGT', strtotime($time)];
+        $time = I('request.time','');
+        $end_time = I('request.end_time','');
+        if ($time && $end_time){
+            $where['create_time'] = ['between', [strtotime($time),strtotime($end_time)]];
+        }elseif ($time){
+            $where['create_time'] = array('egt',strtotime($time));
+        }elseif ($end_time){
+            $where['create_time'] = array('elt',strtotime($end_time));
         }
 
         $number_type = I('num_type',0,'intval');//量
@@ -104,6 +109,14 @@ class ScriptureController extends AdminbaseController{
     // 修改链接提交
     public function link_post(){
         if (IS_POST) {
+            $score =    I("post.score");
+            $voluntary =  I("post.voluntary");
+            $type = I('post.type');
+            if($type == 1 && $score == ''){
+                $this->error("分数查询链接不能为空!");
+            }elseif ($type == 2 && $voluntary == ''){
+                $this->error("志愿填表链接不能为空!");
+            }
             clinks(true);
             $this->success("保存成功");
         }
@@ -136,6 +149,15 @@ class ScriptureController extends AdminbaseController{
 		}
 
 	}
+
+	//详情
+    public function info(){
+        $id = I('get.id',0,'intval');
+        $data =  $this->scripture ->find($id);
+        $data['content']=htmlspecialchars_decode($data['content']);
+        $this->assign("data",$data);
+        $this->display();
+    }
 
     // 初始化图片
 	function initImage(){
@@ -198,9 +220,9 @@ class ScriptureController extends AdminbaseController{
     	if (!empty($id)) {
     		$result =$this->scripture->where(array("id"=>$id))->setField('status','1');
     		if ($result!==false) {
-    			$this->success("禁用成功！", U("scripture/index"));
+    			$this->success("隐藏成功！", U("scripture/index"));
     		} else {
-    			$this->error('禁用失败！');
+    			$this->error('隐藏失败！');
     		}
     	} else {
     		$this->error('数据传入失败！');

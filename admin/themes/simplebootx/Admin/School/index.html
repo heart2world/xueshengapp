@@ -19,12 +19,12 @@
 			<a  href="{:U('school/index',['type'=>2])}"  class="btn {$type==2?'btn-default':'btn-info'}">高中管理</a>
 		</div>
 
-		<form class="well form-search" method="post" action="{$url}">
+		<form class="well form-search" method="post" action="{:U('School/index',array('type'=>$type))}">
 			关键字：
-			<input type="hidden" name="type" value="{:I('type')}">
 			<input type="text" id="keyword" name="keyword" autocomplete="off" value="{:I('request.keyword')}" placeholder="学校名称/地区/专业类型"/>
+			状态：
 			<select type="text" id="status" name="status"  style="width: 120px;height: 35px" >
-				<option value="">选择状态</option>
+				<option value="">全部</option>
 				<foreach name="status" item="v">
 					<php>$ck = I('request.status')==="$key"?"selected":"";</php>
 					<option value="{$key}" {$ck}>{$v}</option>
@@ -61,7 +61,7 @@
 						<td>{$vo.regs}</td>
 						<td>{$status[$vo['status']]}</td>
 						<td>
-							<a href="{:U('school/edit',array('id'=>$vo['id']))}">{:L('EDIT')}</a> |
+							<a href="{:U('school/edit',array('id'=>$vo['id']))}">详情</a> |
                             <eq name="vo.status" value="0">
                                 <a href="{:U('school/ban',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn" data-msg="确定禁用此学校?">停用</a>
                              <else/>

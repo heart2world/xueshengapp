@@ -188,4 +188,11 @@ class GiftController extends AdminbaseController{
     	}
     }
 
+    //商品详情
+    public function info(){
+        $id = I('get.id',0,'intval');
+        $data =  $this->gift ->find($id);
+        $this->assign("data",$data);
+        $this->display();
+    }
 }

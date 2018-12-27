@@ -9,8 +9,9 @@
     <form class="well form-search" method="post" action="{:U('Discuss/comment')}" autocomplete="off">
         <div>
             文本搜索：<input type="text" name="keyword" value="{:I('request.keyword/s','')}" style="width: 180px;" placeholder="请输入评论内容/评论用户">
+            评论序号/点赞量/回复量：
             <select name="number_type" style="height: 36px;">
-                <option value="">评论序号/点赞量/回复量</option>
+                <option value="">全部</option>
                 <option value="1" <if condition="I('request.number_type/s','') eq 1">selected</if>>评论序号</option>
                 <option value="2" <if condition="I('request.number_type/s','') eq 2">selected</if>>点赞量</option>
                 <option value="3" <if condition="I('request.number_type/s','') eq 3">selected</if>>回复量</option>
@@ -20,8 +21,8 @@
         </div>
         <div style="margin-top: 12px;">
             评论时间：
-            <input type="text" class="js-datetime" name="start_time" value="{:I('request.start_time/s','')}" placeholder="开始时间" style="width: 130px;"> —
-            <input type="text" class="js-datetime" name="end_time" value="{:I('request.end_time/s','')}" placeholder="结束时间" style="width: 130px;">
+            <input type="text" id="start_time" name="start_time" value="{:I('request.start_time/s','')}" placeholder="开始时间" style="width: 140px;"> —
+            <input type="text" id="end_time" name="end_time" value="{:I('request.end_time/s','')}" placeholder="结束时间" style="width: 140px;">
             <input type="hidden" name="id" value="{$id}">
             <input type="submit" class="btn btn-info" value="查询" />
         </div>
@@ -47,7 +48,7 @@
             <php>$hot_array = array(1=>'—',2=>'是');</php>
             <foreach name="comment" item="vc">
                 <tr>
-                    <td>{$key+1}</td>
+                    <td>{$vc.id}</td>
                     <td>{$vc.content}</td>
                     <td>{$vc.user_name}</td>
                     <td>{$vc.like_num}</td>
@@ -65,5 +66,10 @@
     </div>
 </div>
 <script src="__PUBLIC__/js/common.js"></script>
+<script src="__PUBLIC__/js/laydate/laydate.js"></script>
+<script type="text/javascript">
+    laydate.render({elem: '#start_time',type: 'datetime'});
+    laydate.render({elem: '#end_time',type: 'datetime'});
+</script>
 </body>
 </html>

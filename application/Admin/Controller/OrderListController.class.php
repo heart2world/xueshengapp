@@ -27,9 +27,20 @@ class OrderListController extends AdminbaseController{
         if ($status!=""){
             $where['status'] = $status;
         }
-        $time = I('request.time');
-        if ($time){
-            $where['create_time'] = ['EGT', strtotime($time)];
+
+
+        $request = I('request.');
+        $startTime = empty($request['start_time']) ? 0 : strtotime($request['start_time']);
+        $endTime   = empty($request['end_time']) ? 0 : strtotime($request['end_time']);
+        if (!empty($startTime) && !empty($endTime)) {
+            $where['create_time'] = [['EGT', $startTime], ['ELT', $endTime]];
+        } else {
+            if (!empty($startTime)) {
+                $where['create_time'] = ['EGT', $startTime];
+            }
+            if (!empty($endTime)) {
+                $where['create_time'] = ['ELT', $endTime];
+            }
         }
 
         if($keyword){

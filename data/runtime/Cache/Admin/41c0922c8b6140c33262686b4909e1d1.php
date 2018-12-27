@@ -70,13 +70,15 @@
         文本搜索：
         <input type="hidden" name="type" value="<?php echo I('type');?>">
         <input type="text" id="keyword" name="keyword" autocomplete="off" value="<?php echo I('request.keyword');?>" placeholder="商品名称"/>
+        商品类型：
         <select type="text" name="type" style="width: 120px;height: 35px">
-            <option value="">选择商品类型</option>
+            <option value="">全部</option>
             <option value="1" <?php if(I('request.type/s','') == 1): ?>selected<?php endif; ?>>积分</option>
-            <option value="2" <?php if(I('request.type/s','') == 1): ?>selected<?php endif; ?>>赞助</option>
+            <option value="2" <?php if(I('request.type/s','') == 2): ?>selected<?php endif; ?>>赞助</option>
         </select>
+        商品单价/库存剩余：
         <select name="number_type" style="height: 36px;width: 180px;">
-            <option value="">商品单价/库存剩余</option>
+            <option value="">全部</option>
             <option value="1" <?php if(I('request.number_type/s','') == 1): ?>selected<?php endif; ?>>商品单价</option>
             <option value="2" <?php if(I('request.number_type/s','') == 2): ?>selected<?php endif; ?>>库存剩余</option>
         </select>
@@ -94,7 +96,7 @@
                 <th>商品类型</th>
                 <th>商品单价</th>
                 <th>库存剩余</th>
-                <th>添创建时间</th>
+                <th>创建时间</th>
                 <th width="60">商品状态</th>
                 <th width="120"><?php echo L('ACTIONS');?></th>
             </tr>
@@ -110,6 +112,7 @@
                     <td><?php echo date("Y-m-d H:i:s",$vo['create_time']);?></td>
                     <td><?php echo ($status[$vo['status']]); ?></td>
                     <td style="text-align: center">
+                        <a href="<?php echo U('gift/info',array('id'=>$vo['id']));?>">详情</a> |
                         <a href="<?php echo U('gift/edit',array('id'=>$vo['id']));?>">编辑</a> |
                         <a class="status"
                            href="<?php echo ($vo['status']==0?U('gift/down',array('id'=>$vo['id'])):U('gift/up',array('id'=>$vo['id']))); ?>">

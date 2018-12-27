@@ -40,14 +40,10 @@
                     <script type="text/plain" id="content" name="content" ></script>
                 </div>
             </div>
-            <div class="control-group">
-                <div class="controls">
-                    <button type="submit" class="btn btn-success js-ajax-submit">{:L('SAVE')}</button>
-                </div>
-            </div>
         </fieldset>
-
-
+        <div class="form-actions">
+            <button type="submit" class="btn btn-success js-ajax-submit" id="btnSubmit">{:L('SAVE')}</button>
+        </div>
     </form>
 </div>
 <script src="__PUBLIC__/js/common.js"></script>
@@ -69,7 +65,6 @@
         editorcontent.sync();
     } catch (err) {
     }
-
 </script>
 </body>
 </html>

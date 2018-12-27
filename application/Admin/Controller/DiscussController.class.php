@@ -111,7 +111,7 @@ class DiscussController extends AdminbaseController{
             ->join('h2w_category as c on c.id=d.category_id')
             ->where($where)
             ->field('d.*,u.user_name,s.school_name,c.name category_name')
-            ->order('d.update_time desc')
+            ->order('d.hot desc,d.update_time desc')
             ->limit($page->firstRow,$page->listRows)
             ->select();
 	    foreach ($discuss as $k=>$v){
@@ -119,10 +119,13 @@ class DiscussController extends AdminbaseController{
 	        if(!empty($v['label'])){
 	            $labels = M('Label')->where(array('id'=>array('in',$v['label'])))->select();
 	            foreach ($labels as $m=>$n){
-                    ($label == '') ? $label = $n['name'] : $label.=','.$n['name'];
+                    ($label == '') ? $label = $n['name'] : $label.='、'.$n['name'];
                 }
-                $discuss[$k]['label'] = $label;
             }
+            if($label == ''){
+                $label = '——';
+            }
+            $discuss[$k]['label'] = $label;
             if(empty($v['name'])){
 	            $content = strip_tags(htmlspecialchars_decode($v['content']));
                 $length = mb_strlen($content);
@@ -164,6 +167,10 @@ class DiscussController extends AdminbaseController{
         $discuss = $this->discuss_model->find($id);
         if($discuss){
             if($discuss['hot'] == 1){//设为热门
+//                $count = $this->discuss_model->where(array('hot'=>2))->count();
+//                if($count >= 6){
+//                    $this->error("设置失败,热门讨论数量已经有6个了");
+//                }
                 if($this->discuss_model->save(array('id'=>$id,'hot'=>2)) !== false){
                     $this->success("设为热门成功");
                 }
@@ -194,10 +201,13 @@ class DiscussController extends AdminbaseController{
         if(!empty($discuss['label'])){
             $labels = M('Label')->where(array('id'=>array('in',$discuss['label'])))->select();
             foreach ($labels as $m=>$n){
-                ($label == '') ? $label = $n['name'] : $label.=','.$n['name'];
+                ($label == '') ? $label = $n['name'] : $label.='、'.$n['name'];
             }
-            $discuss['label'] = $label;
         }
+        if($label == ''){
+            $label = '——';
+        }
+        $discuss['label'] = $label;
         if(empty($discuss['name'])){
             $content = strip_tags(htmlspecialchars_decode($discuss['content']));
             $length = mb_strlen($content);
@@ -207,6 +217,11 @@ class DiscussController extends AdminbaseController{
                 $discuss['name'] = $content;
             }
         }
+        $image = array();
+        if(!empty($discuss['image'])){
+            $image = explode(',',$discuss['image']);
+        }
+        $discuss['image'] = $image;
         $this->assign($discuss);
         $this->display();
     }
@@ -226,11 +241,11 @@ class DiscussController extends AdminbaseController{
             $num_next = I('request.num_next');
             if ($number_type == 1) {
                 if ($num_last >= 0 && $num_next >= 0 && $num_last != null && $num_next != null) {
-                    $where['c.listorder'] = array('between', [$num_last, $num_next]);
+                    $where['c.id'] = array('between', [$num_last, $num_next]);
                 } elseif ($num_last >= 0 && $num_last != null) {
-                    $where['c.listorder'] = array('egt', $num_last);
+                    $where['c.id'] = array('egt', $num_last);
                 } elseif ($num_next >= 0 && $num_next != null) {
-                    $where['c.listorder'] = array('elt', $num_next);
+                    $where['c.id'] = array('elt', $num_next);
                 }
             } elseif ($number_type == 2) {
                 if ($num_last >= 0 && $num_next >= 0 && $num_last != null && $num_next != null) {
@@ -287,6 +302,10 @@ class DiscussController extends AdminbaseController{
         $comment = $this->comment_model->find($id);
         if($comment){
             if($this->comment_model->where(array('id'=>$id))->delete() !== false){
+                $discuss = $this->discuss_model->where(array('id'=>$comment['discuss_id']))->find();
+                if($discuss){//将讨论的评论量减去1
+                    $this->discuss_model->save(array('id'=>$discuss['id'],'comment_num'=>$discuss['comment_num']-1,'like_num'=>$discuss['like_num']-$comment['like_num']));
+                }
                 //删除回复
                 $this->reply_model->where(array('comment_id'=>$id))->delete();
                 $this->success("删除成功");

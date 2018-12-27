@@ -1,4 +1,4 @@
 <?php  return array (
-  'score' => 'http://wap.baidu.com',
+  'score' => '萨顶顶',
   'voluntary' => 'http://wap.sogou.com',
 );

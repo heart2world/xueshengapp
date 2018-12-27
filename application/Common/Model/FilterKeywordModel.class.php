@@ -6,7 +6,7 @@ class FilterKeywordModel extends CommonModel{
 			//array(验证字段,验证规则,错误提示,验证条件,附加规则,验证时间)
 			array('keyword', 'require', '关键词不能为空！'),
 			array('keyword', '', '此关键词已经添加过了！',0,'unique',CommonModel:: MODEL_BOTH),
-			 array('effect_area', [1,2,3], '请至少选择一项!','2',"in"),
+			 array('effect_area', [1,2,3], '生效区域至少选择一个!','2',"in"),
 	);
 	
 	protected function _before_write(&$data) {

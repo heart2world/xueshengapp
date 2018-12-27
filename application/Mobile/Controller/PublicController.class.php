@@ -37,7 +37,7 @@ class PublicController extends AppframeController
                     }
                     $label_count = M('UsersLabel')->where(array('user_id'=>$user['id']))->count();
                     if($label_count < 1){
-                        $this->ajaxReturn(['status'=>-4,'info'=>'用户标签信息为空','id'=>$user['id']]);
+                        $this->ajaxReturn(['status'=>-4,'info'=>'用户信息还未完善','id'=>$user['id']]);
                     }
                     $dataInfo['id'] = $user['id'];
                     $dataInfo['uu_id'] = md5(time().$user['id'].rand(10000,99999));
@@ -192,13 +192,10 @@ class PublicController extends AppframeController
         }
 
         $group_array = array();
+        $list = array();
         if($status == 1) {
             $the_school = M('School')->where(array('id'=>1))->find();
             $list = array('id' => 1,'school_name' => $the_school['school_name'],'first' => 'SZ');
-            $group_array[] = [
-                'name' => 'SZ',
-                'list' => [$list]
-            ];
             $where['id'] = array('neq',1);
         }
 
@@ -216,7 +213,7 @@ class PublicController extends AppframeController
                 }
             }
         }
-        $this->ajaxReturn(['status'=>1,'school'=>$group_array]);
+        $this->ajaxReturn(['status'=>1,'school'=>$group_array,'list'=>$list]);
     }
 
     //获取专业列表
@@ -336,7 +333,7 @@ class PublicController extends AppframeController
         }
         $where['user_type'] = array('in','2,3');
         $where['user_status'] = array('eq',1);
-        $user_info = M('Users')->where($where)->field('id,user_name,avatar,signature,create_time,score,user_type,mobile,school_id,specialty_id,verify,continuous_day,aurora,push,uu_id,school_area,invitation_code')->find();
+        $user_info = M('Users')->where($where)->field('id,user_name,avatar,signature,create_time,score,user_type,mobile,school_id,specialty_id,verify,continuous_day,aurora,push,uu_id,school_area,invitation_code,verify_id')->find();
         if(!$user_info){
             return false;
         }
@@ -346,8 +343,8 @@ class PublicController extends AppframeController
         $user_info['avatar'] = sp_get_image_preview_url($user_info['avatar']);
         $user_info['school_name'] = '';
         $user_info['school_type'] = '';
-        if($user_info['school_id'] > 0){//获取学校信息
-            $school = M('School')->where(array('id'=>$user_info['school_id']))->find();
+        if($user_info['verify_id'] > 0){//获取学校信息
+            $school = M('School')->where(array('id'=>$user_info['verify_id']))->find();
             if($school){
                 $user_info['school_name'] = $school['school_name'];
                 $user_info['school_type'] = $school['type'];
@@ -362,7 +359,7 @@ class PublicController extends AppframeController
         }
         //检查是否已经认证
         if($user_info['user_type'] == 2) {
-            $certification = M('Authentication')->where(array('user_id' => $user_info['id']))->find();
+            $certification = M('Authentication')->where(array('user_id' => $user_info['id']))->order('create_time desc')->limit(1)->find();
             if ($certification) {
                 if($certification['status'] == 1){
                     $user_info['certification'] = 2;//2已认证

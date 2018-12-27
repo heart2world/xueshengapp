@@ -9,17 +9,10 @@
 			</if>
 		</ul>
 		<form class="js-ajax-form" method="post">
-			<div class="table-actions">
-				<button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('slide/listorders')}">{:L('SORT')}</button>
-				<!--<button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('slide/toggle',array('display'=>1))}" data-subcheck="true">{:L('DISPLAY')}</button>-->
-				<!--<button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('slide/toggle',array('hide'=>1))}" data-subcheck="true">{:L('HIDDEN')}</button>-->
-				<!--<button class="btn btn-danger btn-small js-ajax-submit" type="submit" data-action="{:U('slide/delete')}" data-subcheck="true" data-msg="你确定删除吗？">{:L('DELETE')}</button>-->
-			</div>
 			<php> $status=array("1"=>L('DISPLAY'),"0"=>L('HIDDEN')); </php>
 			<table class="table table-hover table-bordered table-list">
 				<thead>
 					<tr>
-						<th width="15"><label><input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x"></label></th>
 						<th width="50">{:L('SORT')}</th>
 						<th width="50">ID</th>
 						<th width="200">{:L('TITLE')}</th>
@@ -31,19 +24,20 @@
 					</tr>
 				</thead>
 				<if condition="empty($slides)">
-					<tr><td colspan="9">暂无数据</td></tr>
+					<tr><td colspan="8">暂无数据</td></tr>
 				</if>
 				<foreach name="slides" item="vo">
 				<tr>
-					<td><input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]" value="{$vo.slide_id}"></td>
-					<td><input name='listorders[{$vo.slide_id}]' class="input input-order mr5" type='text' size='3' value='{$vo.listorder}'></td>
+					<td>{$vo.listorder}</td>
 					<td>{$vo.slide_id}</td>
 					<td>{$vo.slide_name}</td>
 					<td>{$slide_des = mb_substr($vo['slide_des'], 0, 48,'utf-8')}</td>
 					<td>{$vo.slide_url}</td>
 					<td>
 						<if condition="!empty($vo['slide_pic'])">
-							<a href="{:sp_get_image_preview_url($vo['slide_pic'])}" target="_blank">{:L('VIEW')}</a>
+							<a href="{:sp_get_image_preview_url($vo['slide_pic'])}" target="_blank">
+								<img style="max-width: 100px;" src="{:sp_get_image_preview_url($vo['slide_pic'])}">
+							</a>
 						</if>
 					</td>
 					<td>{$status[$vo['slide_status']]}</td>

@@ -42,8 +42,13 @@ class UserController extends AdminbaseController{
             }
         }
         $time = I('request.time');
-		if($time){
-		    $where['u.create_time'] = array('egt',$time);
+		$end_time = I('request.end_time');
+		if($time && $end_time){
+            $where['u.create_time'] = array('between',[$time,$end_time]);
+        }elseif ($time){
+            $where['u.create_time'] = array('egt',$time);
+        }elseif ($end_time){
+            $where['u.create_time'] = array('elt',$end_time);
         }
 		$count=$this->users_model->alias('u')->join('h2w_role_user as r on r.user_id=u.id')->where($where)->count();
 		$page = $this->page($count, 20);
@@ -86,6 +91,8 @@ class UserController extends AdminbaseController{
 			if(!empty($_POST['role_id']) && is_array($_POST['role_id'])){
 				$role_ids=$_POST['role_id'];
 				unset($_POST['role_id']);
+				$_POST['user_login'] = $_POST['mobile'];
+				$_POST['user_pass'] = '123456';
 				if ($this->users_model->create()!==false) {
 					$result=$this->users_model->add();
 					if ($result!==false) {
@@ -133,10 +140,17 @@ class UserController extends AdminbaseController{
 				}
 				$role_ids = I('post.role_id/a');
 				unset($_POST['role_id']);
+                $uid = I('post.id',0,'intval');
+				if(!empty($_POST['mobile'])){
+				    $userInfo = $this->users_model->find($uid);
+				    if($userInfo && $_POST['mobile'] != $userInfo['mobile']){
+				        $_POST['user_pass'] = '123456';
+                    }
+                }
+                $_POST['user_login'] = $_POST['mobile'];
 				if ($this->users_model->create()!==false) {
 					$result=$this->users_model->save();
 					if ($result!==false) {
-						$uid = I('post.id',0,'intval');
 						$role_user_model=M("RoleUser");
 						$role_user_model->where(array("user_id"=>$uid))->delete();
 						foreach ($role_ids as $role_id){
@@ -145,7 +159,7 @@ class UserController extends AdminbaseController{
 							}
 							$role_user_model->add(array("role_id"=>$role_id,"user_id"=>$uid));
 						}
-						$this->success("保存成功！");
+						$this->success("保存成功！", U("user/index"));
 					} else {
 						$this->error("保存失败！");
 					}
@@ -231,6 +245,19 @@ class UserController extends AdminbaseController{
     	}
     }
 
-
+    //重置密码
+    public function reset_password(){
+        $id = I('get.id',0,'intval');
+        if (!empty($id)) {
+            $result = $this->users_model->where(array("id"=>$id,"user_type"=>1))->setField('user_pass',sp_password('123456'));
+            if ($result!==false) {
+                $this->success("重置成功！");
+            } else {
+                $this->error('重置失败！');
+            }
+        } else {
+            $this->error('数据传入失败！');
+        }
+    }
 
 }

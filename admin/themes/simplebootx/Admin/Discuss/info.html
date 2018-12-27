@@ -19,7 +19,14 @@
             <div><span class="left_name">讨论标题</span><span>{$name}</span></div>
             <div><span class="left_name">创建用户</span><span>{$user_name}</span></div>
             <div><span class="left_name">讨论所属学校</span><span>{$school_name}</span></div>
-            <div><span class="left_name">讨论正文</span><span>{$content}</span></div>
+            <div>
+                <span class="left_name">讨论正文</span><span>{$content}</span>
+                <div style="margin-left: 150px;margin-top: 12px;">
+                <foreach name="image" item="vi">
+                    <span><img src="{:sp_get_image_preview_url($vi)}" style="max-height: 180px;margin-right: 12px;"></span>
+                </foreach>
+                </div>
+            </div>
             <div><span class="left_name">是否是热门</span><span>{$hot_array[$hot]}</span></div>
             <div style="width: 40%;margin-left: 20px;">
                 <table class="table table-hover table-bordered table-list">
@@ -44,7 +51,7 @@
             <div><span class="left_name">讨论分类</span><span>{$category_name}</span></div>
             <div><span class="left_name">讨论标签</span><span>{$label}</span></div>
             <div><span class="left_name">创建时间</span><span><php>echo date('Y-m-d H:i:s',$create_time);</php></span></div>
-            <div><span class="left_name">最后更新时间</span><span><php>echo date('Y-m-d H:i:s',$create_time);</php></span></div>
+            <div><span class="left_name">最后更新时间</span><span><php>echo date('Y-m-d H:i:s',$update_time);</php></span></div>
         </div>
     </div>
 </div>

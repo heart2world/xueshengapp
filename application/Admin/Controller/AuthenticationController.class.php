@@ -30,10 +30,22 @@ class AuthenticationController extends AdminbaseController{
         if ($status!=""){
             $where['a.status'] = $status;
         }
-        $time = I('request.time');
-        if ($time){
-            $where['a.create_time'] = ['EGT', strtotime($time)];
+
+
+        $request = I('request.');
+        $startTime = empty($request['start_time']) ? 0 : strtotime($request['start_time']);
+        $endTime   = empty($request['end_time']) ? 0 : strtotime($request['end_time']);
+        if (!empty($startTime) && !empty($endTime)) {
+            $where['a.create_time'] = [['EGT', $startTime], ['ELT', $endTime]];
+        } else {
+            if (!empty($startTime)) {
+                $where['a.create_time'] = ['EGT', $startTime];
+            }
+            if (!empty($endTime)) {
+                $where['a.create_time'] = ['ELT', $endTime];
+            }
         }
+        
         $type = I('request.type',0,'intval');
         if($type){
             $where['s.type'] = array('eq',$type);
@@ -78,7 +90,7 @@ class AuthenticationController extends AdminbaseController{
         $id = I('request.id',0,'intval');
         $status = I('request.status',0,'intval');
         if (!in_array($status,[1,2])){
-            $this->error("操作失败!请刷新后重试");
+            $this->error("操作失败,请刷新后重试！");
         }
     	if (!empty($id)) {
             $auth_info = $this->auth->where(array('id'=>$id,'status'=>0))->find();
@@ -105,12 +117,12 @@ class AuthenticationController extends AdminbaseController{
                             //保存积分记录
                             $this->save_score($userInfo['id'], $gain_score, 4);
                         }
-                        M('Users')->save(array('id' => $userInfo['id'], 'verify' => 1, 'score' => $userInfo['score'] + $gain_score));
+                        M('Users')->save(array('id' => $userInfo['id'], 'verify' => 1, 'score' => $userInfo['score'] + $gain_score,'verify_id'=>$auth_info['school_id']));
                         //发送极光推送
                         if($userInfo['push'] == 1 && !empty($userInfo['aurora'])) {
                             $this->send_pub($userInfo['aurora'],'您于 '.date('Y-m-d H:i:s',$auth_info['create_time']).' 发起的学校认证已被通过。');
                         }
-                    } else {
+                    } else {//拒绝
                         //发送消息
                         $this->save_message($userInfo['id'], get_current_admin_id(), 4, $auth_info['create_time'], $status);
                         //发送极光推送

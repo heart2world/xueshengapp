@@ -76,12 +76,15 @@
         <input type="hidden" name="type" value="<?php echo I('type');?>">
         <input type="text" id="keyword" name="keyword" value="<?php echo I('request.keyword');?>"
                placeholder="输入商品名称/收货人/收货电话"/>
+        发货状态：
         <select type="text" name="status" style="width: 120px;height: 35px">
-            <option value="">选择发货状态</option>
+            <option value="">全部</option>
             <?php if(is_array($status)): foreach($status as $key=>$v): $ck = I('request.status')==="$key"?"selected":""; ?>
                 <option value="<?php echo ($key); ?>" <?php echo ($ck); ?>><?php echo ($v); ?></option><?php endforeach; endif; ?>
         </select>
-        <input type="text"  style="width: 150px" value="<?php echo I('request.time');?>" name="time" id="time"  placeholder="按时间查询"  />
+        提交时间：
+        <input type="text" style="width: 150px" autocomplete="off" value="<?php echo I('request.start_time');?>" name="start_time" id="start_time" placeholder="开始时间"/> -
+        <input type="text" style="width: 150px" autocomplete="off" value="<?php echo I('request.end_time');?>" name="end_time" id="end_time" placeholder="结束时间"/>
         <button type="submit" class="btn btn-primary">查询</button>
         <!--<a class="btn btn-warning" href="<?php echo ($url); ?>">重置</a>-->
     </form>
@@ -130,7 +133,8 @@
     layui.use(["form", 'laytpl', 'laydate'], function () {
         let form = layui.form;
         let laydate = layui.laydate;
-        laydate.render({elem: '#time', type:'datetime'});
+        laydate.render({elem: '#start_time', type: 'datetime'});
+        laydate.render({elem: '#end_time', type: 'datetime'});
         $("a.status").on("click", function () {
             let a = $(this);
             var g_name = a.closest('tr').find('.gname').text();
@@ -139,11 +143,11 @@
             var g_add = a.closest('tr').find('.gadd').text();
             var g_phone = a.closest('tr').find('.gphone').text();
             let html = '<form id="action" class="layui-form">'+
-                '    <div><label><span>发货商品</span>'+g_name+'</label></div>'+
-                '    <div><label><span>发货数量</span>'+g_num+'</label></div>'+
-                '    <div><label><span>收货人</span>'+g_person+'</label></div>'+
-                '    <div><label><span>收货电话</span>'+g_phone+'</label></div>'+
-                '    <div><label><span>收货地址</span>'+g_add+'</label></div>'+
+                '    <div><label><span><b>发货商品</b>：</span>'+g_name+'</label></div>'+
+                '    <div><label><span><b>发货数量</b>：</span>'+g_num+'</label></div>'+
+                '    <div><label><span><b>收货人</b>：</span>'+g_person+'</label></div>'+
+                '    <div><label><span><b>收货电话</b>：</span>'+g_phone+'</label></div>'+
+                '    <div><label><span><b>收货地址</b>：</span>'+g_add+'</label></div>'+
                 '</form>';
             layer.open({
                 title: '修改状态'

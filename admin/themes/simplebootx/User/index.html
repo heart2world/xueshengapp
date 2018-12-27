@@ -11,19 +11,19 @@
 			<input type="text" name="keyword" style="width: 200px;" value="{:I('request.keyword/s','')}" placeholder="请输入手机号/昵称/学校/专业">
 			用户类型：
 			<select name="user_type" style="height: 36px;width: 150px;">
-				<option value="">请选择用户类型</option>
+				<option value="">全部</option>
 				<option value="2" <if condition="I('request.user_type/s','') eq 2">selected</if>>学生</option>
 				<option value="3" <if condition="I('request.user_type/s','') eq 3">selected</if>>家长</option>
 			</select>
 			学校类型：
 			<select name="school_type" style="height: 36px;width: 150px;">
-				<option value="">请选择学校类型</option>
+				<option value="">全部</option>
 				<option value="1" <if condition="I('request.school_type/s','') eq 1">selected</if>>大学</option>
 				<option value="2" <if condition="I('request.school_type/s','') eq 2">selected</if>>高中</option>
 			</select>
 			用户状态：
 			<select name="user_status" style="height: 36px;width: 150px;">
-				<option value="">请选择用户状态</option>
+				<option value="">全部</option>
 				<option value="1" <if condition="I('request.user_status/s','') eq 1">selected</if>>正常</option>
 				<option value="2" <if condition="I('request.user_status/s','') eq 2">selected</if>>停用</option>
 			</select>
@@ -33,8 +33,8 @@
 			<input type="number" name="num_last" style="width: 60px;" value="{:I('request.num_last/s','')}" placeholder=""> —
 			<input type="number" name="num_next" style="width: 60px;" value="{:I('request.num_next/s','')}" placeholder="">
 			注册时间：
-			<input type="text" class="js-datetime" name="start_time" value="{:I('request.start_time/s','')}" placeholder="开始时间" style="width: 130px;"> —
-			<input type="text" class="js-datetime" name="end_time" value="{:I('request.end_time/s','')}" placeholder="结束时间" style="width: 130px;">
+			<input type="text" id="start_time" name="start_time" value="{:I('request.start_time/s','')}" placeholder="开始时间" style="width: 140px;"> —
+			<input type="text" id="end_time" name="end_time" value="{:I('request.end_time/s','')}" placeholder="结束时间" style="width: 140px;">
 			<input type="submit" class="btn btn-info" value="查询" />
 		</div>
 	</form>
@@ -70,14 +70,20 @@
 				<td>{$school_type[$vo['type']]}</td>
 				<td>{$vo.school_name}</td>
 				<td>{$vo.pro_name|default='——'}</td>
-				<td>{$verify_type[$vo['verify']]}</td>
+				<td>
+					<if condition="$vo.user_type eq 3">
+						——
+						<else/>
+						{$verify_type[$vo['verify']]}
+					</if>
+				</td>
 				<td>{$vo.create_time}</td>
 				<td>{$vo.online_time}</td>
 				<td class="action">
 					<if condition="$vo['user_status'] eq 1">
 					<a href="{:U('indexadmin/ban',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn" data-msg="确定要停用该用户？">正常</a>
 						<else/>
-					<a href="{:U('indexadmin/cancelban',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn" data-msg="确定要将该用户恢复正常？">停用</a>
+					<a href="{:U('indexadmin/cancelban',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn" style="color: red;" data-msg="确定要将该用户恢复正常？">停用</a>
 					</if>
 				</td>
 			</tr>
@@ -87,5 +93,10 @@
 	<div class="pagination">{$page}</div>
 </div>
 <script src="__PUBLIC__/js/common.js"></script>
+<script src="__PUBLIC__/js/laydate/laydate.js"></script>
+<script type="text/javascript">
+    laydate.render({elem: '#start_time',type: 'datetime'});
+    laydate.render({elem: '#end_time',type: 'datetime'});
+</script>
 </body>
 </html>

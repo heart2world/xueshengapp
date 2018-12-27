@@ -60,8 +60,9 @@
     <form class="well form-search" method="post" action="<?php echo U('Discuss/index');?>" autocomplete="off">
         <div>
             文本搜索：<input type="text" name="keyword" value="<?php echo I('request.keyword/s','');?>" style="width: 230px;" placeholder="请输入讨论标题/创建用户/所属学校">
+            点击/评论/收藏/评论点赞量：
             <select name="number_type" style="height: 36px;">
-                <option value="">点击/评论/收藏/评论点赞量</option>
+                <option value="">全部</option>
                 <option value="1" <?php if(I('request.number_type/s','') == 1): ?>selected<?php endif; ?>>点击量</option>
                 <option value="2" <?php if(I('request.number_type/s','') == 2): ?>selected<?php endif; ?>>评论量</option>
                 <option value="3" <?php if(I('request.number_type/s','') == 3): ?>selected<?php endif; ?>>收藏量</option>
@@ -69,25 +70,28 @@
             </select>
             <input type="number" name="num_last" style="width: 60px;" value="<?php echo I('request.num_last/s','');?>" placeholder=""> —
             <input type="number" name="num_next" style="width: 60px;" value="<?php echo I('request.num_next/s','');?>" placeholder="">
+        </div>
+        <div style="margin-top: 12px;">
+            是否热门：
             <select name="hot_type" style="height: 36px;">
-                <option value="">是否是热门</option>
+                <option value="">全部</option>
                 <option value="2" <?php if(I('request.hot_type/s','') == 2): ?>selected<?php endif; ?>>热门</option>
                 <option value="1" <?php if(I('request.hot_type/s','') == 1): ?>selected<?php endif; ?>>非热门</option>
             </select>
-        </div>
-        <div style="margin-top: 12px;">
+            讨论状态：
             <select name="status" style="height: 36px;width: 100px;">
-                <option value="">讨论状态</option>
+                <option value="">全部</option>
                 <option value="1" <?php if(I('request.status/s','') == 1): ?>selected<?php endif; ?>>正常</option>
                 <option value="2" <?php if(I('request.status/s','') == 2): ?>selected<?php endif; ?>>停用</option>
             </select>
+            时间类型：
             <select name="time_type" style="height: 36px;width: 120px;">
-                <option value="">时间类型</option>
+                <option value="">全部</option>
                 <option value="1" <?php if(I('request.time_type/s','') == 1): ?>selected<?php endif; ?>>创建时间</option>
                 <option value="2" <?php if(I('request.time_type/s','') == 2): ?>selected<?php endif; ?>>最后更新时间</option>
             </select>
-            <input type="text" class="js-datetime" name="start_time" value="<?php echo I('request.start_time/s','');?>" placeholder="开始时间" style="width: 130px;"> —
-            <input type="text" class="js-datetime" name="end_time" value="<?php echo I('request.end_time/s','');?>" placeholder="结束时间" style="width: 130px;">
+            <input type="text" id="start_time" name="start_time" value="<?php echo I('request.start_time/s','');?>" placeholder="开始时间" style="width: 140px;"> —
+            <input type="text" id="end_time" name="end_time" value="<?php echo I('request.end_time/s','');?>" placeholder="结束时间" style="width: 140px;">
             <input type="submit" class="btn btn-info" value="查询" />
         </div>
     </form>
@@ -147,5 +151,10 @@
     </div>
 </div>
 <script src="/public/js/common.js"></script>
+<script src="/public/js/laydate/laydate.js"></script>
+<script type="text/javascript">
+    laydate.render({elem: '#start_time',type: 'datetime'});
+    laydate.render({elem: '#end_time',type: 'datetime'});
+</script>
 </body>
 </html>

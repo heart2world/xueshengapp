@@ -77,7 +77,7 @@ class PublicController extends AdminbaseController {
     				$groups=$role_user_model->alias("a")->join($role_user_join)->where(array("user_id"=>$result["id"],"status"=>1))->getField("role_id",true);
     				
     				if( $result["id"]!=1 && ( empty($groups) || empty($result['user_status']) ) ){
-    					$this->error(L('USE_DISABLED'));
+    					$this->error(L('该帐号被停用'));
     				}
     				//登入成功页面跳转
     				session('ADMIN_ID',$result["id"]);

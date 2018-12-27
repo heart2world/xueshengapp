@@ -31,7 +31,7 @@
             </div>
 
             <div class="control-group">
-                <label class="control-label">商品单价</label>
+                <label class="control-label">商品单价(分/元)</label>
                 <div class="controls">
                     <input type="number" value="" name="price" placeholder="单价">
                 </div>
@@ -74,10 +74,11 @@
     {{#  layui.each(d, function(index, item){
     index = item.index||index;
     }}
-    <div class="int_list" style="width: 150px;margin-top: 10px;float: left;margin-right: 10px;">
+    <div class="int_list" style="width: 150px;margin-top: 10px;float: left;margin-right: 10px;position: relative;">
         <img src="{{item.img}}" id="img_{{index}}" onerror="this.src='__TMPL__Public/assets/images/default-thumbnail.png'" />
         <input type="hidden" name="img[{{index}}]" id="input_img_{{index}}" class="intro_info"  value="{{item.img}}">
         <input type="text" style="width: 135px;margin-top: 5px" name="sort[{{index}}]" placeholder="图片排序" value="{{item.sort}}">
+        <span style="position: absolute;top:0;right:0;z-index: 2;width: 18px;height: 18px;text-align: center;cursor: pointer;background-color: rgba(0,0,0,.5);color: white;border-radius: 2px;" class="delImg">x</span>
     </div>
     {{#  }) }}
 </script>
@@ -90,7 +91,6 @@
         let laytpl = layui.laytpl;
         let upload = layui.upload;
         form.render();
-
 
         //追加一张
         $("#add_one_img").on("click",function () {
@@ -108,6 +108,11 @@
             $("#intro_box").append(html);
             init_upload("img_"+sort);
             $("#intro_box #img_"+sort).click();
+
+            //删除介绍
+            $(".delImg").on('click',function () {
+                $(this).closest('.int_list').remove();
+            });
         });
 
 
@@ -131,6 +136,8 @@
                         let img_path = res['img_path'];
                         $("#"+id)[0].src = '/data/upload/'+img_path;
                         $("#input_"+id).val(img_path);
+                    }else{
+                        layer.msg(res.info,{icon:2});
                     }
                     layer.closeAll('loading'); //关闭loading
                 }

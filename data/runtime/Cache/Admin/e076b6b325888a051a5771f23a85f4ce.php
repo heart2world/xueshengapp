@@ -66,25 +66,30 @@
         <li class="active"><a href="<?php echo U('scripture/index');?>">学霸笔记管理</a></li>
         <li class=""><a href="<?php echo U('scripture/add');?>">新增笔记</a></li>
     </ul>
-    <?php $status=['0'=>'<font color="#20b2aa">正常</font>','1'=>'<font color="#dc143c">禁用</font>']; ?>
+    <?php $status=['0'=>'<font color="#20b2aa">正常</font>','1'=>'<font color="#dc143c">隐藏</font>']; ?>
     <form class="well form-search" method="post" autocomplete="off" action="<?php echo U('Scripture/index');?>">
         文本搜索：
         <input type="hidden" name="type" value="<?php echo I('type');?>">
         <input type="text" id="keyword" name="keyword" autocomplete="off" value="<?php echo I('request.keyword');?>"
                placeholder="输入笔记标题"/>
+        选择状态：
         <select type="text" name="status" style="width: 120px;height: 35px">
-            <option value="">选择状态</option>
+            <option value="">全部</option>
              <?php if(is_array($status)): foreach($status as $key=>$v): $ck = I('request.status')==="$key"?"selected":""; ?>
              <option value="<?php echo ($key); ?>" <?php echo ($ck); ?>><?php echo ($v); ?></option><?php endforeach; endif; ?>
         </select>
+        点击量/收藏量：
         <select name="num_type" style="width: 140px;height: 35px">
-            <option value="">点击量/收藏量</option>
+            <option value="">全部</option>
             <option value="1" <?php if(I('request.num_type/s','') == 1): ?>selected<?php endif; ?>>点击量</option>
             <option value="2" <?php if(I('request.num_type/s','') == 2): ?>selected<?php endif; ?>>收藏量</option>
         </select>
         <input type="number" name="num_last" style="width: 60px;" value="<?php echo I('request.num_last/s','');?>" placeholder=""> —
         <input type="number" name="num_next" style="width: 60px;" value="<?php echo I('request.num_next/s','');?>" placeholder="">
-        <input type="text"  style="width: 150px" autocomplete="off" value="<?php echo I('request.time');?>" name="time" id="time"  placeholder="按时间查询"  />
+        <br><br>
+        发布时间：
+        <input type="text"  style="width: 150px" autocomplete="off" value="<?php echo I('request.time');?>" name="time" id="time"  placeholder="开始时间"  />—
+        <input type="text"  style="width: 150px" autocomplete="off" value="<?php echo I('request.end_time');?>" name="end_time" id="end_time"  placeholder="结束时间"  />
         <button type="submit" class="btn btn-primary">查询</button>
         <!--<a class="btn btn-warning" href="<?php echo ($url); ?>">重置</a>-->
     </form>
@@ -101,7 +106,7 @@
                 <th>收藏量</th>
                 <th>发布时间</th>
                 <th width="45">状态</th>
-                <th width="120"><?php echo L('ACTIONS');?></th>
+                <th width="140"><?php echo L('ACTIONS');?></th>
             </tr>
             </thead>
             <tbody>
@@ -114,10 +119,11 @@
                     <td><?php echo date("Y-m-d H:i:s",$vo['create_time']);?></td>
                     <td><?php echo ($status[$vo['status']]); ?></td>
                     <td style="text-align: center">
+                        <a href="<?php echo U('scripture/info',array('id'=>$vo['id']));?>">详情</a> |
                         <a href="<?php echo U('scripture/edit',array('id'=>$vo['id']));?>">编辑</a> |
-                        <a class="status js-ajax-dialog-btn" data-msg="确定要<?php echo ($vo['status']==0?'禁用':'启用'); ?>此笔记?"
+                        <a class="status js-ajax-dialog-btn" data-msg="确定要<?php echo ($vo['status']==0?'隐藏':'启用'); ?>此笔记?"
                            href="<?php echo ($vo['status']==0?U('scripture/down',array('id'=>$vo['id'])):U('scripture/up',array('id'=>$vo['id']))); ?>">
-                           <?php echo ($vo['status']==0?"禁用":'启用'); ?>
+                           <?php echo ($vo['status']==0?"隐藏":'启用'); ?>
                         </a> |
                         <a href="<?php echo U('scripture/delete',array('id'=>$vo['id']));?>" class="js-ajax-delete" data-msg="删除无法恢复, 确定还是要删除此项?">删除</a>
 
@@ -136,6 +142,7 @@
         let form = layui.form;
         let laydate = layui.laydate;
         laydate.render({elem: '#time', type:'datetime'});
+        laydate.render({elem: '#end_time',type:'datetime'});
     });
 </script>
 </body>

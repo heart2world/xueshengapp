@@ -17,20 +17,25 @@
         关键字：
         <input type="hidden" name="type" value="{:I('type')}">
         <input type="text" id="keyword" name="keyword" autocomplete="off" value="{:I('request.keyword')}" placeholder="输入认证用户/认证学校"/>
+        认证状态：
         <select type="text" id="status" name="status" style="width: 120px;height: 35px">
-            <option value="">选择认证状态</option>
+            <option value="">全部</option>
             <foreach name="status" item="v">
                 <php>$ck = I('request.status')==="$key"?"selected":"";</php>
                 <option value="{$key}" {$ck}>{$v}</option>
             </foreach>
         </select>
+        认证类型：
         <select type="text" name="type" style="width: 120px;height: 35px">
-            <option value="">选择认证类型</option>
+            <option value="">全部</option>
             <option value="1" <if condition="I('request.type/s','') eq 1">selected</if>>大学</option>
             <option value="2" <if condition="I('request.type/s','') eq 2">selected</if>>高中</option>
         </select>
+        <br>
+        <br>
         申请时间：
-        <input type="text" style="width: 150px" autocomplete="off" value="{:I('request.time')}" name="time" id="time" placeholder="按时间查询"/>
+        <input type="text" style="width: 150px" autocomplete="off" value="{:I('request.start_time')}" name="start_time" id="start_time" placeholder="开始时间"/> -
+        <input type="text" style="width: 150px" autocomplete="off" value="{:I('request.end_time')}" name="end_time" id="end_time" placeholder="结束时间"/>
         <button type="submit" class="btn btn-primary">查询</button>
     </form>
     <form method="post" class="js-ajax-form">
@@ -73,7 +78,8 @@
 <script type="text/javascript">
     layui.use(["form", 'laytpl', 'laydate'], function () {
         let laydate = layui.laydate;
-        laydate.render({elem: '#time', type: 'datetime'});
+        laydate.render({elem: '#start_time', type: 'datetime'});
+        laydate.render({elem: '#end_time', type: 'datetime'});
     });
 </script>
 </body>

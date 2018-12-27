@@ -41,8 +41,8 @@ class CenterController extends BaseController
                 $where['effect_area'] = array('like',"%$effect%");
                 $filter_keyword = M('FilterKeyword')->where($where)->select();
                 foreach ($filter_keyword as $k=>$v){
-                    if(strpos($v['keyword'],$username) !== false){
-                        $this->ajaxReturn(['status'=>0,'info'=>"更新失败,姓名存在非法字符"]);
+                    if(strpos($username,$v['keyword']) !== false){
+                        $this->ajaxReturn(['status'=>0,'info'=>"您输入的内容包含敏感信息,请检查"]);
                     }
                 }
                 $dataInfo['user_name'] = $username;
@@ -68,7 +68,9 @@ class CenterController extends BaseController
     //获取认证信息
     public function cert_info(){
         $user_id = intval(I('request.uid'));
-        $info = M('Authentication')->where(array('user_id'=>$user_id))->find();
+        $where['user_id'] = array('eq',$user_id);
+        $where['status'] = array('in','0,1');
+        $info = M('Authentication')->where($where)->order('create_time desc')->limit(1)->find();
         if($info){
             $info['school_name'] = '';
             $school = M('School')->where(array('id'=>$info['school_id']))->find();
@@ -80,7 +82,7 @@ class CenterController extends BaseController
                 $info['student_true'] = sp_get_image_preview_url($info['student_img']);
             }
         }else{
-            $info = array();
+            $info = 0;
         }
         $this->ajaxReturn(['status'=>1,'info'=>$info]);
     }
@@ -113,20 +115,14 @@ class CenterController extends BaseController
                 ];
                 $result = M('Authentication')->add($dataInfo);
             }else{
-                $certification = M('Authentication')->where(array('user_id'=>$user_id))->find();
                 $dataInfo = [
+                    'user_id' => $user_id,
                     'school_id' => $school_id,
                     'student_img' => sp_asset_relative_url($image),
-                    'create_time' => time(),
-                    'status' => 0
+                    'create_time' => time()
                 ];
                 M('Users')->save(array('id'=>$user_id,'verify'=>0));
-                $result = M('Authentication')->where(array('user_id'=>$user_id))->save($dataInfo);
-                if($certification && $image !== $certification['student_img']){//删除原来的图片
-                    if(file_exists('/data/upload/'.$certification['student_img'])){
-                        unlink('/data/upload/'.$certification['student_img']);
-                    }
-                }
+                $result = M('Authentication')->add($dataInfo);
             }
             if($result != false){
                 $this->ajaxReturn(['status'=>1,'info'=>'申请成功']);
@@ -165,7 +161,7 @@ class CenterController extends BaseController
                 $discuss = M('Discuss')->alias('d')
                     ->join('h2w_users as u on u.id=d.user_id')
                     ->where($where_discuss)
-                    ->field('d.*,u.user_name,u.avatar,u.user_type,u.school_id usc_id')
+                    ->field('d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify')
                     ->order('d.create_time desc')
                     ->select();
                 //处理讨论信息
@@ -302,8 +298,8 @@ class CenterController extends BaseController
     //关于我们
     public function about(){
         $info = [
-            'mobile' => "023-66776677",
-            'introduction' => "随着信息技术的不断创新，信息化校园建设的不断深入，带动了移动应用的快速发展。为了更好的服务于全校师生，上海财经大学现推出iSufe应用，现已良好的支持iPhone和Android终端，目前已推出服务包括新闻、通知公告、空闲教室查询以及wifi申请功能，后续将推出校园地图、公共服务指南、就业信息查询等各类实用功能。在移动互联网高速发展的今天，iSufe将会在未来不断的完善和充实，为全校师生的工作和生活提供更为贴切的服务。"
+            'mobile' => "18487358672",
+            'introduction' => "思源APP为一款高中在校生和大学生以及毕业工作学长等交流的平台，旨在以学长们的学习经验和社会经验来从学习和生活方面帮助高中学弟学妹，度过高中这一段美好的时期，有着更好的升学体验。"
         ];
         $this->ajaxReturn(['status'=>1,'info'=>$info]);
     }

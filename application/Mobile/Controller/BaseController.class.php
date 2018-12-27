@@ -33,7 +33,7 @@ class BaseController extends AppframeController
         }
         $where['user_type'] = array('in','2,3');
         $where['user_status'] = array('eq',1);
-        $user_info = M('Users')->where($where)->field('id,user_name,avatar,signature,create_time,score,user_type,mobile,school_id,specialty_id,verify,online_time,continuous_day,aurora,push,uu_id,school_area,invitation_code')->find();
+        $user_info = M('Users')->where($where)->field('id,user_name,avatar,signature,create_time,score,user_type,mobile,school_id,specialty_id,verify,online_time,continuous_day,aurora,push,uu_id,school_area,invitation_code,verify_id')->find();
         if(!$user_info){
             return false;
         }
@@ -41,13 +41,22 @@ class BaseController extends AppframeController
             $user_info['avatar'] = 'mobile/avatar.jpg';
         }
         $user_info['avatar'] = sp_get_image_preview_url($user_info['avatar']);
-        $user_info['school_name'] = '';
+        $user_info['school_names'] = '';
         $user_info['school_type'] = '';
         if($user_info['school_id'] > 0){//获取学校信息
             $school = M('School')->where(array('id'=>$user_info['school_id']))->find();
             if($school){
-                $user_info['school_name'] = $school['school_name'];
+                $user_info['school_names'] = $school['school_name'];
                 $user_info['school_type'] = $school['type'];
+            }
+        }
+        $user_info['school_name'] = '';
+        $user_info['school_types'] = '';
+        if($user_info['verify_id'] > 0){
+            $schoolInfo = M('School')->where(array('id'=>$user_info['verify_id']))->find();
+            if($schoolInfo){
+                $user_info['school_name'] = $schoolInfo['school_name'];
+                $user_info['school_types'] = $schoolInfo['type'];
             }
         }
         $user_info['specialty'] = '';
@@ -59,7 +68,7 @@ class BaseController extends AppframeController
         }
         //检查是否已经认证
         if($user_info['user_type'] == 2) {
-            $certification = M('Authentication')->where(array('user_id' => $user_info['id']))->find();
+            $certification = M('Authentication')->where(array('user_id' => $user_info['id']))->order('create_time desc')->limit(1)->find();
             if ($certification) {
                 if($certification['status'] == 1){
                     $user_info['certification'] = 2;//2已认证
@@ -95,10 +104,12 @@ class BaseController extends AppframeController
     public function discuss_action($discuss,$user_id,$keyword = ''){
         foreach ($discuss as $k=>$v){
             $discuss[$k]['school_name'] = '';//获取学校名称
-            if($v['usc_id'] > 0){
+            $discuss[$k]['school_types'] = '';//学校类型
+            if($v['usc_id'] > 0 && $v['user_type'] == 2 && $v['verify'] == 1){
                 $school = M('School')->where(array('id'=>$v['usc_id']))->find();
                 if($school){
                     $discuss[$k]['school_name'] = $school['school_name'];
+                    $discuss[$k]['school_types'] = $school['type'];
                 }
             }
             if(empty($v['avatar'])){
@@ -156,7 +167,7 @@ class BaseController extends AppframeController
                     $discuss[$k]['content'] = '';//内容再变为空
                 }else{//如果有标题
                     $discuss[$k]['name'] = str_replace($keyword,"<span style='color: #FF0000;'>$keyword</span>",$v['name']);
-                    if($position){//如果内容符合
+                    if($position !== false){//如果内容符合
                         if($position > 10){//如果符合位置大于10
                             $discuss[$k]['content'] = '...'.$the_info.'...';
                         }else{//如果符合位置小于10
@@ -172,12 +183,14 @@ class BaseController extends AppframeController
     }
 
     //保存消息
-    public function save_message($user_id,$from_uid,$type,$desc = null,$time = ''){
+    public function save_message($user_id,$from_uid,$type,$action_id,$desc = null,$time = ''){
         if($user_id != $from_uid) {
             $from_user = M('Users')->where(array('id' => $from_uid))->field('id,user_name,avatar')->find();
             if ($type == 1) {
                 $title = $from_user['user_name'] . '点赞了您的评论';
-            } elseif ($type == 2 || $type == 3) {
+            } elseif ($type == 2) {
+                $title = $from_user['user_name'] . '评论了您：';
+            } elseif ($type == 3) {
                 $title = $from_user['user_name'] . '回复了您：';
             } else {
                 $title = '您于 ' . date('Y-m-d H:i:s', $time) . ' 发起的学校认证已被通过。';
@@ -186,6 +199,7 @@ class BaseController extends AppframeController
                 $from_user['avatar'] = 'mobile/avatar.jpg';
             }
             $dataInfo = [
+                'action_id' => $action_id,
                 'user_id' => $user_id,
                 'from_uid' => $from_uid,
                 'from_avatar' => $from_user['avatar'],

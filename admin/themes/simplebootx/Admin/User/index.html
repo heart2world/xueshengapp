@@ -8,27 +8,30 @@
 <div class="wrap js-check-wrap">
 	<ul class="nav nav-tabs">
 		<li class="active"><a href="{:U('user/index')}">{:L('ADMIN_USER_INDEX')}</a></li>
-		<li><a href="{:U('user/add')}">{:L('ADMIN_USER_ADD')}</a></li>
+		<li><a href="{:U('user/add')}">新增用户</a></li>
 	</ul>
 	<php>$status=['0'=>'<font color="#dc143c">停用</font>','1'=>'<font color="#20b2aa">正常</font>'];</php>
 	<form class="well form-search" method="post" autocomplete="off" action="{:U('User/index')}">
 		文本搜索：
 		<input type="text" name="keyword" style="width: 160px;" value="{:I('request.keyword/s','')}" placeholder="输入手机号/用户姓名">
+		状态：
 		<select type="text" name="status" style="width: 120px;height: 35px">
-			<option value="">选择状态</option>
+			<option value="">全部</option>
 			<foreach name="status" item="v">
 				<php>$ck = I('request.status')==="$key"?"selected":"";</php>
 				<option value="{$key}" {$ck}>{$v}</option>
 			</foreach>
 		</select>
+		角色：
 		<select type="text" name="role_id" style="width: 150px;height: 35px">
-			<option value="">选择角色</option>
+			<option value="">全部</option>
 			<foreach name="roles" item="vr">
 				<option value="{$vr.id}" <if condition="I('request.role_id/s','') eq $vr['id']">selected</if>>{$vr.name}</option>
 			</foreach>
 		</select>
 		新增时间：
-		<input type="text"  style="width: 150px" value="{:I('request.time')}" name="time" id="time"  placeholder=""  />
+		<input type="text"  style="width: 150px" value="{:I('request.time')}" name="time" id="time"  placeholder="开始时间"  />—
+		<input type="text"  style="width: 150px" value="{:I('request.end_time')}" name="end_time" id="end_time"  placeholder="结束时间"  />
 		<input type="submit" class="btn btn-primary" value="查询" />
 	</form>
 	<table class="table table-hover table-bordered table-list">
@@ -55,7 +58,7 @@
 				<td>{$vo.role_name}</td>
 				<td>{$vo.create_time}</td>
 				<td>{$status[$vo['user_status']]}</td>
-				<td>
+				<td width="180">
 					<if condition="$vo['id'] eq 1 || $vo['id'] eq sp_get_current_admin_id()">
 						<font color="#cccccc">{:L('DELETE')}</font> |
 						<if condition="$vo['user_status'] eq 1">
@@ -71,7 +74,8 @@
 						<else />
 							<a href="{:U('user/cancelban',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn" data-msg="{:L('ACTIVATE_USER_CONFIRM_MESSAGE')}">{:L('ACTIVATE_USER')}</a> |
 						</if>
-						<a href='{:U("user/edit",array("id"=>$vo["id"]))}'>{:L('EDIT')}</a>
+						<a href='{:U("user/edit",array("id"=>$vo["id"]))}'>{:L('EDIT')}</a> |
+						<a href="{:U('user/reset_password',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn" data-msg="确定重置该用户密码？">重置密码</a>
 					</if>
 				</td>
 			</tr>
@@ -86,6 +90,7 @@
 	layui.use(["laydate" ], function () {
 		let laydate = layui.laydate;
 		laydate.render({elem: '#time', type:'datetime'});
+        laydate.render({elem: '#end_time', type:'datetime'});
 	});
 </script>
 </body>

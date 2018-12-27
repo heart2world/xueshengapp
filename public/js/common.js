@@ -68,9 +68,10 @@
             $('button.js-ajax-submit').on('click', function (e) {
                 var btn = $(this),form = btn.parents('form.js-ajax-form');
                 $btn=btn;
+
                 
-                if(btn.data("loading")){
-            		return;
+                if($btn.data("loading")){
+            		return false;
             	}
 
                 //批量操作 判断选项
@@ -237,7 +238,9 @@
                                 
                             },
                             complete: function(){
-                            	$btn.data("loading",false);
+                            	setTimeout(function () {
+                                    $btn.data("loading",false);
+                                },800)
                             }
                         });
                 	}
@@ -339,26 +342,30 @@
                                 if (data.referer) {
                                     location.href = data.referer;
                                 } else {
-                                    art.dialog({
-                                        content: data.info,
-                                        icon: 'succeed',
-                                        ok: function () {
-                                            reloadPage(window);
-                                            return true;
-                                        },
-
+                                    // art.dialog({
+                                    //     content: data.info,
+                                    //     icon: 'succeed',
+                                    //     ok: function () {
+                                    //         reloadPage(window);
+                                    //         return true;
+                                    //     },
+                                    //
+                                    // });
+                                    layer.msg(data.info,{icon:1,time:2000},function () {
+                                        reloadPage(window);
                                     });
                                 }
                             } else if (data.state === 'fail') {
                                 //art.dialog.alert(data.info);
-                                art.dialog({
-                                    content: data.info,
-                                    icon: 'warning',
-                                    ok: function () {
-                                        this.title(data.info);
-                                        return true;
-                                    }
-                                });
+                                // art.dialog({
+                                //     content: data.info,
+                                //     icon: 'warning',
+                                //     ok: function () {
+                                //         this.title(data.info);
+                                //         return true;
+                                //     }
+                                // });
+                                layer.msg(data.info,{icon:7,time:2000});
                             }
                         });
                     },
@@ -767,3 +774,28 @@ function open_iframe_layer(url, title, options) {
     });
 
 }
+
+
+/**
+ * 收集表单数据
+ */
+$.fn.formData = function () {
+    var arr_data = $(this).serializeArray();
+    var data = {};
+    if (arr_data.length > 0) {
+        arr_data.forEach(function (item, index) {
+            var type = typeof data[item.name];
+            if (type === 'undefined') {
+                data[item.name] = item.value;
+            } else {
+                if (type === 'object') {
+                    data[item.name].push(item.value);
+                } else {
+                    data[item.name] = [data[item.name], item.value];
+                }
+            }
+        });
+    }
+    return data;
+};
+

@@ -5,8 +5,8 @@ class SchoolProfessionalModel extends CommonModel{
 	//自动验证
 	protected $_validate = array(
 			//array(验证字段,验证规则,错误提示,验证条件,附加规则,验证时间)
-			array('pro_name', 'require', '专业名称不能为空！'),
-			array('school_id', 'require', '学校ID不能为空！'),
+			array('pro_name', 'require', '专业名称不能为空！',self::MUST_VALIDATE, 'regex', self::MODEL_BOTH),
+			array('school_id', 'require', '学校ID不能为空！',self::MUST_VALIDATE, 'regex', self::MODEL_BOTH),
 	);
 	
 	protected function _before_write(&$data) {

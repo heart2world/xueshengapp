@@ -30,12 +30,12 @@ class TouristController extends AppframeController
         //获取热门列表
         $where['d.hot'] = array('eq',2);
         $where['d.status'] = array('eq',1);
-        $total_count = M('Discuss')->alias('d')->where($where)->count();
+        $total_count = M('Discuss')->where(array('hot'=>2,'status'=>1))->count();
         $total_page = ceil($total_count/$pageSize);
         $discuss = M('Discuss')->alias('d')
             ->join('h2w_users as u on u.id=d.user_id')
             ->where($where)
-            ->field('d.*,u.user_name,u.avatar,u.user_type,u.school_id usc_id')
+            ->field('d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify')
             ->order('d.create_time desc')
             ->limit($start,$pageSize)
             ->select();
@@ -59,7 +59,7 @@ class TouristController extends AppframeController
         $start = ($now_page - 1) * $pageSize;
         $school = M('School')->where(array('id'=>$school_id,'status'=>0))->find();
         if(!$school){
-            $this->ajaxReturn(['status'=>0,'info'=>'该大学讨论区已关闭']);
+            $this->ajaxReturn(['status'=>-5,'info'=>'该大学讨论区已关闭']);
         }
         if($school['type'] != 1){
             $this->ajaxReturn(['status'=>0,'info'=>'只有大学才存在讨论区']);
@@ -78,7 +78,7 @@ class TouristController extends AppframeController
         $discuss = M('Discuss')->alias('d')
             ->join('h2w_users as u on u.id=d.user_id')
             ->where($where)
-            ->field('d.*,u.user_name,u.avatar,u.user_type,u.school_id usc_id')
+            ->field('d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify')
             ->order('d.update_time desc')
             ->limit($start,$pageSize)
             ->select();
@@ -93,10 +93,12 @@ class TouristController extends AppframeController
     function discuss_action($discuss,$user_id = '',$keyword = ''){
         foreach ($discuss as $k=>$v){
             $discuss[$k]['school_name'] = '';//获取学校名称
-            if($v['usc_id'] > 0){
+            $discuss[$k]['school_types'] = '';
+            if($v['usc_id'] > 0 && $v['user_type'] == 2 && $v['verify'] == 1){
                 $school = M('School')->where(array('id'=>$v['usc_id']))->find();
                 if($school){
                     $discuss[$k]['school_name'] = $school['school_name'];
+                    $discuss[$k]['school_types'] = $school['type'];
                 }
             }
             if(empty($v['avatar'])){//头像
@@ -190,14 +192,20 @@ class TouristController extends AppframeController
             $discuss = M('Discuss')->alias('d')
                 ->join('h2w_users as u on u.id=d.user_id')
                 ->where($where)
-                ->field('d.*,u.user_name,u.avatar,u.user_type,u.school_id usc_id')
+                ->field('d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify')
                 ->find();
             if ($discuss) {
+                $school = M('School')->where(array('id'=>$discuss['school_id'],'status'=>0))->find();
+                if(!$school){
+                    $this->ajaxReturn(['status'=>-5,'info'=>'该大学讨论区已关闭']);
+                }
                 $discuss['school_name'] = '';//学校
-                if($discuss['usc_id'] > 0){
+                $discuss['school_types'] = '';//学校
+                if($discuss['usc_id'] > 0 && $discuss['user_type'] == 2 && $discuss['verify'] == 1){
                     $schoolInfo = M('School')->where(array('id'=>$discuss['usc_id']))->find();
                     if($schoolInfo){
                         $discuss['school_name'] = $schoolInfo['school_name'];
+                        $discuss['school_types'] = $schoolInfo['type'];
                     }
                 }
                 M('Discuss')->save(array('id'=>$discuss_id,'click_num'=>$discuss['click_num']+1));
@@ -243,7 +251,7 @@ class TouristController extends AppframeController
                 }
                 $discuss['label'] = $label;
             } else {
-                $this->ajaxReturn(['status' => 0, 'info' => '该讨论不存在或已被停用']);
+                $this->ajaxReturn(['status' => -6, 'info' => '该讨论不存在或已被停用']);
             }
         }
         //获取评论列表及评论回复
@@ -253,16 +261,20 @@ class TouristController extends AppframeController
         $comment = M('Comment')->alias('c')
             ->join('h2w_users as u on u.id=c.user_id')
             ->where($where_comment)
-            ->field('c.*,u.user_name,u.avatar,u.user_type,u.school_id')
+            ->field('c.*,u.user_name,u.avatar,u.user_type,u.verify_id,u.verify')
             ->order('c.like_num desc,c.create_time desc')
             ->limit($start,$pageSize)
             ->select();
 
         foreach ($comment as $k=>$v){
             $comment[$k]['school_name'] = '';
-            $school = M('School')->where(array('id'=>$v['school_id']))->find();
-            if($school){
-                $comment[$k]['school_name'] = $school['school_name'];
+            $comment[$k]['school_types'] = '';//学校
+            if($v['verify_id'] > 0 && $v['user_type'] == 2 && $v['verify'] == 1) {
+                $school = M('School')->where(array('id' => $v['verify_id']))->find();
+                if ($school) {
+                    $comment[$k]['school_name'] = $school['school_name'];
+                    $comment[$k]['school_types'] = $school['type'];
+                }
             }
             if(empty($v['avatar'])){
                 $v['avatar'] = 'mobile/avatar.jpg';
@@ -278,6 +290,17 @@ class TouristController extends AppframeController
             } else {
                 $comment[$k]['time_ago'] = floor($time_comment / 60) . '分钟前';
             }
+            if(!empty($user_id)) {
+                $like = M('UsersComment')->where(array('user_id'=>$user_id,'comment_id'=>$v['id'],'type'=>1))->find();
+                if ($like) {
+                    $comment[$k]['like'] = 1;
+                } else {
+                    $comment[$k]['like'] = 0;
+                }
+            }else{
+                $comment[$k]['like'] = 0;
+            }
+            $reply_count = M('Reply')->where(array('comment_id'=>$v['id']))->count();//回复数量
             //获取该评论下的回复
             $reply = M('Reply')->alias('r')
                 ->join('h2w_users as u on u.id=r.user_id')
@@ -298,9 +321,80 @@ class TouristController extends AppframeController
                     $reply[$x]['time_ago'] = floor($time_dis / 60) . '分钟前';
                 }
             }
+            $comment[$k]['reply_count'] = $reply_count;
             $comment[$k]['reply'] = $reply;
         }
         $this->ajaxReturn(['status'=>1,'discuss'=>$discuss,'comment'=>$comment,'total_page'=>$total_page]);
+    }
+
+    //获取评论详情信息
+    public function comment_info(){
+        $user_id = intval(I('request.uid'));
+        $comment_id = intval(I('request.comment_id'));
+        $where['c.id'] = array('eq',$comment_id);
+        $comment = M('Comment')->alias('c')
+            ->join('h2w_users as u on u.id=c.user_id')
+            ->where($where)
+            ->field('c.*,u.user_name,u.avatar,u.user_type,u.verify_id,u.verify')
+            ->find();
+        if($comment){
+            $comment['school_name'] = '';
+            $comment['school_types'] = '';//学校
+            if($comment['verify_id'] > 0 && $comment['user_type'] == 2 && $comment['verify'] == 1) {
+                $school = M('School')->where(array('id' => $comment['verify_id']))->find();
+                if ($school) {
+                    $comment['school_name'] = $school['school_name'];
+                    $comment['school_types'] = $school['type'];
+                }
+            }
+            if(empty($comment['avatar'])){
+                $comment['avatar'] = 'mobile/avatar.jpg';
+            }
+            $comment['avatar'] = sp_get_image_preview_url($comment['avatar']);
+            $time_comment = time()-$comment['create_time'];
+            if($time_comment >= 3600*24*5){
+                $comment['time_ago'] = date('Y-m-d',$comment['create_time']);
+            } elseif ($time_comment >= 3600 * 24) {
+                $comment['time_ago'] = floor($time_comment / 86400) . '天前';
+            } elseif ($time_comment >= 3600) {
+                $comment['time_ago'] = floor($time_comment / 3600) . '小时前';
+            } else {
+                $comment['time_ago'] = floor($time_comment / 60) . '分钟前';
+            }
+            if(!empty($user_id)) {
+                $like = M('UsersComment')->where(array('user_id'=>$user_id,'comment_id'=>$comment_id,'type'=>1))->find();
+                if ($like) {
+                    $comment['like'] = 1;
+                } else {
+                    $comment['like'] = 0;
+                }
+            }else{
+                $comment['like'] = 0;
+            }
+            //获取该评论下的回复
+            $reply = M('Reply')->alias('r')
+                ->join('h2w_users as u on u.id=r.user_id')
+                ->where(array('r.comment_id'=>$comment_id))
+                ->field('r.*,u.user_name')
+                ->order('r.create_time asc')
+                ->select();
+            foreach ($reply as $x=>$y){
+                $time_dis = time()-$y['create_time'];
+                if($time_dis >= 3600*24*5){
+                    $reply[$x]['time_ago'] = date('Y-m-d',$y['create_time']);
+                } elseif ($time_dis >= 3600 * 24) {
+                    $reply[$x]['time_ago'] = floor($time_dis / 86400) . '天前';
+                } elseif ($time_dis >= 3600) {
+                    $reply[$x]['time_ago'] = floor($time_dis / 3600) . '小时前';
+                } else {
+                    $reply[$x]['time_ago'] = floor($time_dis / 60) . '分钟前';
+                }
+            }
+            $comment['reply'] = $reply;
+            $this->ajaxReturn(['status'=>1,'comment'=>$comment]);
+        }else{
+            $this->ajaxReturn(['status'=>-6,'info'=>'当前评论不存在']);
+        }
     }
 
     //藏经阁
@@ -338,7 +432,7 @@ class TouristController extends AppframeController
         $note_id = intval(I('request.nid'));
         $note = M('Scripture')->where(array('id'=>$note_id,'status'=>0))->find();
         if(!$note){
-            $this->ajaxReturn(['status'=>0,'info'=>'当前笔记不存在或已被禁用']);
+            $this->ajaxReturn(['status'=>-7,'info'=>'当前笔记不存在或已被禁用']);
         }
         if(!empty($note['content'])){
             $note['content'] = htmlspecialchars_decode($note['content']);
@@ -370,7 +464,6 @@ class TouristController extends AppframeController
         $pageSize = 20;
         $start = ($now_page - 1) * $pageSize;
         $where['status'] = array('eq',0);
-        $where['surplus'] = array('gt',0);
         ($type == 1) ? $where['type'] = array('eq',1) : $where['type'] = array('eq',2);
         $total_count = M('Gift')->where($where)->count();
         $total_page = ceil($total_count/$pageSize);
@@ -391,7 +484,7 @@ class TouristController extends AppframeController
         $goods_id = intval(I('request.gid'));
         $goods = M('Gift')->where(array('id'=>$goods_id,'status'=>0))->find();
         if(!$goods){
-            $this->ajaxReturn(['status'=>0,'info'=>'该商品不存在或已下架']);
+            $this->ajaxReturn(['status'=>-8,'info'=>'该商品不存在或已下架']);
         }
         if(!empty($goods['cover_img'])){
             $goods['cover_img'] = sp_get_image_preview_url($goods['cover_img']);

@@ -216,7 +216,7 @@ class AdminbaseController extends AppframeController {
 		}
 
 		$rule=MODULE_NAME.CONTROLLER_NAME.ACTION_NAME;
-		$no_need_check_rules=array("AdminIndexindex","AdminMainindex","AdminSettingclearcache","AdminSettingpassword","AdminSettingpassword_post");
+		$no_need_check_rules=array("AdminIndexindex","AdminMainindex","AdminSettingclearcache","AdminSettingpassword","AdminSettingpassword_post","AdminGiftupload");
 
 		if( !in_array($rule,$no_need_check_rules) ){
 			return sp_auth_check($uid);

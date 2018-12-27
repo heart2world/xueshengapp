@@ -59,7 +59,7 @@
 <script id="temp" type="text/html">
     <form action="" class="layui-form" autocomplete="off" style="padding: 20px 10px;">
         <div class="layui-form-item">
-            <label for="kwd">过滤关键字</label> <input type="text" id="kwd" maxlength="25" placeholder="请输入过滤关键词" />
+            <label for="kwd">新增关键词</label> <input type="text" id="kwd" maxlength="25" placeholder="请输入过滤关键词" />
         </div>
         <div class="layui-form-item">
             <label >生效区域</label>
@@ -96,10 +96,14 @@
                 , btn :['确定']
                 , yes: function (index) {
 
-                    let keyword = $("#kwd").val();
+                    let keyword = $("#kwd").val().trim();
+                    if(keyword == ''){
+                        layer.msg("请输入过滤关键词",{type:1});
+                        return;
+                    }
                     let check =  checked();
                     if (!check.length){
-                        layer.msg("请至少选择一条",{type:1});
+                        layer.msg("生效区域至少选择一个",{type:1});
                         return;
                     }
                     request({

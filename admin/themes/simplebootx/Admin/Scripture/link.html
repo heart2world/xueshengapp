@@ -42,21 +42,20 @@
         let form = layui.form;
 
         $("#score").on("click",function () {
-            let v= $("input[name=score]").val();
+            let v= $("input[name=score]").val().trim();
             request({
                 url:"{:U('scripture/link_post')}",
-                data:{score:v},
-                reload:1,
+                data:{score:v,type:1}
             })
         });
 
 
         $("#voluntary").on("click",function () {
-            let v= $("input[name=voluntary]").val();
+            let v= $("input[name=voluntary]").val().trim();
             request({
                 url:"{:U('scripture/link_post')}",
                 reload:1,
-                data:{voluntary:v}
+                data:{voluntary:v,type:2}
             })
         });
 

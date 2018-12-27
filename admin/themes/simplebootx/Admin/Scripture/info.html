@@ -1,0 +1,55 @@
+<admintpl file="header"/>
+<link rel="stylesheet" href="__PUBLIC__/layui/css/layui.css">
+<style>
+    .action a {color: #00a2d4;}
+    .form-control{margin-top: 5px;}
+    .content img{max-height: 200px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:U('scripture/index')}">学霸笔记管理</a></li>
+        <li class="active"><a href="">笔记详情</a></li>
+    </ul>
+    <form class="form-horizontal js-ajax-form layui-form">
+        <fieldset>
+            <div class="control-group">
+                <label class="control-label">笔记ID</label>
+                <div class="controls">
+                    <label class="form-control">{$data.id}</label>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">笔记标题</label>
+                <div class="controls">
+                    <label class="form-control">{$data.title}</label>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">笔记封面</label>
+                <div class="controls">
+                    <label class="form-control">
+                        <a href="{:sp_get_image_preview_url($data['cover_img'])}" target="_blank">
+                        <img src="{:sp_get_image_preview_url($data['cover_img'])}" style="max-width: 200px;">
+                        </a>
+                    </label>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">笔记正文</label>
+                <div class="controls clearfix" style="min-width: 800px;width:60%">
+                    <label class="form-control content">{$data.content}</label>
+                </div>
+            </div>
+            <table class="table table-bordered" style="width: 50%;margin-left: 180px;">
+                <thead><tr><th>点击量</th><th>收藏量</th></tr></thead>
+                <tbody><tr><td>{$data.views}</td><td>{$data.collect}</td></tr></tbody>
+            </table>
+        </fieldset>
+    </form>
+</div>
+<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

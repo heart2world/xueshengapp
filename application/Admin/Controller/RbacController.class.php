@@ -27,6 +27,7 @@ class RbacController extends AdminbaseController {
     // 添加角色提交
     public function roleadd_post() {
     	if (IS_POST) {
+    	    $_POST['status'] = 1;
     		if ($this->role_model->create()!==false) {
     			if ($this->role_model->add()!==false) {
     				$this->success("添加角色成功",U("rbac/index"));

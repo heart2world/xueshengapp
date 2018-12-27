@@ -10,8 +10,9 @@
     <form class="well form-search" method="post" action="{:U('Discuss/index')}" autocomplete="off">
         <div>
             文本搜索：<input type="text" name="keyword" value="{:I('request.keyword/s','')}" style="width: 230px;" placeholder="请输入讨论标题/创建用户/所属学校">
+            点击/评论/收藏/评论点赞量：
             <select name="number_type" style="height: 36px;">
-                <option value="">点击/评论/收藏/评论点赞量</option>
+                <option value="">全部</option>
                 <option value="1" <if condition="I('request.number_type/s','') eq 1">selected</if>>点击量</option>
                 <option value="2" <if condition="I('request.number_type/s','') eq 2">selected</if>>评论量</option>
                 <option value="3" <if condition="I('request.number_type/s','') eq 3">selected</if>>收藏量</option>
@@ -19,25 +20,28 @@
             </select>
             <input type="number" name="num_last" style="width: 60px;" value="{:I('request.num_last/s','')}" placeholder=""> —
             <input type="number" name="num_next" style="width: 60px;" value="{:I('request.num_next/s','')}" placeholder="">
+        </div>
+        <div style="margin-top: 12px;">
+            是否热门：
             <select name="hot_type" style="height: 36px;">
-                <option value="">是否是热门</option>
+                <option value="">全部</option>
                 <option value="2" <if condition="I('request.hot_type/s','') eq 2">selected</if>>热门</option>
                 <option value="1" <if condition="I('request.hot_type/s','') eq 1">selected</if>>非热门</option>
             </select>
-        </div>
-        <div style="margin-top: 12px;">
+            讨论状态：
             <select name="status" style="height: 36px;width: 100px;">
-                <option value="">讨论状态</option>
+                <option value="">全部</option>
                 <option value="1" <if condition="I('request.status/s','') eq 1">selected</if>>正常</option>
                 <option value="2" <if condition="I('request.status/s','') eq 2">selected</if>>停用</option>
             </select>
+            时间类型：
             <select name="time_type" style="height: 36px;width: 120px;">
-                <option value="">时间类型</option>
+                <option value="">全部</option>
                 <option value="1" <if condition="I('request.time_type/s','') eq 1">selected</if>>创建时间</option>
                 <option value="2" <if condition="I('request.time_type/s','') eq 2">selected</if>>最后更新时间</option>
             </select>
-            <input type="text" class="js-datetime" name="start_time" value="{:I('request.start_time/s','')}" placeholder="开始时间" style="width: 130px;"> —
-            <input type="text" class="js-datetime" name="end_time" value="{:I('request.end_time/s','')}" placeholder="结束时间" style="width: 130px;">
+            <input type="text" id="start_time" name="start_time" value="{:I('request.start_time/s','')}" placeholder="开始时间" style="width: 140px;"> —
+            <input type="text" id="end_time" name="end_time" value="{:I('request.end_time/s','')}" placeholder="结束时间" style="width: 140px;">
             <input type="submit" class="btn btn-info" value="查询" />
         </div>
     </form>
@@ -105,5 +109,10 @@
     </div>
 </div>
 <script src="__PUBLIC__/js/common.js"></script>
+<script src="__PUBLIC__/js/laydate/laydate.js"></script>
+<script type="text/javascript">
+    laydate.render({elem: '#start_time',type: 'datetime'});
+    laydate.render({elem: '#end_time',type: 'datetime'});
+</script>
 </body>
 </html>

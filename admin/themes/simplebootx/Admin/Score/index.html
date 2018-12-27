@@ -17,19 +17,19 @@
             <div class="control-group">
                 <label class="control-label" style="width: 350px;text-align: left;padding-left: 100px">连续登录积分（保存后明日开始生效）</label><br><br>
                 <div class="controls">
-                    首天登录获得 <input type="text" style="width: 30px;padding: 2px 6px" autocomplete="off" value="{$score.first_day}" placeholder="" name="first_day"> 积分 <br><br>
-                    连续登录每次递增 <input type="text" style="width: 30px;padding: 2px 6px" autocomplete="off" value="{$score.increase_progressively}" placeholder="" name="increase_progressively"> 积分 <br><br>
-                    连续登录单次最多 <input type="text" style="width: 30px;padding: 2px 6px" autocomplete="off" value="{$score.max_single_time}" placeholder="" name="max_single_time"> 积分 <br><br>
+                    首天登录获得 <input type="number" style="width: 100px;padding: 2px 6px" autocomplete="off" value="{$score.first_day}" max="99999" placeholder="" name="first_day"> 积分 <br><br>
+                    连续登录每次递增 <input type="number" style="width: 100px;padding: 2px 6px" autocomplete="off" value="{$score.increase_progressively}" max="99999" placeholder="" name="increase_progressively"> 积分 <br><br>
+                    连续登录单次最多 <input type="number" style="width: 100px;padding: 2px 6px" autocomplete="off" value="{$score.max_single_time}" max="99999" placeholder="" name="max_single_time"> 积分 <br><br>
                 </div>
             </div>
             <div class="control-group">
                 <label style="width: 350px;text-align: left;padding-left: 100px"  class="control-label">额外积分（保存后明日开始生效）</label><br><br>
                 <div class="controls">
-                    发布讨论获得 <input type="text" style="width: 30px;padding: 2px 6px" autocomplete="off" value="{$score.publish_discussion}" placeholder="" name="publish_discussion"> 积分 ，
-                    每人每天限 <input type="text" style="width: 30px;padding: 2px 6px" autocomplete="off" value="{$score.publish_discussion_every_day_max}" placeholder="" name="publish_discussion_every_day_max"> 次 <br><br>
-                    发表回复获得 <input type="text" style="width: 30px;padding: 2px 6px" autocomplete="off" value="{$score.publish_reply}" placeholder="" name="publish_reply"> 积分 ，
-                    每人每天限 <input type="text" style="width: 30px;padding: 2px 6px" autocomplete="off" value="{$score.publish_reply_every_day_max}" placeholder="" name="publish_reply_every_day_max"> 次 <br><br>
-                    认证通过获得 <input type="text" style="width: 30px;padding: 2px 6px" autocomplete="off" value="{$score.pass_authentication}" placeholder="" name="pass_authentication"> 积分
+                    发布讨论获得 <input type="number" style="width: 100px;padding: 2px 6px" autocomplete="off" value="{$score.publish_discussion}" max="99999" placeholder="" name="publish_discussion"> 积分 ，
+                    每人每天限 <input type="number" style="width: 100px;padding: 2px 6px" autocomplete="off" value="{$score.publish_discussion_every_day_max}" max="99999" placeholder="" name="publish_discussion_every_day_max"> 次 <br><br>
+                    发表回复获得 <input type="number" style="width: 100px;padding: 2px 6px" autocomplete="off" value="{$score.publish_reply}" placeholder="" max="99999" name="publish_reply"> 积分 ，
+                    每人每天限 <input type="number" style="width: 100px;padding: 2px 6px" autocomplete="off" value="{$score.publish_reply_every_day_max}" max="99999" placeholder="" name="publish_reply_every_day_max"> 次 <br><br>
+                    认证通过获得 <input type="number" style="width: 100px;padding: 2px 6px" autocomplete="off" value="{$score.pass_authentication}" max="99999" placeholder="" name="pass_authentication"> 积分
                 </div>
             </div>
             <div class="control-group">

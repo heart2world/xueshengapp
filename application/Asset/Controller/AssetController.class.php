@@ -65,6 +65,7 @@ class AssetController extends AdminbaseController {
                 $oriName = $_FILES['file']['name'];
                 //写入附件数据库信息
                 $first=array_shift($info);
+                unset($info);
                 if(!empty($first['url'])){
                 	$url=$first['url'];
                 	$storage_setting=sp_get_cmf_settings('storage');
@@ -98,8 +99,8 @@ class AssetController extends AdminbaseController {
                     $filepath = $res_arr[3].'/'.$res_arr[4].'/'.$res_arr[5];
                     $url = $preview_url;
                 }
-                $info = array('preview_url'=>$preview_url,'filepath'=>$filepath,'url'=>$url,'name'=>$oriName,'status'=>1,'message'=>'success');
-				$this->ajaxReturn($info);
+                $res_info = array('preview_url'=>$preview_url,'filepath'=>$filepath,'url'=>$url,'name'=>$oriName,'status'=>1,'message'=>'success');
+				$this->ajaxReturn($res_info);
             } else {
                 $this->ajaxReturn(array('name'=>'','status'=>0,'message'=>$upload->getError()));
             }

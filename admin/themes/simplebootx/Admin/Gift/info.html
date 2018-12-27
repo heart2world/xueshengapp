@@ -1,0 +1,88 @@
+<admintpl file="header"/>
+<link rel="stylesheet" href="__PUBLIC__/layui/css/layui.css">
+<style>
+    .action a {
+        color: #00a2d4;
+    }
+</style>
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:U('gift/index')}">商品管理</a></li>
+        <li class="active"><a href="">商品详情</a></li>
+    </ul>
+    <form class="form-horizontal js-ajax-form layui-form">
+        <fieldset>
+            <div class="control-group">
+                <label class="control-label">商 品 I D </label>
+                <div class="controls">
+                    <div style="padding-top: 6px">{$data.id}</div>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">商品名称</label>
+                <div class="controls">
+                    <div style="padding-top: 6px">{$data.gift_name}</div>
+                </div>
+            </div>
+
+            <div class="control-group" >
+                <label class="control-label">商品类型</label>
+                <div class="controls">
+                    <php>$types = array('1'=>'积分','2'=>'赞助');</php>
+                    <div style="padding-top: 6px">{$types[$data['type']]}</div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">商品单价</label>
+                <div class="controls">
+                    <php>$prices = array('1'=>'分','2'=>'元');</php>
+                    <div style="padding-top: 6px">{$data.price}{$prices[$data['type']]}</div>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">商品库存</label>
+                <div class="controls">
+                    <div style="padding-top: 6px">{$data.surplus}</div>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">商品封面</label>
+                <div class="controls">
+                    <img src="{:sp_get_image_preview_url($data['cover_img'])}" style="max-width: 200px;" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">商品介绍</label>
+                <div class="controls clearfix" id="intro_box"></div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<script src="__PUBLIC__/js/common.js"></script>
+<script src="__PUBLIC__/layui/layui.js"></script>
+<script src="__PUBLIC__/js/app.js?_={:time()}"></script>
+<script type="text/html" id="temp">
+    {{#  layui.each(d, function(index, item){
+            index = item.index||index;
+    }}
+    <div class="int_list" style="width: 150px;margin-top: 10px;float: left;margin-right: 10px;">
+        <img src="/data/upload/{{item.img}}" />
+        <input type="text" style="width: 135px;margin-top: 5px;border: none;" readonly value="{{item.sort}}">
+    </div>
+    {{#  }) }}
+</script>
+<script>
+    layui.use(["form",'laytpl','upload'], function () {
+        let laytpl = layui.laytpl;
+        let data= eval('{:htmlspecialchars_decode($data["product_intro"])}');
+        if(data){
+            let html = laytpl($("#temp").html()).render(data);
+            $("#intro_box").html(html);
+        }
+    });
+</script>
+</body>
+</html>
