@@ -94,6 +94,10 @@ class UserController extends AdminbaseController{
 				$_POST['user_login'] = $_POST['mobile'];
 				$_POST['user_pass'] = '123456';
 				if ($this->users_model->create()!==false) {
+				    $exist = $this->users_model->where(array("user_type"=>1,'mobile'=>$_POST['mobile']))->find();
+				    if($exist){
+                        $this->error("手机号已经存在！");
+                    }
 					$result=$this->users_model->add();
 					if ($result!==false) {
 						$role_user_model=M("RoleUser");
@@ -149,6 +153,10 @@ class UserController extends AdminbaseController{
                 }
                 $_POST['user_login'] = $_POST['mobile'];
 				if ($this->users_model->create()!==false) {
+                    $exist = $this->users_model->where(array("user_type"=>1,'mobile'=>$_POST['mobile'],'id'=>array('neq',$_POST['id'])))->find();
+                    if($exist){
+                        $this->error("手机号已经存在！");
+                    }
 					$result=$this->users_model->save();
 					if ($result!==false) {
 						$role_user_model=M("RoleUser");

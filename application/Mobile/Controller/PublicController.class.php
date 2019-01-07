@@ -110,13 +110,26 @@ class PublicController extends AppframeController
 //            if(!check_send_code($mobile,trim($yzm))){
 //                $this->ajaxReturn(['status'=>0,'info'=>'验证码输入有误']);
 //            }
-            $exist = M('Users')->where(array('mobile'=>$mobile))->find();
+            $username = trim(I('post.username'));//姓名
+            //获取关键词并过滤
+            $effect = 1;
+            $where['effect_area'] = array('like',"%$effect%");
+            $filter_keyword = M('FilterKeyword')->where($where)->select();
+            foreach ($filter_keyword as $k=>$v){
+                if(strpos($username,$v['keyword']) !== false){
+                    $this->ajaxReturn(['status'=>0,'info'=>"您输入的内容包含敏感信息,请检查"]);
+                }
+            }
+            $where_exist['mobile'] = array('eq',$mobile);
+            $where_exist['user_type'] = array('in','2,3');
+            $exist = M('Users')->where($where_exist)->find();
             if($exist){
                 $this->ajaxReturn(['status'=>0,'info'=>'该账户已存在']);
             }
             $dataInfo = [
                 'user_login' => $mobile,
                 'user_pass' => sp_password($password),
+                'user_name' => $username,
                 'create_time' => date('Y-m-d H:i:s'),
                 'user_status' => 1,
                 'user_type' => 0,//先默认0
@@ -124,8 +137,7 @@ class PublicController extends AppframeController
                 'mobile' => $mobile
             ];
             $result_id = M('Users')->add($dataInfo);
-            if($result_id){
-                M('Users')->save(array('id'=>$result_id,'user_name'=>'用户'.$result_id));
+            if($result_id !== false){
                 $this->ajaxReturn(['status'=>1,'info'=>'注册成功','id'=>$result_id]);
             }else{
                 $this->ajaxReturn(['status'=>-1,'info'=>'网络错误,请稍后再试']);
@@ -152,7 +164,7 @@ class PublicController extends AppframeController
             }
             if($school['type'] == 1) {
                 $specialty_id = intval(I('post.specialty_id'));
-                $specialty = M('SchoolProfessional')->where(array('id' => $specialty_id, 'school_id' => $school_id))->find();
+                $specialty = M('SchoolProfessional')->where(array('id' => $specialty_id))->find();
                 if (!$specialty) {
                     $this->ajaxReturn(['status' => 0, 'info' => '选择失败,不存在该专业']);
                 }
@@ -218,8 +230,8 @@ class PublicController extends AppframeController
 
     //获取专业列表
     public function specialty_list(){
-        $school_id = intval(I('request.school_id'));
-        $where['school_id'] = array('eq',$school_id);
+        //$school_id = intval(I('request.school_id'));
+        //$where['school_id'] = array('eq',$school_id);
         $where['status'] = array('eq',0);
         $keyword = I('request.keyword');
         if($keyword){
@@ -398,7 +410,7 @@ class PublicController extends AppframeController
         if(preg_match('/^1[3456789][0-9]{9}$/',$mobile) < 1){
             $this->ajaxReturn(['status'=>0,'info'=>'请输入正确的手机号！']);
         }
-        $employee = M('Users')->where(['mobile'=>$mobile])->find();
+        $employee = M('Users')->where(['mobile'=>$mobile,'user_type'=>array('in','2,3')])->find();
         if($employee){
             $this->ajaxReturn(['status'=>0,'info'=>'该手机号已存在']);
         }
@@ -475,5 +487,10 @@ class PublicController extends AppframeController
         }else{
             return false;
         }
+    }
+
+    //协议
+    public function protocol(){
+        $this->display();
     }
 }

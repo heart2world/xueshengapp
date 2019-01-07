@@ -1,0 +1,71 @@
+[ 2018-12-29T10:47:38+08:00 ] 27.14.253.85 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001976s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002386s ]
+
+[ 2018-12-29T11:24:39+08:00 ] 42.236.10.117 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002559s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003090s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000681s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001237s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000587s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002634s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `h2w_options` WHERE ( option_name='site_options' ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-12-29T15:00:07+08:00 ] 222.182.196.132 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002569s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003096s ]
+
+[ 2018-12-29T15:56:23+08:00 ] 42.236.10.106 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002979s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003579s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000841s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001341s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000627s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002910s ]
+
+[ 2018-12-29T15:57:16+08:00 ] 42.236.10.75 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003681s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004276s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000930s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001412s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000703s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003146s ]
+
+[ 2018-12-29T16:15:36+08:00 ] 222.182.196.132 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002428s ]
+
+[ 2018-12-29T16:28:59+08:00 ] 222.182.196.132 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002520s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003026s ]
+
+[ 2018-12-29T16:52:58+08:00 ] 222.182.196.132 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002807s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003365s ]
+
+[ 2018-12-29T16:57:57+08:00 ] 222.182.196.132 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002111s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002556s ]
+

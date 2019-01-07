@@ -1,0 +1,1347 @@
+[ 2019-01-01T12:24:40+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=index_hot&uid=&token=&page=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003367s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004032s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000780s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001346s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003043s ]
+SQL: SHOW COLUMNS FROM `h2w_slide` [ RunTime:0.0048s ]
+SQL: SELECT `slide_id`,`slide_pic`,`slide_url` FROM `h2w_slide` WHERE `slide_status` = 1 ORDER BY listorder asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0052s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_discuss` WHERE `hot` = 2 AND `status` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id  WHERE d.hot = 2 AND d.status = 1 ORDER BY d.create_time desc LIMIT 0,6   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0117s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:24:40+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Center&a=mine&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002524s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003192s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000857s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000342s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001868s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0041s ]
+SQL: SELECT `id`,`uu_id` FROM `h2w_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id`,`user_name`,`avatar`,`signature`,`create_time`,`score`,`user_type`,`mobile`,`school_id`,`specialty_id`,`verify`,`online_time`,`continuous_day`,`aurora`,`push`,`uu_id`,`school_area`,`invitation_code`,`verify_id` FROM `h2w_users` WHERE `id` = 2 AND `user_type` IN ('2','3') AND `user_status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `h2w_school_professional` WHERE `id` = 112 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_authentication` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `h2w_authentication` WHERE `user_id` = 2 ORDER BY create_time desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users_sign` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `h2w_users_sign` WHERE `user_id` = 2 AND `sign_time` = 1546272000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users_message` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users_message` WHERE `user_id` = 2 AND `read` = 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:24:40+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Index&a=sign_in&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002361s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000910s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000382s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001994s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0046s ]
+SQL: SELECT `id`,`uu_id` FROM `h2w_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`user_name`,`avatar`,`signature`,`create_time`,`score`,`user_type`,`mobile`,`school_id`,`specialty_id`,`verify`,`online_time`,`continuous_day`,`aurora`,`push`,`uu_id`,`school_area`,`invitation_code`,`verify_id` FROM `h2w_users` WHERE `id` = 2 AND `user_type` IN ('2','3') AND `user_status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `h2w_school_professional` WHERE `id` = 112 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_authentication` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `h2w_authentication` WHERE `user_id` = 2 ORDER BY create_time desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users_sign` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `h2w_users_sign` WHERE `user_id` = 2 AND `sign_time` = 1546272000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_message` [ RunTime:0.0034s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users_message` WHERE `user_id` = 2 AND `read` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_users_sign` WHERE `user_id` = 2 AND `sign_time` = 1546185600 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `h2w_users_sign` (`user_id`,`sign_time`,`score`,`create_time`) VALUES ('2','1546272000','3','1546316680') [ RunTime:0.0031s ]
+SQL: UPDATE `h2w_users` SET `score`='19',`online_time`='4',`continuous_day`='4' WHERE `id` = 2 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_users_score` [ RunTime:0.0035s ]
+SQL: INSERT INTO `h2w_users_score` (`user_id`,`status`,`score`,`type`,`month`,`create_time`) VALUES ('2','1','3','1','1546272000','1546316680') [ RunTime:0.0018s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:24:42+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Center&a=mine&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002099s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002576s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000892s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000320s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001874s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0046s ]
+SQL: SELECT `id`,`uu_id` FROM `h2w_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`user_name`,`avatar`,`signature`,`create_time`,`score`,`user_type`,`mobile`,`school_id`,`specialty_id`,`verify`,`online_time`,`continuous_day`,`aurora`,`push`,`uu_id`,`school_area`,`invitation_code`,`verify_id` FROM `h2w_users` WHERE `id` = 2 AND `user_type` IN ('2','3') AND `user_status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `h2w_school_professional` WHERE `id` = 112 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_authentication` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `h2w_authentication` WHERE `user_id` = 2 ORDER BY create_time desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_sign` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `h2w_users_sign` WHERE `user_id` = 2 AND `sign_time` = 1546272000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_message` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users_message` WHERE `user_id` = 2 AND `read` = 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:24:44+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Center&a=mine&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001554s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001924s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000407s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000678s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000273s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001456s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0044s ]
+SQL: SELECT `id`,`uu_id` FROM `h2w_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`user_name`,`avatar`,`signature`,`create_time`,`score`,`user_type`,`mobile`,`school_id`,`specialty_id`,`verify`,`online_time`,`continuous_day`,`aurora`,`push`,`uu_id`,`school_area`,`invitation_code`,`verify_id` FROM `h2w_users` WHERE `id` = 2 AND `user_type` IN ('2','3') AND `user_status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `h2w_school_professional` WHERE `id` = 112 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_authentication` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `h2w_authentication` WHERE `user_id` = 2 ORDER BY create_time desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users_sign` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `h2w_users_sign` WHERE `user_id` = 2 AND `sign_time` = 1546272000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_message` [ RunTime:0.0035s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users_message` WHERE `user_id` = 2 AND `read` = 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:24:44+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=index&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001891s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002340s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000572s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000875s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000281s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001835s ]
+SQL: SHOW COLUMNS FROM `h2w_scripture` [ RunTime:0.0042s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_scripture` WHERE `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_scripture` WHERE `status` = 0 ORDER BY create_time desc LIMIT 0,20   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:24:46+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Center&a=mine&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001780s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002244s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000711s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000271s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001671s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0043s ]
+SQL: SELECT `id`,`uu_id` FROM `h2w_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`user_name`,`avatar`,`signature`,`create_time`,`score`,`user_type`,`mobile`,`school_id`,`specialty_id`,`verify`,`online_time`,`continuous_day`,`aurora`,`push`,`uu_id`,`school_area`,`invitation_code`,`verify_id` FROM `h2w_users` WHERE `id` = 2 AND `user_type` IN ('2','3') AND `user_status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `h2w_school_professional` WHERE `id` = 112 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_authentication` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `h2w_authentication` WHERE `user_id` = 2 ORDER BY create_time desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_sign` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `h2w_users_sign` WHERE `user_id` = 2 AND `sign_time` = 1546272000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_message` [ RunTime:0.0037s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users_message` WHERE `user_id` = 2 AND `read` = 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:24:46+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Center&a=mine&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001902s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002390s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000510s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000698s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000334s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001649s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0040s ]
+SQL: SELECT `id`,`uu_id` FROM `h2w_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`user_name`,`avatar`,`signature`,`create_time`,`score`,`user_type`,`mobile`,`school_id`,`specialty_id`,`verify`,`online_time`,`continuous_day`,`aurora`,`push`,`uu_id`,`school_area`,`invitation_code`,`verify_id` FROM `h2w_users` WHERE `id` = 2 AND `user_type` IN ('2','3') AND `user_status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `h2w_school_professional` WHERE `id` = 112 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_authentication` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `h2w_authentication` WHERE `user_id` = 2 ORDER BY create_time desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users_sign` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `h2w_users_sign` WHERE `user_id` = 2 AND `sign_time` = 1546272000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_message` [ RunTime:0.0031s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users_message` WHERE `user_id` = 2 AND `read` = 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:24:46+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=index_hot&uid=&token=&page=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001811s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002208s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000556s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000852s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000372s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001916s ]
+SQL: SHOW COLUMNS FROM `h2w_slide` [ RunTime:0.0035s ]
+SQL: SELECT `slide_id`,`slide_pic`,`slide_url` FROM `h2w_slide` WHERE `slide_status` = 1 ORDER BY listorder asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0034s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_discuss` WHERE `hot` = 2 AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id  WHERE d.hot = 2 AND d.status = 1 ORDER BY d.create_time desc LIMIT 0,6   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:24:53+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=index&a=discuss_savor&uid=2&token=303c22152aa8d501a67c5df2c287c835&page=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001829s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002293s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000426s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000732s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001540s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0041s ]
+SQL: SELECT `id`,`uu_id` FROM `h2w_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_label` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `h2w_users_label` WHERE `user_id` = 2  [ RunTime:0.0003s ]
+SQL: select count(*) from h2w_discuss d, h2w_discuss_label dl where d.id=dl.discuss_id and d.status=1 and dl.label_id in(1,2,7) GROUP BY dl.discuss_id [ RunTime:0.0006s ]
+SQL: select d.* from h2w_discuss d, h2w_discuss_label dl where d.id=dl.discuss_id and d.status=1 and dl.label_id in(1,2,7) GROUP BY dl.discuss_id order by count(dl.label_id) desc,d.create_time desc limit 0,6 [ RunTime:0.0035s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '2' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '7' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '7' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '5' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '6' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '6' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: verify C:\www\xueshengapp\application\Mobile\Controller\BaseController.class.php 第 108 行.
+SQL: SHOW COLUMNS FROM `h2w_users_collect` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 1 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 6 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 5 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 4 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 3 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 2 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:24:55+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Center&a=mine&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001425s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001835s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000428s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000710s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000285s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001576s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0043s ]
+SQL: SELECT `id`,`uu_id` FROM `h2w_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`user_name`,`avatar`,`signature`,`create_time`,`score`,`user_type`,`mobile`,`school_id`,`specialty_id`,`verify`,`online_time`,`continuous_day`,`aurora`,`push`,`uu_id`,`school_area`,`invitation_code`,`verify_id` FROM `h2w_users` WHERE `id` = 2 AND `user_type` IN ('2','3') AND `user_status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `h2w_school_professional` WHERE `id` = 112 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_authentication` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `h2w_authentication` WHERE `user_id` = 2 ORDER BY create_time desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users_sign` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `h2w_users_sign` WHERE `user_id` = 2 AND `sign_time` = 1546272000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_message` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users_message` WHERE `user_id` = 2 AND `read` = 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:24:55+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=index&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001467s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001802s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000481s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000639s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000347s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001564s ]
+SQL: SHOW COLUMNS FROM `h2w_scripture` [ RunTime:0.0039s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_scripture` WHERE `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_scripture` WHERE `status` = 0 ORDER BY create_time desc LIMIT 0,20   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:24:57+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Center&a=mine&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001828s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002289s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000548s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000867s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000383s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001923s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0050s ]
+SQL: SELECT `id`,`uu_id` FROM `h2w_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`user_name`,`avatar`,`signature`,`create_time`,`score`,`user_type`,`mobile`,`school_id`,`specialty_id`,`verify`,`online_time`,`continuous_day`,`aurora`,`push`,`uu_id`,`school_area`,`invitation_code`,`verify_id` FROM `h2w_users` WHERE `id` = 2 AND `user_type` IN ('2','3') AND `user_status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `h2w_school_professional` WHERE `id` = 112 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_authentication` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `h2w_authentication` WHERE `user_id` = 2 ORDER BY create_time desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_sign` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `h2w_users_sign` WHERE `user_id` = 2 AND `sign_time` = 1546272000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_message` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users_message` WHERE `user_id` = 2 AND `read` = 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:24:57+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=mall&uid=2&token=303c22152aa8d501a67c5df2c287c835&type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001356s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001697s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000411s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000676s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000277s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001456s ]
+SQL: SHOW COLUMNS FROM `h2w_gift` [ RunTime:0.0047s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_gift` WHERE `status` = 0 AND `type` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`gift_name`,`price`,`surplus`,`cover_img` FROM `h2w_gift` WHERE `status` = 0 AND `type` = 1 ORDER BY create_time desc LIMIT 0,20   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:24:58+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Center&a=mine&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001346s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001693s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000664s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000273s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001440s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0045s ]
+SQL: SELECT `id`,`uu_id` FROM `h2w_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`user_name`,`avatar`,`signature`,`create_time`,`score`,`user_type`,`mobile`,`school_id`,`specialty_id`,`verify`,`online_time`,`continuous_day`,`aurora`,`push`,`uu_id`,`school_area`,`invitation_code`,`verify_id` FROM `h2w_users` WHERE `id` = 2 AND `user_type` IN ('2','3') AND `user_status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `h2w_school_professional` WHERE `id` = 112 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_authentication` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `h2w_authentication` WHERE `user_id` = 2 ORDER BY create_time desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users_sign` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `h2w_users_sign` WHERE `user_id` = 2 AND `sign_time` = 1546272000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_message` [ RunTime:0.0033s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users_message` WHERE `user_id` = 2 AND `read` = 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:24:59+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Center&a=mine&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001801s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002257s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000414s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000633s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000282s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001434s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0046s ]
+SQL: SELECT `id`,`uu_id` FROM `h2w_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`user_name`,`avatar`,`signature`,`create_time`,`score`,`user_type`,`mobile`,`school_id`,`specialty_id`,`verify`,`online_time`,`continuous_day`,`aurora`,`push`,`uu_id`,`school_area`,`invitation_code`,`verify_id` FROM `h2w_users` WHERE `id` = 2 AND `user_type` IN ('2','3') AND `user_status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `h2w_school_professional` WHERE `id` = 112 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_authentication` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `h2w_authentication` WHERE `user_id` = 2 ORDER BY create_time desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_sign` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `h2w_users_sign` WHERE `user_id` = 2 AND `sign_time` = 1546272000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_message` [ RunTime:0.0038s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users_message` WHERE `user_id` = 2 AND `read` = 0 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:24:59+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Center&a=mine&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001797s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002270s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000628s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000990s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000455s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002212s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0037s ]
+SQL: SELECT `id`,`uu_id` FROM `h2w_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`user_name`,`avatar`,`signature`,`create_time`,`score`,`user_type`,`mobile`,`school_id`,`specialty_id`,`verify`,`online_time`,`continuous_day`,`aurora`,`push`,`uu_id`,`school_area`,`invitation_code`,`verify_id` FROM `h2w_users` WHERE `id` = 2 AND `user_type` IN ('2','3') AND `user_status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `h2w_school_professional` WHERE `id` = 112 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_authentication` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `h2w_authentication` WHERE `user_id` = 2 ORDER BY create_time desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_sign` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `h2w_users_sign` WHERE `user_id` = 2 AND `sign_time` = 1546272000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_message` [ RunTime:0.0051s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users_message` WHERE `user_id` = 2 AND `read` = 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:25:00+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Center&a=mine&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001315s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001650s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000567s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000849s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000375s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001924s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0043s ]
+SQL: SELECT `id`,`uu_id` FROM `h2w_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`user_name`,`avatar`,`signature`,`create_time`,`score`,`user_type`,`mobile`,`school_id`,`specialty_id`,`verify`,`online_time`,`continuous_day`,`aurora`,`push`,`uu_id`,`school_area`,`invitation_code`,`verify_id` FROM `h2w_users` WHERE `id` = 2 AND `user_type` IN ('2','3') AND `user_status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `h2w_school_professional` WHERE `id` = 112 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_authentication` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `h2w_authentication` WHERE `user_id` = 2 ORDER BY create_time desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_sign` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `h2w_users_sign` WHERE `user_id` = 2 AND `sign_time` = 1546272000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_message` [ RunTime:0.0029s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users_message` WHERE `user_id` = 2 AND `read` = 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:25:00+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=index_hot&uid=&token=&page=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001481s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001820s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000860s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001924s ]
+SQL: SHOW COLUMNS FROM `h2w_slide` [ RunTime:0.0041s ]
+SQL: SELECT `slide_id`,`slide_pic`,`slide_url` FROM `h2w_slide` WHERE `slide_status` = 1 ORDER BY listorder asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0034s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_discuss` WHERE `hot` = 2 AND `status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id  WHERE d.hot = 2 AND d.status = 1 ORDER BY d.create_time desc LIMIT 0,6   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:25:00+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Center&a=mine&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001984s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002440s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000539s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000816s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000342s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001842s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0034s ]
+SQL: SELECT `id`,`uu_id` FROM `h2w_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id`,`user_name`,`avatar`,`signature`,`create_time`,`score`,`user_type`,`mobile`,`school_id`,`specialty_id`,`verify`,`online_time`,`continuous_day`,`aurora`,`push`,`uu_id`,`school_area`,`invitation_code`,`verify_id` FROM `h2w_users` WHERE `id` = 2 AND `user_type` IN ('2','3') AND `user_status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `h2w_school_professional` WHERE `id` = 112 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_authentication` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `h2w_authentication` WHERE `user_id` = 2 ORDER BY create_time desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_sign` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `h2w_users_sign` WHERE `user_id` = 2 AND `sign_time` = 1546272000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_message` [ RunTime:0.0033s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users_message` WHERE `user_id` = 2 AND `read` = 0 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:31:02+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=discuss_area&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002750s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003187s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000769s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001210s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002769s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `h2w_category` WHERE `status` = 1 ORDER BY listorder asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0033s ]
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_discuss d WHERE d.school_id = 1 AND d.status = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id  WHERE d.school_id = 1 AND d.status = 1 ORDER BY d.update_time desc LIMIT 0,20   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `h2w_users_collect` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 4 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 2 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 1 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0037s ]
+SQL: UPDATE `h2w_users` SET `school_area`='1' WHERE `id` = 2 [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:31:02+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Center&a=mine&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001979s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002382s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000604s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001016s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002160s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0045s ]
+SQL: SELECT `id`,`uu_id` FROM `h2w_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`user_name`,`avatar`,`signature`,`create_time`,`score`,`user_type`,`mobile`,`school_id`,`specialty_id`,`verify`,`online_time`,`continuous_day`,`aurora`,`push`,`uu_id`,`school_area`,`invitation_code`,`verify_id` FROM `h2w_users` WHERE `id` = 2 AND `user_type` IN ('2','3') AND `user_status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `h2w_school_professional` WHERE `id` = 112 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_authentication` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `h2w_authentication` WHERE `user_id` = 2 ORDER BY create_time desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_sign` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `h2w_users_sign` WHERE `user_id` = 2 AND `sign_time` = 1546272000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_message` [ RunTime:0.0036s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users_message` WHERE `user_id` = 2 AND `read` = 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:31:03+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=discuss_area&uid=2&token=303c22152aa8d501a67c5df2c287c835&sid=&cid=&page=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002117s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002633s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001122s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000566s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002496s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `h2w_category` WHERE `status` = 1 ORDER BY listorder asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0035s ]
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_discuss d WHERE d.school_id = 1 AND d.status = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id  WHERE d.school_id = 1 AND d.status = 1 ORDER BY d.update_time desc LIMIT 0,20   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_users_collect` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 4 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 2 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 1 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0031s ]
+SQL: UPDATE `h2w_users` SET `school_area`='1' WHERE `id` = 2 [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:31:04+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Center&a=mine&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001988s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002468s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000495s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001079s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000451s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002127s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0040s ]
+SQL: SELECT `id`,`uu_id` FROM `h2w_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`user_name`,`avatar`,`signature`,`create_time`,`score`,`user_type`,`mobile`,`school_id`,`specialty_id`,`verify`,`online_time`,`continuous_day`,`aurora`,`push`,`uu_id`,`school_area`,`invitation_code`,`verify_id` FROM `h2w_users` WHERE `id` = 2 AND `user_type` IN ('2','3') AND `user_status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `h2w_school_professional` WHERE `id` = 112 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_authentication` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `h2w_authentication` WHERE `user_id` = 2 ORDER BY create_time desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users_sign` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `h2w_users_sign` WHERE `user_id` = 2 AND `sign_time` = 1546272000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_message` [ RunTime:0.0032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users_message` WHERE `user_id` = 2 AND `read` = 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:31:04+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Public&a=school_list&type=1&keyword=&status=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001823s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002209s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000490s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000825s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001911s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_school` WHERE `type` = 1 AND `status` = 0 AND `id` <> 1 GROUP BY first  [ RunTime:0.0023s ]
+SQL: SELECT `id`,`school_name`,`first` FROM `h2w_school` WHERE `type` = 1 AND `status` = 0 AND `id` <> 1  [ RunTime:0.0024s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:31:07+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=discuss_area&uid=2&token=303c22152aa8d501a67c5df2c287c835&sid=13&cid=0&page=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001813s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002196s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000835s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000426s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001852s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 13 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `h2w_category` WHERE `status` = 1 ORDER BY listorder asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0036s ]
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_discuss d WHERE d.school_id = 13 AND d.status = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id  WHERE d.school_id = 13 AND d.status = 1 ORDER BY d.update_time desc LIMIT 0,20   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0033s ]
+SQL: UPDATE `h2w_users` SET `school_area`='13' WHERE `id` = 2 [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:31:09+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Center&a=mine&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001807s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002220s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000649s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001070s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000428s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002273s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0040s ]
+SQL: SELECT `id`,`uu_id` FROM `h2w_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`user_name`,`avatar`,`signature`,`create_time`,`score`,`user_type`,`mobile`,`school_id`,`specialty_id`,`verify`,`online_time`,`continuous_day`,`aurora`,`push`,`uu_id`,`school_area`,`invitation_code`,`verify_id` FROM `h2w_users` WHERE `id` = 2 AND `user_type` IN ('2','3') AND `user_status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `h2w_school_professional` WHERE `id` = 112 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_authentication` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `h2w_authentication` WHERE `user_id` = 2 ORDER BY create_time desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users_sign` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `h2w_users_sign` WHERE `user_id` = 2 AND `sign_time` = 1546272000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_message` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users_message` WHERE `user_id` = 2 AND `read` = 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:31:09+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Public&a=school_list&type=1&keyword=&status=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002128s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002544s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000651s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001104s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000577s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002475s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_school` WHERE `type` = 1 AND `status` = 0 AND `id` <> 1 GROUP BY first  [ RunTime:0.0023s ]
+SQL: SELECT `id`,`school_name`,`first` FROM `h2w_school` WHERE `type` = 1 AND `status` = 0 AND `id` <> 1  [ RunTime:0.0022s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:31:24+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=discuss_area&uid=2&token=303c22152aa8d501a67c5df2c287c835&sid=357&cid=0&page=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002735s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003314s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000746s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001199s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000689s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002764s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 357 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `h2w_category` WHERE `status` = 1 ORDER BY listorder asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0031s ]
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_discuss d WHERE d.school_id = 357 AND d.status = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id  WHERE d.school_id = 357 AND d.status = 1 ORDER BY d.update_time desc LIMIT 0,20   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0039s ]
+SQL: UPDATE `h2w_users` SET `school_area`='357' WHERE `id` = 2 [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:31:28+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=discuss_area&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002121s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002637s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000655s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000849s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002092s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `h2w_category` WHERE `status` = 1 ORDER BY listorder asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0038s ]
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_discuss d WHERE d.school_id = 1 AND d.status = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id  WHERE d.school_id = 1 AND d.status = 1 ORDER BY d.update_time desc LIMIT 0,20   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `h2w_users_collect` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 4 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 2 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 1 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0037s ]
+SQL: UPDATE `h2w_users` SET `school_area`='1' WHERE `id` = 2 [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:31:28+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Center&a=mine&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001585s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001944s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000564s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000933s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000272s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001888s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0036s ]
+SQL: SELECT `id`,`uu_id` FROM `h2w_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id`,`user_name`,`avatar`,`signature`,`create_time`,`score`,`user_type`,`mobile`,`school_id`,`specialty_id`,`verify`,`online_time`,`continuous_day`,`aurora`,`push`,`uu_id`,`school_area`,`invitation_code`,`verify_id` FROM `h2w_users` WHERE `id` = 2 AND `user_type` IN ('2','3') AND `user_status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `h2w_school_professional` WHERE `id` = 112 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_authentication` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `h2w_authentication` WHERE `user_id` = 2 ORDER BY create_time desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_sign` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `h2w_users_sign` WHERE `user_id` = 2 AND `sign_time` = 1546272000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users_message` [ RunTime:0.0036s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users_message` WHERE `user_id` = 2 AND `read` = 0 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:31:28+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=discuss_area&uid=2&token=303c22152aa8d501a67c5df2c287c835&sid=&cid=&page=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001972s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002452s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000561s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000917s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000376s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001979s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `h2w_category` WHERE `status` = 1 ORDER BY listorder asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_discuss d WHERE d.school_id = 1 AND d.status = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id  WHERE d.school_id = 1 AND d.status = 1 ORDER BY d.update_time desc LIMIT 0,20   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `h2w_users_collect` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 4 AND `type` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 2 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 1 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0036s ]
+SQL: UPDATE `h2w_users` SET `school_area`='1' WHERE `id` = 2 [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:31:29+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Center&a=mine&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001450s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001834s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000410s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000709s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000269s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001488s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0043s ]
+SQL: SELECT `id`,`uu_id` FROM `h2w_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`user_name`,`avatar`,`signature`,`create_time`,`score`,`user_type`,`mobile`,`school_id`,`specialty_id`,`verify`,`online_time`,`continuous_day`,`aurora`,`push`,`uu_id`,`school_area`,`invitation_code`,`verify_id` FROM `h2w_users` WHERE `id` = 2 AND `user_type` IN ('2','3') AND `user_status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `h2w_school_professional` WHERE `id` = 112 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_authentication` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `h2w_authentication` WHERE `user_id` = 2 ORDER BY create_time desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users_sign` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `h2w_users_sign` WHERE `user_id` = 2 AND `sign_time` = 1546272000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_message` [ RunTime:0.0029s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users_message` WHERE `user_id` = 2 AND `read` = 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:31:29+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Public&a=school_list&type=1&keyword=&status=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001442s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001763s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000421s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000945s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000372s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001864s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_school` WHERE `type` = 1 AND `status` = 0 AND `id` <> 1 GROUP BY first  [ RunTime:0.0015s ]
+SQL: SELECT `id`,`school_name`,`first` FROM `h2w_school` WHERE `type` = 1 AND `status` = 0 AND `id` <> 1  [ RunTime:0.0022s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:31:37+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Public&a=school_list&type=1&keyword=%E5%8C%97%E6%96%B9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001599s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001940s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000962s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000362s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002040s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `h2w_school` WHERE `type` = 1 AND `status` = 0 AND `school_name` LIKE '%北方%' GROUP BY first  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`school_name`,`first` FROM `h2w_school` WHERE `type` = 1 AND `status` = 0 AND `school_name` LIKE '%北方%'  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:31:39+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=discuss_area&uid=2&token=303c22152aa8d501a67c5df2c287c835&sid=16&cid=0&page=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001951s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002343s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000890s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000440s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001996s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 16 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `h2w_category` WHERE `status` = 1 ORDER BY listorder asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_discuss d WHERE d.school_id = 16 AND d.status = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id  WHERE d.school_id = 16 AND d.status = 1 ORDER BY d.update_time desc LIMIT 0,20   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_users_collect` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 3 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0033s ]
+SQL: UPDATE `h2w_users` SET `school_area`='16' WHERE `id` = 2 [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:31:41+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=discuss_area&uid=2&token=303c22152aa8d501a67c5df2c287c835&sid=16&cid=5&page=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001395s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001736s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000399s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000741s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000282s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001519s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 16 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_discuss d WHERE d.school_id = 16 AND d.status = 1 AND d.category_id = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id  WHERE d.school_id = 16 AND d.status = 1 AND d.category_id = 5 ORDER BY d.update_time desc LIMIT 0,20   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0052s ]
+SQL: UPDATE `h2w_users` SET `school_area`='16' WHERE `id` = 2 [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:31:42+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=discuss_area&uid=2&token=303c22152aa8d501a67c5df2c287c835&sid=16&cid=1&page=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001571s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001898s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000631s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000853s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000268s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001864s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 16 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0037s ]
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_discuss d WHERE d.school_id = 16 AND d.status = 1 AND d.category_id = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id  WHERE d.school_id = 16 AND d.status = 1 AND d.category_id = 1 ORDER BY d.update_time desc LIMIT 0,20   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0039s ]
+SQL: UPDATE `h2w_users` SET `school_area`='16' WHERE `id` = 2 [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:31:43+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=discuss_area&uid=2&token=303c22152aa8d501a67c5df2c287c835&sid=16&cid=2&page=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001571s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001898s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000762s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000280s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001633s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 16 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0031s ]
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_discuss d WHERE d.school_id = 16 AND d.status = 1 AND d.category_id = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id  WHERE d.school_id = 16 AND d.status = 1 AND d.category_id = 2 ORDER BY d.update_time desc LIMIT 0,20   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0033s ]
+SQL: UPDATE `h2w_users` SET `school_area`='16' WHERE `id` = 2 [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:31:43+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=discuss_area&uid=2&token=303c22152aa8d501a67c5df2c287c835&sid=16&cid=3&page=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001388s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001724s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000681s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000280s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001465s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 16 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0031s ]
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_discuss d WHERE d.school_id = 16 AND d.status = 1 AND d.category_id = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id  WHERE d.school_id = 16 AND d.status = 1 AND d.category_id = 3 ORDER BY d.update_time desc LIMIT 0,20   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0040s ]
+SQL: UPDATE `h2w_users` SET `school_area`='16' WHERE `id` = 2 [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:31:44+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=discuss_area&uid=2&token=303c22152aa8d501a67c5df2c287c835&sid=16&cid=4&page=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001929s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002380s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000917s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000367s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001956s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 16 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_discuss d WHERE d.school_id = 16 AND d.status = 1 AND d.category_id = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id  WHERE d.school_id = 16 AND d.status = 1 AND d.category_id = 4 ORDER BY d.update_time desc LIMIT 0,20   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_users_collect` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 3 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0033s ]
+SQL: UPDATE `h2w_users` SET `school_area`='16' WHERE `id` = 2 [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:31:45+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=discuss_area&uid=2&token=303c22152aa8d501a67c5df2c287c835&sid=16&cid=5&page=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001898s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002336s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000578s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000940s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002007s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 16 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0036s ]
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_discuss d WHERE d.school_id = 16 AND d.status = 1 AND d.category_id = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id  WHERE d.school_id = 16 AND d.status = 1 AND d.category_id = 5 ORDER BY d.update_time desc LIMIT 0,20   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0036s ]
+SQL: UPDATE `h2w_users` SET `school_area`='16' WHERE `id` = 2 [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:31:47+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=discuss_area&uid=2&token=303c22152aa8d501a67c5df2c287c835&sid=16&cid=1&page=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001577s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001917s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000468s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000744s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000362s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001670s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 16 AND `status` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0031s ]
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_discuss d WHERE d.school_id = 16 AND d.status = 1 AND d.category_id = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id  WHERE d.school_id = 16 AND d.status = 1 AND d.category_id = 1 ORDER BY d.update_time desc LIMIT 0,20   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0036s ]
+SQL: UPDATE `h2w_users` SET `school_area`='16' WHERE `id` = 2 [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:31:49+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=discuss_area&uid=2&token=303c22152aa8d501a67c5df2c287c835&sid=16&cid=0&page=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001836s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002255s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000546s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000918s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000372s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001963s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 16 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `h2w_category` WHERE `status` = 1 ORDER BY listorder asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_discuss d WHERE d.school_id = 16 AND d.status = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id  WHERE d.school_id = 16 AND d.status = 1 ORDER BY d.update_time desc LIMIT 0,20   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_users_collect` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 3 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0036s ]
+SQL: UPDATE `h2w_users` SET `school_area`='16' WHERE `id` = 2 [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:32:03+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=discuss_area&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001955s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002415s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000579s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000954s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000377s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002034s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `h2w_category` WHERE `status` = 1 ORDER BY listorder asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_discuss d WHERE d.school_id = 1 AND d.status = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id  WHERE d.school_id = 1 AND d.status = 1 ORDER BY d.update_time desc LIMIT 0,20   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `h2w_users_collect` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 4 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 2 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 1 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0033s ]
+SQL: UPDATE `h2w_users` SET `school_area`='1' WHERE `id` = 2 [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:32:03+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Center&a=mine&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001992s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002460s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000958s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002128s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0036s ]
+SQL: SELECT `id`,`uu_id` FROM `h2w_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id`,`user_name`,`avatar`,`signature`,`create_time`,`score`,`user_type`,`mobile`,`school_id`,`specialty_id`,`verify`,`online_time`,`continuous_day`,`aurora`,`push`,`uu_id`,`school_area`,`invitation_code`,`verify_id` FROM `h2w_users` WHERE `id` = 2 AND `user_type` IN ('2','3') AND `user_status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `h2w_school_professional` WHERE `id` = 112 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_authentication` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `h2w_authentication` WHERE `user_id` = 2 ORDER BY create_time desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users_sign` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `h2w_users_sign` WHERE `user_id` = 2 AND `sign_time` = 1546272000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users_message` [ RunTime:0.0031s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users_message` WHERE `user_id` = 2 AND `read` = 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:32:03+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=discuss_area&uid=2&token=303c22152aa8d501a67c5df2c287c835&sid=&cid=&page=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001926s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002315s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000473s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000857s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001948s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `h2w_category` WHERE `status` = 1 ORDER BY listorder asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_discuss d WHERE d.school_id = 1 AND d.status = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id  WHERE d.school_id = 1 AND d.status = 1 ORDER BY d.update_time desc LIMIT 0,20   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `h2w_users_collect` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 4 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 2 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 1 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0034s ]
+SQL: UPDATE `h2w_users` SET `school_area`='1' WHERE `id` = 2 [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:32:06+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=discuss_area&uid=2&token=303c22152aa8d501a67c5df2c287c835&sid=1&cid=&page=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002915s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003440s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000769s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001204s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002749s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `h2w_category` WHERE `status` = 1 ORDER BY listorder asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_discuss d WHERE d.school_id = 1 AND d.status = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id  WHERE d.school_id = 1 AND d.status = 1 ORDER BY d.update_time desc LIMIT 0,20   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `h2w_users_collect` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 4 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 2 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_users_collect` WHERE `user_id` = 2 AND `collect_id` = 1 AND `type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0034s ]
+SQL: UPDATE `h2w_users` SET `school_area`='1' WHERE `id` = 2 [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:32:11+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Center&a=mine&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001811s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002192s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000524s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000819s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000418s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001859s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0049s ]
+SQL: SELECT `id`,`uu_id` FROM `h2w_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`user_name`,`avatar`,`signature`,`create_time`,`score`,`user_type`,`mobile`,`school_id`,`specialty_id`,`verify`,`online_time`,`continuous_day`,`aurora`,`push`,`uu_id`,`school_area`,`invitation_code`,`verify_id` FROM `h2w_users` WHERE `id` = 2 AND `user_type` IN ('2','3') AND `user_status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `h2w_school_professional` WHERE `id` = 112 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_authentication` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `h2w_authentication` WHERE `user_id` = 2 ORDER BY create_time desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users_sign` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `h2w_users_sign` WHERE `user_id` = 2 AND `sign_time` = 1546272000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users_message` [ RunTime:0.0037s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users_message` WHERE `user_id` = 2 AND `read` = 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:32:12+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=index&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002423s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000487s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000885s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000511s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001983s ]
+SQL: SHOW COLUMNS FROM `h2w_scripture` [ RunTime:0.0039s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_scripture` WHERE `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_scripture` WHERE `status` = 0 ORDER BY create_time desc LIMIT 0,20   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:32:13+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Center&a=mine&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001976s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002357s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000479s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000805s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001967s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0047s ]
+SQL: SELECT `id`,`uu_id` FROM `h2w_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`user_name`,`avatar`,`signature`,`create_time`,`score`,`user_type`,`mobile`,`school_id`,`specialty_id`,`verify`,`online_time`,`continuous_day`,`aurora`,`push`,`uu_id`,`school_area`,`invitation_code`,`verify_id` FROM `h2w_users` WHERE `id` = 2 AND `user_type` IN ('2','3') AND `user_status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `h2w_school_professional` WHERE `id` = 112 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_authentication` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `h2w_authentication` WHERE `user_id` = 2 ORDER BY create_time desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users_sign` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `h2w_users_sign` WHERE `user_id` = 2 AND `sign_time` = 1546272000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_message` [ RunTime:0.0033s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users_message` WHERE `user_id` = 2 AND `read` = 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:32:14+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=mall&uid=2&token=303c22152aa8d501a67c5df2c287c835&type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001814s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002208s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000494s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000806s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000427s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001821s ]
+SQL: SHOW COLUMNS FROM `h2w_gift` [ RunTime:0.0039s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_gift` WHERE `status` = 0 AND `type` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`gift_name`,`price`,`surplus`,`cover_img` FROM `h2w_gift` WHERE `status` = 0 AND `type` = 1 ORDER BY create_time desc LIMIT 0,20   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:32:14+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Center&a=mine&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001964s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002347s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000609s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000808s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000512s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002031s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0043s ]
+SQL: SELECT `id`,`uu_id` FROM `h2w_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`user_name`,`avatar`,`signature`,`create_time`,`score`,`user_type`,`mobile`,`school_id`,`specialty_id`,`verify`,`online_time`,`continuous_day`,`aurora`,`push`,`uu_id`,`school_area`,`invitation_code`,`verify_id` FROM `h2w_users` WHERE `id` = 2 AND `user_type` IN ('2','3') AND `user_status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `h2w_school_professional` WHERE `id` = 112 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_authentication` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `h2w_authentication` WHERE `user_id` = 2 ORDER BY create_time desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users_sign` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `h2w_users_sign` WHERE `user_id` = 2 AND `sign_time` = 1546272000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_message` [ RunTime:0.0033s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users_message` WHERE `user_id` = 2 AND `read` = 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T12:32:15+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Center&a=mine&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001923s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002306s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000809s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000462s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001999s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0046s ]
+SQL: SELECT `id`,`uu_id` FROM `h2w_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`user_name`,`avatar`,`signature`,`create_time`,`score`,`user_type`,`mobile`,`school_id`,`specialty_id`,`verify`,`online_time`,`continuous_day`,`aurora`,`push`,`uu_id`,`school_area`,`invitation_code`,`verify_id` FROM `h2w_users` WHERE `id` = 2 AND `user_type` IN ('2','3') AND `user_status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `h2w_school_professional` WHERE `id` = 112 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_authentication` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `h2w_authentication` WHERE `user_id` = 2 ORDER BY create_time desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users_sign` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `h2w_users_sign` WHERE `user_id` = 2 AND `sign_time` = 1546272000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_message` [ RunTime:0.0034s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users_message` WHERE `user_id` = 2 AND `read` = 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T13:09:16+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Center&a=mine&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002384s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002845s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000652s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001053s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000427s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002255s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0046s ]
+SQL: SELECT `id`,`uu_id` FROM `h2w_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`user_name`,`avatar`,`signature`,`create_time`,`score`,`user_type`,`mobile`,`school_id`,`specialty_id`,`verify`,`online_time`,`continuous_day`,`aurora`,`push`,`uu_id`,`school_area`,`invitation_code`,`verify_id` FROM `h2w_users` WHERE `id` = 2 AND `user_type` IN ('2','3') AND `user_status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `h2w_school_professional` WHERE `id` = 112 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_authentication` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `h2w_authentication` WHERE `user_id` = 2 ORDER BY create_time desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_users_sign` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `h2w_users_sign` WHERE `user_id` = 2 AND `sign_time` = 1546272000 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_users_message` [ RunTime:0.0041s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users_message` WHERE `user_id` = 2 AND `read` = 0 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T13:09:16+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Center&a=mine&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003074s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003716s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000867s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001318s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000573s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002902s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0081s ]
+SQL: SELECT `id`,`uu_id` FROM `h2w_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`user_name`,`avatar`,`signature`,`create_time`,`score`,`user_type`,`mobile`,`school_id`,`specialty_id`,`verify`,`online_time`,`continuous_day`,`aurora`,`push`,`uu_id`,`school_area`,`invitation_code`,`verify_id` FROM `h2w_users` WHERE `id` = 2 AND `user_type` IN ('2','3') AND `user_status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `h2w_school_professional` WHERE `id` = 112 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_authentication` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `h2w_authentication` WHERE `user_id` = 2 ORDER BY create_time desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_users_sign` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `h2w_users_sign` WHERE `user_id` = 2 AND `sign_time` = 1546272000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_users_message` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users_message` WHERE `user_id` = 2 AND `read` = 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T13:09:18+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=index_hot&uid=&token=&page=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002370s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002898s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000620s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001060s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000442s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002249s ]
+SQL: SHOW COLUMNS FROM `h2w_slide` [ RunTime:0.0046s ]
+SQL: SELECT `slide_id`,`slide_pic`,`slide_url` FROM `h2w_slide` WHERE `slide_status` = 1 ORDER BY listorder asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0058s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_discuss` WHERE `hot` = 2 AND `status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT d.*,u.user_name,u.avatar,u.user_type,u.verify_id usc_id,u.verify FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id  WHERE d.hot = 2 AND d.status = 1 ORDER BY d.create_time desc LIMIT 0,6   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T13:09:29+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Center&a=mine&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001453s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001875s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000431s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000770s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000293s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001599s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0043s ]
+SQL: SELECT `id`,`uu_id` FROM `h2w_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`user_name`,`avatar`,`signature`,`create_time`,`score`,`user_type`,`mobile`,`school_id`,`specialty_id`,`verify`,`online_time`,`continuous_day`,`aurora`,`push`,`uu_id`,`school_area`,`invitation_code`,`verify_id` FROM `h2w_users` WHERE `id` = 2 AND `user_type` IN ('2','3') AND `user_status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_school` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_school` WHERE `id` = 1108 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_school_professional` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `h2w_school_professional` WHERE `id` = 112 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_authentication` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `h2w_authentication` WHERE `user_id` = 2 ORDER BY create_time desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_sign` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `h2w_users_sign` WHERE `user_id` = 2 AND `sign_time` = 1546272000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_users_message` [ RunTime:0.0033s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_users_message` WHERE `user_id` = 2 AND `read` = 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+
+[ 2019-01-01T13:09:30+08:00 ] 27.14.253.85 /index.php?g=Mobile&m=Tourist&a=index&uid=2&token=303c22152aa8d501a67c5df2c287c835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001491s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001822s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000441s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000631s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000314s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001487s ]
+SQL: SHOW COLUMNS FROM `h2w_scripture` [ RunTime:0.0043s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_scripture` WHERE `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_scripture` WHERE `status` = 0 ORDER BY create_time desc LIMIT 0,20   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: url C:\www\xueshengapp\application\Common\Controller\AppframeController.class.php 第 22 行.
+

@@ -1,0 +1,1117 @@
+[ 2019-01-07T00:16:56+08:00 ] 112.47.17.119 /index.php?g=Admin&m=Public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001943s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002377s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000548s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000951s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000259s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001862s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001220s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001276s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0042s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000134s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008213s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008265s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000513s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001045s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000691s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000741s ]
+
+[ 2019-01-07T00:16:56+08:00 ] 112.47.17.119 /index.php?g=Admin&m=Public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001981s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002429s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000685s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001183s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002355s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001231s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001282s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0037s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000056s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000097s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008859s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008911s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000322s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000425s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000803s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000493s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000528s ]
+
+[ 2019-01-07T00:16:56+08:00 ] 112.47.17.119 /index.php?g=Admin&m=Public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002225s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002592s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000494s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001315s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000349s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002341s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001480s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001539s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0037s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000081s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000137s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009140s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009200s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000448s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000482s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000681s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000729s ]
+
+[ 2019-01-07T00:20:10+08:00 ] 27.14.253.85 /index.php?g=admin&m=public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001555s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001895s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000555s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000946s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001882s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001237s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001287s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0040s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000102s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007041s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007092s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000374s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000389s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000825s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000552s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000589s ]
+
+[ 2019-01-07T00:20:10+08:00 ] 27.14.253.85 /index.php?g=admin&m=public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001820s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002165s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000582s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001054s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000270s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002004s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001315s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001368s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0038s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000108s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006877s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006922s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000318s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000401s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000774s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000486s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000520s ]
+
+[ 2019-01-07T00:20:21+08:00 ] 27.14.253.85 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002153s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002613s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000683s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001034s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002103s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001236s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001281s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `h2w_users` WHERE `user_type` = 1 AND `user_login` = 'admin' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `h2w_role_user` [ RunTime:0.0028s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0007s ]
+SQL: UPDATE `h2w_users` SET `user_login`='admin',`user_pass`='###a8d4b4bcd77826ff84ca126241fc5be3',`user_nicename`='admin',`user_name`='admin',`user_email`='123456@qq.com',`user_url`='',`avatar`=NULL,`sex`='1',`birthday`='2000-01-01',`signature`='',`last_login_ip`='27.14.253.85',`last_login_time`='2019-01-07 00:20:21',`create_time`='2018-11-19 04:55:56',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='',`school_id`=NULL,`specialty_id`=NULL,`verify_id`='0',`verify`='0',`online_time`='0',`continuous_day`='0',`aurora`=NULL,`push`='1',`uu_id`=NULL,`school_area`='0',`invitation_code`=NULL WHERE `id` = '1' [ RunTime:0.0003s ]
+
+[ 2019-01-07T00:20:21+08:00 ] 27.14.253.85 /index.php?g=Admin&m=Index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002207s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002664s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000507s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000905s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000255s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001764s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001364s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001420s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_menu` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 0 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 134 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 190 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 191 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 192 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 193 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 194 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 189 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 198 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 197 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 188 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 195 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 196 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 187 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 109 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 200 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 54 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 199 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 139 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 140 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 149 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0033s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000156s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000196s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012971s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013015s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000353s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000482s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000892s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000519s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000559s ]
+
+[ 2019-01-07T00:20:21+08:00 ] 27.14.253.85 /index.php?g=Admin&m=Main&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002259s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002730s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000515s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001308s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000277s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002198s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001669s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001730s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0005s ]
+SQL: select VERSION() as version [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0034s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000120s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000177s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013501s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013558s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001032s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000697s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000747s ]
+
+[ 2019-01-07T07:11:38+08:00 ] 119.84.153.195 /index.php?g=admin&m=public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002224s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002724s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000773s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001744s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000549s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003183s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001764s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001818s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0051s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000144s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022731s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022781s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000454s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000513s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000581s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000618s ]
+
+[ 2019-01-07T07:12:02+08:00 ] 119.84.153.195 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001355s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001730s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000410s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000986s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000269s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001762s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001057s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001104s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `h2w_users` WHERE `user_type` = 1 AND `user_login` = '15919164607' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `h2w_role_user` [ RunTime:0.0031s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '28' AND `status` = 1  [ RunTime:0.0007s ]
+SQL: UPDATE `h2w_users` SET `user_login`='15919164607',`user_pass`='###a8d4b4bcd77826ff84ca126241fc5be3',`user_nicename`='',`user_name`='刘琢玉',`user_email`='',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`='2000-01-01',`signature`=NULL,`last_login_ip`='111.10.140.207',`last_login_time`='2019-01-07 07:12:02',`create_time`='2019-01-06 21:43:57',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='15919164607',`school_id`=NULL,`specialty_id`=NULL,`verify_id`='0',`verify`='0',`online_time`='0',`continuous_day`='0',`aurora`=NULL,`push`='1',`uu_id`=NULL,`school_area`='0',`invitation_code`=NULL WHERE `id` = '28' [ RunTime:0.0004s ]
+
+[ 2019-01-07T07:12:02+08:00 ] 119.84.153.195 /index.php?g=Admin&m=Index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001812s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002280s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000505s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000941s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000276s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001830s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000984s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001036s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '28' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_menu` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 0 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `h2w_role_user` [ RunTime:0.0026s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '28' AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_auth_access` [ RunTime:0.0036s ]
+SQL: SELECT * FROM h2w_auth_access a INNER JOIN h2w_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('user/indexadmin/index')  [ RunTime:0.0008s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '28' AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SELECT * FROM h2w_auth_access a INNER JOIN h2w_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/school/index')  [ RunTime:0.0004s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '28' AND `status` = 1  [ RunTime:0.0002s ]
+SQL: SELECT * FROM h2w_auth_access a INNER JOIN h2w_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/discuss/default')  [ RunTime:0.0003s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '28' AND `status` = 1  [ RunTime:0.0002s ]
+SQL: SELECT * FROM h2w_auth_access a INNER JOIN h2w_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/scripture/default')  [ RunTime:0.0003s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '28' AND `status` = 1  [ RunTime:0.0002s ]
+SQL: SELECT * FROM h2w_auth_access a INNER JOIN h2w_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/gift/default')  [ RunTime:0.0003s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '28' AND `status` = 1  [ RunTime:0.0002s ]
+SQL: SELECT * FROM h2w_auth_access a INNER JOIN h2w_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/authentication/index')  [ RunTime:0.0003s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '28' AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SELECT * FROM h2w_auth_access a INNER JOIN h2w_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/setting/default')  [ RunTime:0.0005s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '28' AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SELECT * FROM h2w_auth_access a INNER JOIN h2w_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('user/indexadmin/default3')  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 134 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 190 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 191 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '28' AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SELECT * FROM h2w_auth_access a INNER JOIN h2w_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/discuss/index')  [ RunTime:0.0004s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '28' AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SELECT * FROM h2w_auth_access a INNER JOIN h2w_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/discuss/category')  [ RunTime:0.0003s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '28' AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SELECT * FROM h2w_auth_access a INNER JOIN h2w_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/discuss/label')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 192 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 193 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 194 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 189 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '28' AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SELECT * FROM h2w_auth_access a INNER JOIN h2w_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/scripture/index')  [ RunTime:0.0004s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '28' AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SELECT * FROM h2w_auth_access a INNER JOIN h2w_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/scripture/link')  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 198 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 197 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 188 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '28' AND `status` = 1  [ RunTime:0.0002s ]
+SQL: SELECT * FROM h2w_auth_access a INNER JOIN h2w_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/gift/index')  [ RunTime:0.0003s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '28' AND `status` = 1  [ RunTime:0.0002s ]
+SQL: SELECT * FROM h2w_auth_access a INNER JOIN h2w_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/orderlist/index')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 195 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 196 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 187 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 109 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '28' AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SELECT * FROM h2w_auth_access a INNER JOIN h2w_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/score/index')  [ RunTime:0.0004s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '28' AND `status` = 1  [ RunTime:0.0002s ]
+SQL: SELECT * FROM h2w_auth_access a INNER JOIN h2w_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/slide/index')  [ RunTime:0.0004s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '28' AND `status` = 1  [ RunTime:0.0002s ]
+SQL: SELECT * FROM h2w_auth_access a INNER JOIN h2w_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/filterkeyword/index')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 200 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 54 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 199 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 139 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '28' AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SELECT * FROM h2w_auth_access a INNER JOIN h2w_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/rbac/index')  [ RunTime:0.0004s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '28' AND `status` = 1  [ RunTime:0.0002s ]
+SQL: SELECT * FROM h2w_auth_access a INNER JOIN h2w_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/user/index')  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 140 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 149 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0036s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000201s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000251s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '28' AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SELECT * FROM h2w_auth_access a INNER JOIN h2w_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('portal/adminterm/index')  [ RunTime:0.0003s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '28' AND `status` = 1  [ RunTime:0.0002s ]
+SQL: SELECT * FROM h2w_auth_access a INNER JOIN h2w_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('portal/adminpost/index')  [ RunTime:0.0004s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '28' AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SELECT * FROM h2w_auth_access a INNER JOIN h2w_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/setting/site')  [ RunTime:0.0003s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '28' AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SELECT * FROM h2w_auth_access a INNER JOIN h2w_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/user/userinfo')  [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031630s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031688s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000490s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000497s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001065s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000577s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000639s ]
+
+[ 2019-01-07T07:12:03+08:00 ] 119.84.153.195 /index.php?g=Admin&m=Main&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001765s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002224s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001383s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000371s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002470s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001610s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001675s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '28' LIMIT 1   [ RunTime:0.0004s ]
+SQL: select VERSION() as version [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0032s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000117s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009911s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009959s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000317s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000385s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000761s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000404s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000440s ]
+
+[ 2019-01-07T11:19:52+08:00 ] 222.182.194.33 /index.php?g=Admin&m=Public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002906s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003464s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000749s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001638s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000681s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003199s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.002108s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.002173s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0043s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000096s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006956s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000411s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000507s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000975s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000569s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000613s ]
+
+[ 2019-01-07T11:20:00+08:00 ] 222.182.194.33 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001858s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002233s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001111s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000400s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002193s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001526s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001578s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `h2w_users` WHERE `user_type` = 1 AND `user_login` = 'admin' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_role_user` [ RunTime:0.0052s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0008s ]
+SQL: UPDATE `h2w_users` SET `user_login`='admin',`user_pass`='###a8d4b4bcd77826ff84ca126241fc5be3',`user_nicename`='admin',`user_name`='admin',`user_email`='123456@qq.com',`user_url`='',`avatar`=NULL,`sex`='1',`birthday`='2000-01-01',`signature`='',`last_login_ip`='222.182.194.33',`last_login_time`='2019-01-07 11:20:00',`create_time`='2018-11-19 04:55:56',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='',`school_id`=NULL,`specialty_id`=NULL,`verify_id`='0',`verify`='0',`online_time`='0',`continuous_day`='0',`aurora`=NULL,`push`='1',`uu_id`=NULL,`school_area`='0',`invitation_code`=NULL WHERE `id` = '1' [ RunTime:0.0004s ]
+
+[ 2019-01-07T11:20:01+08:00 ] 222.182.194.33 /index.php?g=Admin&m=Index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001843s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002218s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000471s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001012s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000424s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002006s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001501s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001568s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_menu` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 0 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 134 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 190 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 191 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 192 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 193 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 194 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 189 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 198 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 197 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 188 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 195 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 196 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 187 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 109 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 200 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 54 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 199 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 139 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 140 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_menu` WHERE `parentid` = 149 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0036s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000231s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000287s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015414s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015464s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000358s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000575s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000990s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000621s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000663s ]
+
+[ 2019-01-07T11:20:01+08:00 ] 222.182.194.33 /index.php?g=Admin&m=Main&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002435s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002939s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000663s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001706s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000595s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003092s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.002146s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.002209s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: select VERSION() as version [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0041s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000119s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009461s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009504s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000326s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000637s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001032s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000669s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000717s ]
+
+[ 2019-01-07T11:20:04+08:00 ] 222.182.194.33 /index.php?g=Admin&m=Discuss&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002438s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002959s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000664s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001395s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000583s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002772s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001896s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001962s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id INNER JOIN h2w_school as s on s.id=d.school_id  LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT d.*,u.user_name,s.school_name,c.name category_name FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id INNER JOIN h2w_school as s on s.id=d.school_id INNER JOIN h2w_category as c on c.id=d.category_id  ORDER BY d.hot desc,d.update_time desc LIMIT 0,20   [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('1','2','4','6','7')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('1','4','7')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('2','7')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('7')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('2')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('2','4')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('7')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('1','4','7')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('7')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('1')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('7')  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0034s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000130s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013140s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013184s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000338s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000455s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000853s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000509s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000556s ]
+
+[ 2019-01-07T11:20:09+08:00 ] 222.182.194.33 /index.php?g=Admin&m=Discuss&a=info&id=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002118s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002528s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000680s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001909s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000688s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003414s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001929s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001998s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0065s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0059s ]
+SQL: SELECT d.*,u.user_name,s.school_name,c.name category_name FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id INNER JOIN h2w_school as s on s.id=d.school_id INNER JOIN h2w_category as c on c.id=d.category_id  WHERE d.id = 10 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('1','2','4','6','7')  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0035s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000111s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000169s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012157s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012220s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000542s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000477s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001092s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000809s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000856s ]
+
+[ 2019-01-07T11:20:11+08:00 ] 222.182.194.33 /index.php?g=Admin&m=Discuss&a=comment&id=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001883s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002274s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001081s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000491s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002184s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001941s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.002007s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0061s ]
+SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0035s ]
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_comment c INNER JOIN h2w_users as u on u.id=c.user_id  WHERE c.discuss_id = 10 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT c.*,u.user_name FROM h2w_comment c INNER JOIN h2w_users as u on u.id=c.user_id  WHERE c.discuss_id = 10 ORDER BY c.create_time asc LIMIT 0,20   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0030s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000103s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000158s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014906s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014959s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000467s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000619s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001165s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000683s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000732s ]
+
+[ 2019-01-07T11:20:14+08:00 ] 222.182.194.33 /index.php?g=Admin&m=Discuss&a=reply&id=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001804s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002186s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000501s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001151s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000443s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002195s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001391s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001442s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0598s ]
+SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0034s ]
+SQL: SELECT c.*,u.user_name FROM h2w_comment c INNER JOIN h2w_users as u on u.id=c.user_id  WHERE c.id = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_reply` WHERE `comment_id` = 11 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT r.*,u.user_name FROM h2w_reply r INNER JOIN h2w_users as u on u.id=r.user_id  WHERE r.comment_id = 11  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0123s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000112s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009358s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009403s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000327s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000435s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000829s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000492s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000529s ]
+
+[ 2019-01-07T11:20:25+08:00 ] 222.182.194.33 /index.php?g=Admin&m=Discuss&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.004240s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005218s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001055s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001733s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000811s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003795s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.004426s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.004531s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.2958s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0076s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0409s ]
+SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0035s ]
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id INNER JOIN h2w_school as s on s.id=d.school_id  LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT d.*,u.user_name,s.school_name,c.name category_name FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id INNER JOIN h2w_school as s on s.id=d.school_id INNER JOIN h2w_category as c on c.id=d.category_id  ORDER BY d.hot desc,d.update_time desc LIMIT 0,20   [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0148s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('1','2','4','6','7')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('1','4','7')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('2','7')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('7')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('2')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('2','4')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('7')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('1','4','7')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('7')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('1')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('7')  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0044s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000101s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000142s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013770s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013815s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000425s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000495s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000981s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000544s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000612s ]
+
+[ 2019-01-07T11:20:31+08:00 ] 222.182.194.33 /index.php?g=Admin&m=Discuss&a=info&id=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001882s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002258s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000516s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001066s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002113s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001385s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001443s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0057s ]
+SQL: SELECT d.*,u.user_name,s.school_name,c.name category_name FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id INNER JOIN h2w_school as s on s.id=d.school_id INNER JOIN h2w_category as c on c.id=d.category_id  WHERE d.id = 10 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('1','2','4','6','7')  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0034s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012290s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012343s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000422s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000600s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001102s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000665s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000714s ]
+
+[ 2019-01-07T11:20:32+08:00 ] 222.182.194.33 /index.php?g=Admin&m=Discuss&a=comment&id=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002748s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003263s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000557s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001112s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000495s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002273s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001669s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001727s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0048s ]
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_comment c INNER JOIN h2w_users as u on u.id=c.user_id  WHERE c.discuss_id = 10 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT c.*,u.user_name FROM h2w_comment c INNER JOIN h2w_users as u on u.id=c.user_id  WHERE c.discuss_id = 10 ORDER BY c.create_time asc LIMIT 0,20   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0046s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000113s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010371s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010423s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000326s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000444s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000824s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000470s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000504s ]
+
+[ 2019-01-07T11:20:34+08:00 ] 222.182.194.33 /index.php?g=Admin&m=Discuss&a=reply&id=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002426s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002957s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000664s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001113s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000568s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002464s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001352s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001403s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0035s ]
+SQL: SELECT c.*,u.user_name FROM h2w_comment c INNER JOIN h2w_users as u on u.id=c.user_id  WHERE c.id = 11 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_reply` WHERE `comment_id` = 11 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT r.*,u.user_name FROM h2w_reply r INNER JOIN h2w_users as u on u.id=r.user_id  WHERE r.comment_id = 11  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0036s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000115s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009658s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009712s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000437s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000836s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000550s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000587s ]
+
+[ 2019-01-07T11:20:35+08:00 ] 222.182.194.33 /index.php?g=Admin&m=Discuss&a=comment&id=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001826s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002228s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000785s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001600s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000610s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003129s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.003345s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.003428s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_comment c INNER JOIN h2w_users as u on u.id=c.user_id  WHERE c.discuss_id = 10 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT c.*,u.user_name FROM h2w_comment c INNER JOIN h2w_users as u on u.id=c.user_id  WHERE c.discuss_id = 10 ORDER BY c.create_time asc LIMIT 0,20   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0034s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000112s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000168s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014127s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014187s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000453s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000603s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001134s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000691s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000740s ]
+
+[ 2019-01-07T11:20:37+08:00 ] 222.182.194.33 /index.php?g=Admin&m=Discuss&a=reply&id=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002442s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002963s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000722s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001441s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000579s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002874s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.002012s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.002087s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0046s ]
+SQL: SELECT c.*,u.user_name FROM h2w_comment c INNER JOIN h2w_users as u on u.id=c.user_id  WHERE c.id = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h2w_reply` WHERE `comment_id` = 11 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT r.*,u.user_name FROM h2w_reply r INNER JOIN h2w_users as u on u.id=r.user_id  WHERE r.comment_id = 11  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0035s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000102s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000161s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013395s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013460s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000449s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000882s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001416s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000721s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000774s ]
+
+[ 2019-01-07T11:20:40+08:00 ] 222.182.194.33 /index.php?g=Admin&m=Discuss&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002517s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000676s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001432s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002929s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001980s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.002047s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id INNER JOIN h2w_school as s on s.id=d.school_id  LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT d.*,u.user_name,s.school_name,c.name category_name FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id INNER JOIN h2w_school as s on s.id=d.school_id INNER JOIN h2w_category as c on c.id=d.category_id  ORDER BY d.hot desc,d.update_time desc LIMIT 0,20   [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('1','2','4','6','7')  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('1','4','7')  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('2','7')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('7')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('2')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('2','4')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('7')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('1','4','7')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('7')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('1')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('7')  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0038s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000139s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000196s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017711s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017768s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000586s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000638s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001300s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000703s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000757s ]
+
+[ 2019-01-07T11:20:53+08:00 ] 58.247.206.154 /index.php?g=Admin&m=Public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002484s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003012s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000674s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001488s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000680s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002976s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.002029s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.002102s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0048s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000088s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000149s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009058s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000442s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000630s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001162s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000785s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000835s ]
+
+[ 2019-01-07T11:20:56+08:00 ] 222.182.194.33 /index.php?g=Admin&m=Discuss&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002653s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003187s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000672s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001416s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000585s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002805s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001924s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001994s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_category` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `h2w_discuss` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `h2w_comment` [ RunTime:0.0057s ]
+SQL: SHOW COLUMNS FROM `h2w_reply` [ RunTime:0.0043s ]
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id INNER JOIN h2w_school as s on s.id=d.school_id  LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT d.*,u.user_name,s.school_name,c.name category_name FROM h2w_discuss d INNER JOIN h2w_users as u on u.id=d.user_id INNER JOIN h2w_school as s on s.id=d.school_id INNER JOIN h2w_category as c on c.id=d.category_id  ORDER BY d.hot desc,d.update_time desc LIMIT 0,20   [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `h2w_label` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('1','2','4','6','7')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('1','4','7')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('2','7')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('7')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('2')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('2','4')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('7')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('1','4','7')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('7')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('1')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `h2w_label` WHERE `id` IN ('7')  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0045s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000139s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000204s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016313s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016359s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000468s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000868s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000503s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000551s ]
+
+[ 2019-01-07T11:21:12+08:00 ] 101.89.29.78 /index.php?g=Admin&m=Index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001814s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002207s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000509s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001081s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002099s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001841s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001903s ]
+

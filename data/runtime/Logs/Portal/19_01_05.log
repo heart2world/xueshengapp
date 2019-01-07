@@ -1,0 +1,29 @@
+[ 2019-01-05T14:35:24+08:00 ] 58.17.206.121 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002126s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002460s ]
+
+[ 2019-01-05T14:41:43+08:00 ] 58.17.206.121 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001866s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002245s ]
+
+[ 2019-01-05T15:46:29+08:00 ] 27.14.253.85 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002196s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002592s ]
+
+[ 2019-01-05T15:50:05+08:00 ] 180.163.220.4 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002865s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003426s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000803s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002186s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000680s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003799s ]
+

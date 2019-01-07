@@ -1,0 +1,122 @@
+[ 2019-01-03T08:33:48+08:00 ] 222.182.194.150 /index.php?g=User&m=Indexadmin&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002080s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002554s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002682s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003896s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001593s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001649s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '12' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_role_user` [ RunTime:0.0027s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '12' AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_auth_access` [ RunTime:0.0060s ]
+SQL: SELECT * FROM h2w_auth_access a INNER JOIN h2w_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('user/indexadmin/index')  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: user_status C:\www\xueshengapp\application\User\Controller\IndexadminController.class.php 第 28 行.
+NOTIC: [8] Undefined index: num_last C:\www\xueshengapp\application\User\Controller\IndexadminController.class.php 第 36 行.
+NOTIC: [8] Undefined index: num_next C:\www\xueshengapp\application\User\Controller\IndexadminController.class.php 第 37 行.
+NOTIC: [8] Undefined index: start_time C:\www\xueshengapp\application\User\Controller\IndexadminController.class.php 第 45 行.
+NOTIC: [8] Undefined index: end_time C:\www\xueshengapp\application\User\Controller\IndexadminController.class.php 第 46 行.
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_users u INNER JOIN h2w_school as s on s.id=u.school_id left join h2w_school_professional as p on p.id=u.specialty_id  WHERE u.user_type IN ('2','3') LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT u.*,s.type,s.school_name,p.pro_name FROM h2w_users u INNER JOIN h2w_school as s on s.id=u.school_id left join h2w_school_professional as p on p.id=u.specialty_id  WHERE u.user_type IN ('2','3') ORDER BY u.create_time DESC LIMIT 0,20   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0043s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000130s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000186s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014077s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014131s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000595s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000997s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000612s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000654s ]
+
+[ 2019-01-03T08:35:35+08:00 ] 222.182.194.150 /index.php?g=User&m=Indexadmin&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001523s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001861s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000503s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001185s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000388s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002187s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001362s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001413s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '12' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `h2w_role_user` [ RunTime:0.0027s ]
+SQL: SELECT `role_id` FROM h2w_role_user a INNER JOIN h2w_role as b on a.role_id =b.id  WHERE `user_id` = '12' AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `h2w_auth_access` [ RunTime:0.0034s ]
+SQL: SELECT * FROM h2w_auth_access a INNER JOIN h2w_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('user/indexadmin/index')  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: user_status C:\www\xueshengapp\application\User\Controller\IndexadminController.class.php 第 28 行.
+NOTIC: [8] Undefined index: num_last C:\www\xueshengapp\application\User\Controller\IndexadminController.class.php 第 36 行.
+NOTIC: [8] Undefined index: num_next C:\www\xueshengapp\application\User\Controller\IndexadminController.class.php 第 37 行.
+NOTIC: [8] Undefined index: start_time C:\www\xueshengapp\application\User\Controller\IndexadminController.class.php 第 45 行.
+NOTIC: [8] Undefined index: end_time C:\www\xueshengapp\application\User\Controller\IndexadminController.class.php 第 46 行.
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_users u INNER JOIN h2w_school as s on s.id=u.school_id left join h2w_school_professional as p on p.id=u.specialty_id  WHERE u.user_type IN ('2','3') LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT u.*,s.type,s.school_name,p.pro_name FROM h2w_users u INNER JOIN h2w_school as s on s.id=u.school_id left join h2w_school_professional as p on p.id=u.specialty_id  WHERE u.user_type IN ('2','3') ORDER BY u.create_time DESC LIMIT 0,20   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0040s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015541s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015594s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000395s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000383s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000835s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000522s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000562s ]
+
+[ 2019-01-03T22:28:10+08:00 ] 27.14.253.85 /index.php?g=User&m=Indexadmin&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001854s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002291s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000527s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002179s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000395s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003217s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001999s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.002076s ]
+SQL: SHOW COLUMNS FROM `h2w_users` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `h2w_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: user_status C:\www\xueshengapp\application\User\Controller\IndexadminController.class.php 第 28 行.
+NOTIC: [8] Undefined index: num_last C:\www\xueshengapp\application\User\Controller\IndexadminController.class.php 第 36 行.
+NOTIC: [8] Undefined index: num_next C:\www\xueshengapp\application\User\Controller\IndexadminController.class.php 第 37 行.
+NOTIC: [8] Undefined index: start_time C:\www\xueshengapp\application\User\Controller\IndexadminController.class.php 第 45 行.
+NOTIC: [8] Undefined index: end_time C:\www\xueshengapp\application\User\Controller\IndexadminController.class.php 第 46 行.
+SQL: SELECT COUNT(*) AS tp_count FROM h2w_users u INNER JOIN h2w_school as s on s.id=u.school_id left join h2w_school_professional as p on p.id=u.specialty_id  WHERE u.user_type IN ('2','3') LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT u.*,s.type,s.school_name,p.pro_name FROM h2w_users u INNER JOIN h2w_school as s on s.id=u.school_id left join h2w_school_professional as p on p.id=u.specialty_id  WHERE u.user_type IN ('2','3') ORDER BY u.create_time DESC LIMIT 0,20   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `h2w_options` [ RunTime:0.0033s ]
+SQL: SELECT `option_value` FROM `h2w_options` WHERE `option_name` = 'cdn_settings' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000085s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000129s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012536s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012595s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000388s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000456s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000909s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000534s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000574s ]
+

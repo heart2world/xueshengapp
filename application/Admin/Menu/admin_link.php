@@ -1,4 +1,4 @@
 <?php  return array (
-  'score' => '萨顶顶',
-  'voluntary' => 'http://wap.sogou.com',
+  'score' => 'https://mr.baidu.com/c0uvos0?f=cp',
+  'voluntary' => 'https://gaokao.chsi.com.cn/gkzt/tbzyzn2018',
 );

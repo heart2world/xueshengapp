@@ -60,6 +60,7 @@ class PublicController extends AdminbaseController {
     		$this->error(L('CAPTCHA_NOT_RIGHT'));
     	}else{
     		$user = D("Common/Users");
+    		$where['user_type'] = 1;
     		if(strpos($name,"@")>0){//邮箱登陆
     			$where['user_email']=$name;
     		}else{
@@ -67,7 +68,7 @@ class PublicController extends AdminbaseController {
     		}
     		
     		$result = $user->where($where)->find();
-    		if(!empty($result) && $result['user_type']==1){
+    		if(!empty($result)){
     			if(sp_compare_password($pass,$result['user_pass'])){
     				
     				$role_user_model=M("RoleUser");

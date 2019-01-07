@@ -12,8 +12,9 @@
 	<div class="wrap js-check-wrap">
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="{:U('school/index')}">学校管理</a></li>
+			<li><a href="{:U('school/profession')}">专业管理</a></li>
 		</ul>
-		<php>$status=['0'=>'正常','1'=>'停用'];</php>
+		<php>$status=['0'=>'<font color="#20b2aa">正常</font>','1'=>'<font color="#dc143c">停用</font>'];</php>
 		<div class="type_pane">
 			<a href="{:U('school/index', ['type'=>1])}" class="btn {:empty($type) || $type==1 ? 'btn-default':'btn-info' }">大学管理</a>
 			<a  href="{:U('school/index',['type'=>2])}"  class="btn {$type==2?'btn-default':'btn-info'}">高中管理</a>
@@ -41,7 +42,6 @@
 						<th><eq name="type" value="1">大学<else/>高中</eq>名称</th>
 						<th>所在地区</th>
 						<eq name="type" value="1"><th>学校类型</th></eq>
-						<eq name="type" value="1"><th>专业数</th></eq>
 						<th>注册总人数</th>
 						<th width="45">{:L('STATUS')}</th>
 						<th width="120">{:L('ACTIONS')}</th>
@@ -49,7 +49,7 @@
 				</thead>
 				<tbody>
 				<if condition="empty($list)">
-					<tr><td colspan="6">暂无数据</td></tr>
+					<tr><td colspan="7">暂无数据</td></tr>
 				</if>
 					<foreach name="list" item="vo">
 					<tr>
@@ -57,13 +57,12 @@
 						<td>{$vo.school_name}</td>
                         <td>{$vo.address}</td>
 						<eq name="type" value="1"><td>{$vo.professional_type}</td></eq>
-						<eq name="type" value="1"> <td>{$vo.pros}</td></eq>
 						<td>{$vo.regs}</td>
 						<td>{$status[$vo['status']]}</td>
 						<td>
 							<a href="{:U('school/edit',array('id'=>$vo['id']))}">详情</a> |
                             <eq name="vo.status" value="0">
-                                <a href="{:U('school/ban',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn" data-msg="确定禁用此学校?">停用</a>
+                                <a href="{:U('school/ban',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn" data-msg="确定停用此学校?">停用</a>
                              <else/>
                                 <a href="{:U('school/cancelban',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn" data-msg="确定启用此学校?">启用</a>
                             </eq>

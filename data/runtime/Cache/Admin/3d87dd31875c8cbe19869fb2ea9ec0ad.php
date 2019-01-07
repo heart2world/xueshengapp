@@ -50,11 +50,8 @@
 		}
 	</style><?php endif; ?>
 <link rel="stylesheet" href="/public/layui/css/layui.css">
-<style>
-    .action a {
-        color: #00a2d4;
-    }
-    .layui-layer-btn-{text-align: center !important;}
+<style type="text/css">
+    .action a {color: #00a2d4;}
 </style>
 </head>
 <body>
@@ -110,91 +107,12 @@
                 <button type="submit" class="btn btn-success js-ajax-submit"><?php echo L('SAVE');?></button>
             </div>
         </fieldset>
-
-        <?php if(($data["type"]) == "1"): $status=array(0=>'正常',1=>'停用'); ?>
-            <label class="control-label">学校专业</label>
-            <div class="form-actions" style="background: #fff;margin-top: -15px;">
-                <button id="add_pro" type="button" class="btn btn-info actions_info" style="margin-bottom: 10px;display: none;">新增专业</button>
-                <table class="table table-hover table-bordered table-list" style="width: 50%;">
-                    <thead>
-                    <tr>
-                        <th>专业名称</th>
-                        <th>专业注册人数</th>
-                        <th>状态</th>
-                        <th class="actions_info" style="display: none;">操作</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php if(is_array($pro_list)): foreach($pro_list as $key=>$vo): ?><tr>
-                            <td><?php echo ($vo["pro_name"]); ?></td>
-                            <td><?php echo ($vo["count"]); ?></td>
-                            <td><?php echo ($status[$vo['status']]); ?></td>
-                            <td class="action actions_info" style="display: none;">
-                                <?php if(($vo["status"]) == "0"): ?><a href="<?php echo U('school/ban_pro',array('id'=>$vo['id']));?>" class="js-ajax-dialog-btn"
-                                       data-msg="确定禁用此专业?">停用</a>
-                                    <?php else: ?>
-                                    <a href="<?php echo U('school/cancelban_pro',array('id'=>$vo['id']));?>" class="js-ajax-dialog-btn"
-                                       data-msg="确定启用此专业?">启用</a><?php endif; ?>
-                                <a href="javascript:;" class="editPro" data-id="<?php echo ($vo["id"]); ?>" data-name="<?php echo ($vo["pro_name"]); ?>" data-action="<?php echo ($vo["status"]); ?>">编辑</a>
-                            </td>
-                        </tr><?php endforeach; endif; ?>
-                    </tbody>
-                </table>
-            </div><?php endif; ?>
     </form>
 </div>
-<script type="text/html" id="temp">
-    <h3 style="text-align: center;font-size: 16px"> 添加专业 </h3>
-    <form class="layui-form control-group" action="<?php echo U('school/add_pro_post');?>" id="formBox"
-          style="padding: 25px 10px 0 0">
-        <div class="layui-form-item">
-            <label class="layui-form-label">专业名称</label>
-            <div class="layui-input-block">
-                <input type="hidden" name="school_id" value="<?php echo ($data["id"]); ?>"/>
-                <input type="text" name="pro_name" maxlength="20" placeholder="请输入名称" autocomplete="off">
-            </div>
-        </div>
-
-        <div class="layui-form-item">
-            <label class="layui-form-label">状态</label>
-            <div class="layui-input-block">
-                <input type="radio" value="0" name="status" title="启用" checked/>
-                <input type="radio" value="1" name="status" title="禁用"/>
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <div class="layui-input-block">
-                <button style="margin:6px 0 0 23px;" class="btn btn-info" lay-submit lay-filter="add">添加</button>
-            </div>
-        </div>
-    </form>
-</script>
-<script type="text/html" id="editTemp">
-    <h3 style="text-align: center;font-size: 16px"> 编辑专业 </h3>
-    <form class="layui-form control-group" action="<?php echo U('school/add_pro_post');?>" id="formEdit"
-          style="padding: 25px 10px 0 0">
-        <div class="layui-form-item">
-            <label class="layui-form-label">专业名称</label>
-            <div class="layui-input-block">
-                <input type="hidden" id="school_id" value="<?php echo ($data["id"]); ?>"/>
-                <input type="text" name="pro_name" maxlength="20" placeholder="请输入名称" autocomplete="off">
-            </div>
-        </div>
-
-        <div class="layui-form-item">
-            <label class="layui-form-label">状态</label>
-            <div class="layui-input-block">
-                <input type="radio" value="0" name="status" title="启用"/>
-                <input type="radio" value="1" name="status" title="禁用"/>
-            </div>
-        </div>
-    </form>
-</script>
 <script src="/public/js/common.js"></script>
 <script src="/public/layui/layui.js"></script>
 <script src="/public/js/app.js?_=<?php echo time();?>"></script>
 <script type="text/javascript">
-    var action_code = 1;
     layui.use("form", function () {
         let form = layui.form;
         $("#add_pro").on('click', function () {
@@ -214,45 +132,6 @@
             });
             return false;
         });
-        //编辑专业
-        $(".editPro").on('click',function () {
-            var the_id = parseInt($(this).attr('data-id'));
-            var the_name = $(this).attr('data-name');
-            var the_status = parseInt($(this).attr('data-action'));
-            layer.open({
-                title:false,
-                area:["350px","250px;"],
-                type: 1,
-                content: $("#editTemp").html(),
-                btn: ["保存"],
-                yes: function (index) {
-                    if(action_code === 1){
-                        action_code = 0;
-                        var school_id = $("#school_id").val();
-                        var radio_status = $("input[type=radio]:checked").val();
-                        var pro_name = $("input[name=pro_name]").val().trim();
-                        $.ajax({
-                            type: 'POST',
-                            url: '<?php echo U("school/edit_pro_post");?>',
-                            data:{school_id:school_id,id:the_id,pro_name:pro_name,status:radio_status},
-                            success:function (res) {
-                                if(res.status === 1){
-                                    layer.msg(res.info,{icon:1,time:2000},function () {
-                                        location.reload();
-                                    });
-                                }else{
-                                    action_code = 1;
-                                    layer.msg(res.info,{icon:2,time:2000});
-                                }
-                            }
-                        })
-                    }
-                }
-            });
-            $("input[name=pro_name]").val(the_name);
-            $("input[type=radio]").eq(the_status).prop("checked", true);
-            form.render();
-        })
     });
 
     function openWin() {

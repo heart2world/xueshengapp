@@ -1,0 +1,151 @@
+<admintpl file="header"/>
+<style type="text/css">
+    .form-horizontal{margin-top: 20px;}
+    .control-label{width: 100px !important;padding-top: 8px !important;margin-right: 12px;}
+</style>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:U('school/index')}">学校管理</a></li>
+        <li class="active"><a href="{:U('school/profession')}">专业管理</a></li>
+    </ul>
+    <php>$status=['0'=>'<font color="#20b2aa">正常</font>','1'=>'<font color="#dc143c">停用</font>'];</php>
+    <form class="well form-search" method="post" autocomplete="off" action="{:U('school/profession')}">
+        文本搜索：
+        <input type="text" id="keyword" name="keyword" value="{:I('request.keyword')}" placeholder="请输入专业名称"/>
+        <button type="submit" class="btn btn-primary">查询</button>
+        <a href="javascript:;" class="btn btn-info" id="btnAdd" style="margin-left: 20px;">新增专业</a>
+    </form>
+    <div class="js-ajax-form">
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th width="50">专业ID</th>
+                <th>专业名称</th>
+                <th width="200">专业注册人数</th>
+                <th width="100">专业状态</th>
+                <th width="120">{:L('ACTIONS')}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <if condition="empty($profession)">
+                <tr><td colspan="4">暂无数据</td></tr>
+            </if>
+            <foreach name="profession" item="vo">
+                <tr>
+                    <td>{$vo.id}</td>
+                    <td>{$vo.pro_name}</td>
+                    <td>{$vo.number}</td>
+                    <td>{$status[$vo['status']]}</td>
+                    <td style="text-align: center">
+                        <eq name="vo.status" value="0">
+                            <a href="{:U('school/ban_pro',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn"
+                               data-msg="确定停用此专业?">停用</a>
+                            <else/>
+                            <a href="{:U('school/cancelban_pro',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn"
+                               data-msg="确定启用此专业?">启用</a>
+                        </eq>
+                        | <a href="javascript:;" data-id="{$vo.id}" data-name="{$vo.pro_name}" class="btnEdit">编辑</a>
+                    </td>
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination">{$page}</div>
+</div>
+<script src="__PUBLIC__/js/common.js"></script>
+<script src="__PUBLIC__/js/layer/layer.js"></script>
+<script type="text/javascript">
+    var action_code = 1;
+    //新增专业
+    $("#btnAdd").on('click',function () {
+        var html ='<div class="form-horizontal">' +
+            '<div class="form-group">' +
+            '   <label class="col-sm-2 control-label">专业名称</label>' +
+            '   <div class="col-md-7 col-sm-8">' +
+            '       <input style="width: 180px !important;" type="text" placeholder="请输入专业名称" id="proName" maxlength="20" name="pro_name">' +
+            '   </div>' +
+            '</div></div>';
+        layer.open({
+            title: '新增专业',
+            type: 1,
+            content: html,
+            area: ['360px','180px'],
+            btn: ['保存','取消'],
+            yes: function (index) {
+                var pro_name = $("#proName").val().trim();
+                layer.confirm('确定新增该专业？', {icon: 3, title:'提示'}, function(index2){
+                    if(action_code === 1) {
+                        action_code = 0;
+                        $.ajax({
+                            type: 'POST',
+                            url: '{:U("School/add_pro_post")}',
+                            data: {pro_name:pro_name},
+                            success: function (res) {
+                                if (res.status === 1) {
+                                    layer.close(index);
+                                    layer.msg(res.info, {icon: 1, time: 2000}, function () {
+                                        location.reload();
+                                    });
+                                } else {
+                                    action_code = 1;
+                                    layer.msg(res.info, {icon: 2, time: 2000});
+                                }
+                            }
+                        });
+                        layer.close(index2);
+                    }
+                });
+            }
+        })
+    });
+
+    //编辑专业
+    $(".btnEdit").on('click',function () {
+        var the_id = parseInt($(this).attr('data-id'));
+        var the_name = $(this).attr('data-name');
+        var html ='<div class="form-horizontal">' +
+            '<div class="form-group">' +
+            '   <label class="col-sm-2 control-label">专业名称</label>' +
+            '   <div class="col-md-7 col-sm-8">' +
+            '       <input style="width: 180px !important;" value="'+the_name+'" type="text" placeholder="请输入专业名称" id="proName" maxlength="20" name="pro_name">' +
+            '   </div>' +
+            '</div></div>';
+        layer.open({
+            title: '编辑专业',
+            type: 1,
+            content: html,
+            area: ['360px','180px'],
+            btn: ['保存','取消'],
+            yes: function (index) {
+                var pro_name = $("#proName").val().trim();
+                layer.confirm('确定编辑该专业？', {icon: 3, title:'提示'}, function(index2){
+                    if(action_code === 1) {
+                        action_code = 0;
+                        $.ajax({
+                            type: 'POST',
+                            url: '{:U("School/edit_pro_post")}',
+                            data: {id:the_id,pro_name:pro_name},
+                            success: function (res) {
+                                if (res.status === 1) {
+                                    layer.close(index);
+                                    layer.msg(res.info, {icon: 1, time: 2000}, function () {
+                                        location.reload();
+                                    });
+                                } else {
+                                    action_code = 1;
+                                    layer.msg(res.info, {icon: 2, time: 2000});
+                                }
+                            }
+                        });
+                        layer.close(index2);
+                    }
+                });
+            }
+        })
+    })
+</script>
+</body>
+</html>

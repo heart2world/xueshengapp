@@ -62,8 +62,9 @@
 	<div class="wrap js-check-wrap">
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="<?php echo U('school/index');?>">学校管理</a></li>
+			<li><a href="<?php echo U('school/profession');?>">专业管理</a></li>
 		</ul>
-		<?php $status=['0'=>'正常','1'=>'停用']; ?>
+		<?php $status=['0'=>'<font color="#20b2aa">正常</font>','1'=>'<font color="#dc143c">停用</font>']; ?>
 		<div class="type_pane">
 			<a href="<?php echo U('school/index', ['type'=>1]);?>" class="btn <?php echo empty($type) || $type==1 ? 'btn-default':'btn-info' ;?>">大学管理</a>
 			<a  href="<?php echo U('school/index',['type'=>2]);?>"  class="btn <?php echo ($type==2?'btn-default':'btn-info'); ?>">高中管理</a>
@@ -89,25 +90,23 @@
 						<th><?php if(($type) == "1"): ?>大学<?php else: ?>高中<?php endif; ?>名称</th>
 						<th>所在地区</th>
 						<?php if(($type) == "1"): ?><th>学校类型</th><?php endif; ?>
-						<?php if(($type) == "1"): ?><th>专业数</th><?php endif; ?>
 						<th>注册总人数</th>
 						<th width="45"><?php echo L('STATUS');?></th>
 						<th width="120"><?php echo L('ACTIONS');?></th>
 					</tr>
 				</thead>
 				<tbody>
-				<?php if(empty($list)): ?><tr><td colspan="6">暂无数据</td></tr><?php endif; ?>
+				<?php if(empty($list)): ?><tr><td colspan="7">暂无数据</td></tr><?php endif; ?>
 					<?php if(is_array($list)): foreach($list as $key=>$vo): ?><tr>
 						<td><?php echo ($vo["id"]); ?></td>
 						<td><?php echo ($vo["school_name"]); ?></td>
                         <td><?php echo ($vo["address"]); ?></td>
 						<?php if(($type) == "1"): ?><td><?php echo ($vo["professional_type"]); ?></td><?php endif; ?>
-						<?php if(($type) == "1"): ?><td><?php echo ($vo["pros"]); ?></td><?php endif; ?>
 						<td><?php echo ($vo["regs"]); ?></td>
 						<td><?php echo ($status[$vo['status']]); ?></td>
 						<td>
 							<a href="<?php echo U('school/edit',array('id'=>$vo['id']));?>">详情</a> |
-                            <?php if(($vo["status"]) == "0"): ?><a href="<?php echo U('school/ban',array('id'=>$vo['id']));?>" class="js-ajax-dialog-btn" data-msg="确定禁用此学校?">停用</a>
+                            <?php if(($vo["status"]) == "0"): ?><a href="<?php echo U('school/ban',array('id'=>$vo['id']));?>" class="js-ajax-dialog-btn" data-msg="确定停用此学校?">停用</a>
                              <?php else: ?>
                                 <a href="<?php echo U('school/cancelban',array('id'=>$vo['id']));?>" class="js-ajax-dialog-btn" data-msg="确定启用此学校?">启用</a><?php endif; ?>
 						</td>
